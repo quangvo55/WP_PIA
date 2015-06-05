@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="App1.Views.SessionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.BottomAppBar>
+        <CommandBar x:Name="bottomAppBar">
+            <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
+            <AppBarButton Icon="Delete" Label="Delete" Click="DeleteButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,0">
+            <TextBlock Text="Cash Games" FontSize="16" HorizontalAlignment="Left" />
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
+        
+            <StackPanel Grid.Row="1" Margin="0,0,0,0">
+                <TextBlock Text="Stakes" FontSize="16" HorizontalAlignment="Left"/>
+                <ComboBox  x:Name="stakeListPicker" Width="350" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Games" FontSize="16" HorizontalAlignment="Left"/>
+                <ComboBox  x:Name="gamesListPicker" Width="350" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Location" FontSize="16" HorizontalAlignment="Left"/>
+                <ComboBox  x:Name="locationListPicker" Width="350"
+                    VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Limit Type" FontSize="16" HorizontalAlignment="Left"/>
+                <ComboBox  x:Name="limitListPicker" Width="350" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Buy In" FontSize="16" HorizontalAlignment="Left"/>
+                <Grid x:Name="BuyIn" Background="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBox x:Name="BuyInAmount" InputScope="Number" Width="200" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
+                    <Button Width="200" Content="Rebuy" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
+                </Grid>
+                <TextBlock Text="Note" FontSize="16" HorizontalAlignment="Left"/>
+                <TextBox Width="400" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Text="Start" FontSize="16" HorizontalAlignment="Left"/>
+                <Grid x:Name="Start" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker x:Name="startDate" Grid.Column="0"></DatePicker>
+                    <TimePicker x:Name="startTime" Grid.Column="1"></TimePicker>
+                </Grid>
+                <TextBlock Text="End" FontSize="16" HorizontalAlignment="Left"/>
+                <Grid x:Name="End" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <DatePicker x:Name="endDate" Grid.Column="0"></DatePicker>
+                    <TimePicker x:Name="endTime" Grid.Column="1"></TimePicker>
+                </Grid>
+                <TextBlock Text="Cashed Out ($)" FontSize="16" HorizontalAlignment="Left"/>
+                <TextBox x:Name="CashOutAmount" InputScope="Number" Width="400" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left">
+                </TextBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
