@@ -36,3 +36,8 @@ C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\SessionPage.g.cs
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\SessionPage.xaml
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\SessionPage.xbf
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AllSessions.g.i.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AllSessions.g.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AllSessions.xaml
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AllSessions.xbf
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AllSessions.xbf

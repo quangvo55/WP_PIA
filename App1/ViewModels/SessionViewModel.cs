@@ -120,8 +120,8 @@ namespace App1.ViewModels
             }
         }
 
-        private string sessiontime = string.Empty;
-        public string SessionTime
+        private TimeSpan sessiontime;
+        public TimeSpan SessionTime
         {
             get { return sessiontime; }
 

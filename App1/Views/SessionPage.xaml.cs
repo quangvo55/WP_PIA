@@ -40,6 +40,15 @@ namespace App1.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            session.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
+            session.CashOut = Convert.ToDouble(this.CashOutAmount.Text);
+            session.Stakes = ((ComboBoxItem)stakesComboBox.SelectedItem).Content.ToString();
+            session.GameName = ((ComboBoxItem)gamesComboBox.SelectedItem).Content.ToString();
+            session.Location = ((ComboBoxItem)locationComboBox.SelectedItem).Content.ToString();
+            session.Profit = Convert.ToDouble(this.CashOutAmount.Text) - Convert.ToDouble(this.BuyInAmount.Text);
+            session.SessionDate = endDate.Date.DateTime;
+            session.SessionTime = endTime.Time;
+
             string result = session.SaveSession(session);
             App.CurrentSessionId = session.Id;
             if (result.Contains("Success"))
@@ -57,9 +66,9 @@ namespace App1.Views
             }
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.GoBack();
         } 
     }
 }

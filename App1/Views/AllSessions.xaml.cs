@@ -28,7 +28,26 @@ namespace App1.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             sessionsViewModel = new SessionsViewModel();
-            this.DataContext = sessionsViewModel.Sessions;
+            this.DataContext = sessionsViewModel.GetSessions();
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SessionPage));
+        } 
+
+        private void ListViewClick(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SessionPage), (SessionViewModel)e.ClickedItem);
+        }
+        private void ListViewSelect(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

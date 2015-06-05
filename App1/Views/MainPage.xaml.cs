@@ -40,5 +40,10 @@ namespace App1.Views
         {
             this.Frame.Navigate(typeof(SessionPage));
         }
+
+        private void allSessionsTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllSessions));
+        }
     }
 }

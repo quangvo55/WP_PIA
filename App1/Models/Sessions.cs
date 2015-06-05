@@ -14,6 +14,6 @@ namespace App1.Models
         public double CashOut { get; set; }
         public double Profit { get; set; }
         public DateTime SessionDate { get; set; }
-        public string SessionTime { get; set; }
+        public TimeSpan SessionTime { get; set; }
     }
 }

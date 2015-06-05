@@ -14,7 +14,7 @@
                 <StackPanel>
                     <TextBlock x:ConnectionId='1' Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='2' Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="32"                                 VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='3' Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='3' Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="32"                            VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='4' Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='5' Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
                 </StackPanel>

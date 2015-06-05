@@ -22,12 +22,13 @@
     
     <Page.BottomAppBar>
         <CommandBar x:Name="bottomAppBar">
-            <AppBarButton Icon="Home" Label="Home" Click="HomeButton_Click"/>
-            <AppBarButton Icon="Add" Label="Add" Click="AddButton_Click"/>
+            <AppBarButton x:ConnectionId='1' Icon="Home" Label="Home"                         />
+            <AppBarButton x:ConnectionId='2' Icon="Add" Label="Add"                        />
         </CommandBar>
     </Page.BottomAppBar>
     
     <Grid>
-        <ListView x:Name="SessionsListView" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"  ItemClick="ListViewClick"/>
+        <ListView x:ConnectionId='3' x:Name="SessionsListView" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
     </Grid>
 </Page>
+
