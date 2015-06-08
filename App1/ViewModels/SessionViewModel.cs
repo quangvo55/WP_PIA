@@ -168,26 +168,29 @@ namespace App1.ViewModels
 
                     if (existingSession != null)
                     {
-                        existingSession.Stakes = session.Stakes;
-                        existingSession.GameName = session.GameName;
-                        existingSession.Location = session.Location;
                         existingSession.BuyIn = session.BuyIn;
                         existingSession.CashOut = session.CashOut;
+                        existingSession.GameName = session.GameName;
+                        existingSession.Location = session.Location;
+                        existingSession.Profit = session.Profit;
                         existingSession.SessionDate = session.SessionDate;
                         existingSession.SessionTime = session.SessionTime;
+                        existingSession.Stakes = session.Stakes;
+
                         int success = db.Update(existingSession);
                     }
                     else
                     {
                         int success = db.Insert(new Sessions()
                         {
-                            Stakes = session.Stakes,
-                            GameName = session.GameName,
-                            Location = session.Location,
                             BuyIn = session.BuyIn,
                             CashOut = session.CashOut,
+                            GameName = session.GameName,
+                            Location = session.Location,
+                            Profit = session.Profit,
                             SessionDate = session.SessionDate,
-                            SessionTime = session.SessionTime
+                            SessionTime = session.SessionTime,
+                            Stakes = session.Stakes
                         });
                     }
                     result = "Success";

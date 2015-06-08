@@ -124,19 +124,23 @@ namespace App1.App1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
-            _typeNameTable[0] = "App1.Views.AllSessions";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "App1.Views.SessionPage";
-            _typeNameTable[4] = "App1.Views.MainPage";
+            _typeNameTable = new string[7];
+            _typeNameTable[0] = "App1.Utils.DateToStringConverter";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "App1.Views.AllSessions";
+            _typeNameTable[3] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[5] = "App1.Views.SessionPage";
+            _typeNameTable[6] = "App1.Views.MainPage";
 
-            _typeTable = new global::System.Type[5];
-            _typeTable[0] = typeof(global::App1.Views.AllSessions);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::App1.Views.SessionPage);
-            _typeTable[4] = typeof(global::App1.Views.MainPage);
+            _typeTable = new global::System.Type[7];
+            _typeTable[0] = typeof(global::App1.Utils.DateToStringConverter);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::App1.Views.AllSessions);
+            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[5] = typeof(global::App1.Views.SessionPage);
+            _typeTable[6] = typeof(global::App1.Views.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -171,9 +175,10 @@ namespace App1.App1_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AllSessions() { return new global::App1.Views.AllSessions(); }
-        private object Activate_3_SessionPage() { return new global::App1.Views.SessionPage(); }
-        private object Activate_4_MainPage() { return new global::App1.Views.MainPage(); }
+        private object Activate_0_DateToStringConverter() { return new global::App1.Utils.DateToStringConverter(); }
+        private object Activate_2_AllSessions() { return new global::App1.Views.AllSessions(); }
+        private object Activate_5_SessionPage() { return new global::App1.Views.SessionPage(); }
+        private object Activate_6_MainPage() { return new global::App1.Views.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -185,31 +190,42 @@ namespace App1.App1_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  App1.Views.AllSessions
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_AllSessions;
+            case 0:   //  App1.Utils.DateToStringConverter
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_DateToStringConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 3:   //  App1.Views.SessionPage
+            case 2:   //  App1.Views.AllSessions
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_SessionPage;
+                userType.Activator = Activate_2_AllSessions;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  App1.Views.MainPage
+            case 3:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 4:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  App1.Views.SessionPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_MainPage;
+                userType.Activator = Activate_5_SessionPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  App1.Views.MainPage
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -547,6 +563,5 @@ namespace App1.App1_XamlTypeInfo
         }
     }
 }
-
 
 

@@ -5,18 +5,24 @@
     xmlns:local="using:App1.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:valueconverter="using:App1.Utils"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
+        <valueconverter:DateToStringConverter x:Key="DateToStringConverter" />
         <DataTemplate x:Key="AllSessionsTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding GameName}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
-                <TextBlock Grid.Column="1" Text="{Binding Stakes}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
-            </Grid>
+            <StackPanel>
+                <TextBlock Width="300" Text="{Binding SessionDate, Converter={StaticResource DateToStringConverter}}"  Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                <TextBlock Style="{ThemeResource ListViewItemTextBlockStyle}">
+                    <Run Text="{Binding Location}" />
+                    <Run Text="{Binding SessionTime}"  />
+                    <Run Text="{Binding Profit}"  />
+                </TextBlock>
+                <TextBlock Style="{ThemeResource ListViewItemTextBlockStyle}">
+                    <Run Text="{Binding Stakes}" />
+                    <Run Text="{Binding GameName}"  />
+                </TextBlock>
+            </StackPanel>
         </DataTemplate>
     </Page.Resources>
     
@@ -26,8 +32,8 @@
             <AppBarButton x:ConnectionId='2' Icon="Add" Label="Add"                        />
         </CommandBar>
     </Page.BottomAppBar>
-    
-    <Grid>
+
+    <Grid Margin="10,0,0,0">
         <ListView x:ConnectionId='3' x:Name="SessionsListView" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
     </Grid>
 </Page>
