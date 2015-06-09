@@ -13,12 +13,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 ﻿using App1.ViewModels; 
+using App1.Models;
 
 namespace App1.Views
 {
     public sealed partial class SessionPage : Page
     {
-        SessionViewModel session = null; 
+        SessionViewModel session = null;
+        SessionMode mode = SessionMode.New;
         public SessionPage()
         {
             this.InitializeComponent();
@@ -34,7 +36,15 @@ namespace App1.Views
             {
                 session = (SessionViewModel)e.Parameter;
                 App.CurrentSessionId = session.Id;
+                mode = SessionMode.Edit;
+                
             }
+
+            if (mode != SessionMode.New)
+            {
+                ToggleEndDataInput(true);
+            }
+
             this.DataContext = session;
         }
 
@@ -55,6 +65,37 @@ namespace App1.Views
             {
                 this.Frame.Navigate(typeof(MainPage));
             }
+        }
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleEndDataInput(true);
+            mode = SessionMode.Running;
+            TogglePlayButton("Pause", Symbol.Pause, StartButton_Click, PauseButton_Click);
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            mode = SessionMode.Paused;
+            TogglePlayButton("Resume", Symbol.Play, PauseButton_Click, ResumeButton_Click); 
+        }
+        private void ResumeButton_Click(object sender, RoutedEventArgs e)
+        {
+            mode = SessionMode.Running;
+            TogglePlayButton("Pause", Symbol.Pause, ResumeButton_Click, PauseButton_Click); 
+        }
+
+        private void TogglePlayButton(string label, Symbol icon, RoutedEventHandler clickEventToRemove, RoutedEventHandler clickEventToAdd)
+        {
+            var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(0);
+            btn.Label = label;
+            btn.Icon = new SymbolIcon(icon);
+            btn.Click -= clickEventToRemove;
+            btn.Click += clickEventToAdd;
+        }
+
+        private void ToggleEndDataInput(bool show)
+        {
+            sessionEndDataInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

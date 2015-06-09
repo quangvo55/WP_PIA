@@ -10,6 +10,7 @@
     
     <Page.BottomAppBar>
         <CommandBar x:Name="bottomAppBar">
+            <AppBarButton Icon="Play" Label="Start" Click="StartButton_Click"/>
             <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
             <AppBarButton Icon="Delete" Label="Delete" Click="DeleteButton_Click"/>
             <AppBarButton Icon="Cancel" Label="Cancel" Click="CancelButton_Click"/>
@@ -74,28 +75,30 @@
                 </Grid>
                 <TextBlock Text="Note" FontSize="16" HorizontalAlignment="Left"/>
                 <TextBox Width="400" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
-                <TextBlock Text="Start" FontSize="16" HorizontalAlignment="Left"/>
-                <Grid x:Name="Start" Background="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="200"/>
-                    </Grid.ColumnDefinitions>
-                    <DatePicker x:Name="startDate" Grid.Column="0"></DatePicker>
-                    <TimePicker x:Name="startTime" Grid.Column="1"></TimePicker>
-                </Grid>
-                <TextBlock Text="End" FontSize="16" HorizontalAlignment="Left"/>
-                <Grid x:Name="End" Background="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="200"/>
-                    </Grid.ColumnDefinitions>
+                <StackPanel x:Name="sessionEndDataInput" Visibility="Collapsed">
+                    <TextBlock Text="Start" FontSize="16" HorizontalAlignment="Left"/>
+                    <Grid x:Name="Start" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker x:Name="startDate" Grid.Column="0"></DatePicker>
+                        <TimePicker x:Name="startTime" Grid.Column="1"></TimePicker>
+                    </Grid>
+                    <TextBlock Text="End" FontSize="16" HorizontalAlignment="Left"/>
+                    <Grid x:Name="End" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
                     
-                    <DatePicker x:Name="endDate" Grid.Column="0"></DatePicker>
-                    <TimePicker x:Name="endTime" Grid.Column="1"></TimePicker>
-                </Grid>
-                <TextBlock Text="Cashed Out ($)" FontSize="16" HorizontalAlignment="Left"/>
-                <TextBox x:Name="CashOutAmount" InputScope="Number" Width="400" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left">
-                </TextBox>
+                        <DatePicker x:Name="endDate" Grid.Column="0"></DatePicker>
+                        <TimePicker x:Name="endTime" Grid.Column="1"></TimePicker>
+                    </Grid>
+
+                    <TextBlock Text="Cashed Out ($)" FontSize="16" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="CashOutAmount" InputScope="Number" Width="400" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
     </Grid>
