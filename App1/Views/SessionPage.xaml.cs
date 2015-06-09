@@ -56,8 +56,9 @@ namespace App1.Views
             session.GameName = ((ComboBoxItem)gamesComboBox.SelectedItem).Content.ToString();
             session.Location = ((ComboBoxItem)locationComboBox.SelectedItem).Content.ToString();
             session.Profit = Convert.ToDouble(this.CashOutAmount.Text) - Convert.ToDouble(this.BuyInAmount.Text);
-            session.SessionDate = endDate.Date.DateTime;
-            session.SessionTime = endTime.Time;
+            session.StartDate = startDate.Date.DateTime;
+            session.EndDate = endDate.Date.DateTime;
+            session.EndTime = endTime.Time;
 
             string result = session.SaveSession(session);
             App.CurrentSessionId = session.Id;
