@@ -13,7 +13,9 @@ namespace App1.Models
         public double BuyIn { get; set; }
         public double CashOut { get; set; }
         public double Profit { get; set; }
-        public DateTime SessionDate { get; set; }
-        public TimeSpan SessionTime { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
     }
 }

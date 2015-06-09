@@ -106,31 +106,58 @@ namespace App1.ViewModels
             }
         }
 
-        private DateTime sessiondate = DateTime.Now;
-        public DateTime SessionDate
+        private DateTime startdate = DateTime.Now;
+        public DateTime StartDate
         {
-            get { return sessiondate; }
+            get { return startdate; }
 
             set
             {
-                if (sessiondate == value) { return; }
+                if (startdate == value) { return; }
 
-                sessiondate = value;
-                RaisePropertyChanged("SessionDate");
+                startdate = value;
+                RaisePropertyChanged("StartDate");
+            }
+        }
+        private DateTime enddate = DateTime.Now;
+        public DateTime EndDate
+        {
+            get { return enddate; }
+
+            set
+            {
+                if (enddate == value) { return; }
+
+                enddate = value;
+                RaisePropertyChanged("EndDate");
             }
         }
 
-        private TimeSpan sessiontime;
-        public TimeSpan SessionTime
+        private TimeSpan starttime;
+        public TimeSpan StartTime
         {
-            get { return sessiontime; }
+            get { return starttime; }
 
             set
             {
-                if (sessiontime == value) { return; }
+                if (starttime == value) { return; }
 
-                sessiontime = value;
-                RaisePropertyChanged("SessionTime");
+                starttime = value;
+                RaisePropertyChanged("StartTime");
+            }
+        }
+
+        private TimeSpan endtime;
+        public TimeSpan EndTime
+        {
+            get { return endtime; }
+
+            set
+            {
+                if (endtime == value) { return; }
+
+                endtime = value;
+                RaisePropertyChanged("EndTime");
             }
         }
         
@@ -150,8 +177,10 @@ namespace App1.ViewModels
                 session.Location = _session.Location;
                 session.BuyIn = _session.BuyIn;
                 session.CashOut = _session.CashOut;
-                session.SessionDate = _session.SessionDate;
-                session.SessionTime = _session.SessionTime;
+                session.StartDate = _session.StartDate;
+                session.StartTime = _session.StartTime;
+                session.EndDate = _session.EndDate;
+                session.EndTime = _session.EndTime;
             }
             return session;
         }
@@ -173,8 +202,10 @@ namespace App1.ViewModels
                         existingSession.GameName = session.GameName;
                         existingSession.Location = session.Location;
                         existingSession.Profit = session.Profit;
-                        existingSession.SessionDate = session.SessionDate;
-                        existingSession.SessionTime = session.SessionTime;
+                        existingSession.StartDate = session.StartDate;
+                        existingSession.StartTime = session.StartTime;
+                        existingSession.EndDate = session.EndDate;
+                        existingSession.EndTime = session.EndTime;
                         existingSession.Stakes = session.Stakes;
 
                         int success = db.Update(existingSession);
@@ -188,8 +219,10 @@ namespace App1.ViewModels
                             GameName = session.GameName,
                             Location = session.Location,
                             Profit = session.Profit,
-                            SessionDate = session.SessionDate,
-                            SessionTime = session.SessionTime,
+                            StartDate = session.StartDate,
+                            StartTime = session.StartTime,
+                            EndDate = session.EndDate,
+                            EndTime = session.EndTime,
                             Stakes = session.Stakes
                         });
                     }
