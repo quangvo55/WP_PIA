@@ -12,7 +12,7 @@
         <valueconverter:DateToStringConverter x:Key="DateToStringConverter" />
         <DataTemplate x:Key="AllSessionsTemplate">
             <StackPanel>
-                <TextBlock Width="300" Text="{Binding SessionDate, Converter={StaticResource DateToStringConverter}}"  Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                <TextBlock Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}"  Style="{ThemeResource ListViewItemTextBlockStyle}" />
                 <TextBlock Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Location}" />
                     <Run Text="{Binding SessionTime}"  />

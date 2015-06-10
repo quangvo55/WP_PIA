@@ -9,8 +9,9 @@ namespace App1.Models
     public enum SessionMode
     {
         New,
-        Edit,
         Running,
         Paused,
+        Stopped,
+        Edit,
     }
 }

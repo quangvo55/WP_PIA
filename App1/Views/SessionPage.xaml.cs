@@ -31,47 +31,29 @@ namespace App1.Views
             if (e.Parameter == null)
             {
                 session = new SessionViewModel();
+                ToggleDeleteButton("Stop", Symbol.Stop, DeleteButton_Click, StopButton_Click);
             }
             else
             {
                 session = (SessionViewModel)e.Parameter;
                 App.CurrentSessionId = session.Id;
                 mode = SessionMode.Edit;
-                
-            }
 
-            if (mode != SessionMode.New)
-            {
+                //Update UI
+                RemovePlayButton();
                 ToggleEndDataInput(true);
             }
 
             this.DataContext = session;
         }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            session.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
-            session.CashOut = Convert.ToDouble(this.CashOutAmount.Text);
-            session.Stakes = ((ComboBoxItem)stakesComboBox.SelectedItem).Content.ToString();
-            session.GameName = ((ComboBoxItem)gamesComboBox.SelectedItem).Content.ToString();
-            session.Location = ((ComboBoxItem)locationComboBox.SelectedItem).Content.ToString();
-            session.Profit = Convert.ToDouble(this.CashOutAmount.Text) - Convert.ToDouble(this.BuyInAmount.Text);
-            session.StartDate = startDate.Date.DateTime;
-            session.EndDate = endDate.Date.DateTime;
-            session.EndTime = endTime.Time;
-
-            string result = session.SaveSession(session);
-            App.CurrentSessionId = session.Id;
-            if (result.Contains("Success"))
-            {
-                this.Frame.Navigate(typeof(MainPage));
-            }
-        }
+                
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            ToggleEndDataInput(true);
             mode = SessionMode.Running;
             TogglePlayButton("Pause", Symbol.Pause, StartButton_Click, PauseButton_Click);
+            breakInput.Visibility = Visibility.Visible;
+            startDate.Date = DateTime.Now;
+            startTime.Time = DateTime.Now.TimeOfDay;
         }
 
         private void PauseButton_Click(object sender, RoutedEventArgs e)
@@ -85,20 +67,33 @@ namespace App1.Views
             TogglePlayButton("Pause", Symbol.Pause, ResumeButton_Click, PauseButton_Click); 
         }
 
-        private void TogglePlayButton(string label, Symbol icon, RoutedEventHandler clickEventToRemove, RoutedEventHandler clickEventToAdd)
+        private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(0);
-            btn.Label = label;
-            btn.Icon = new SymbolIcon(icon);
-            btn.Click -= clickEventToRemove;
-            btn.Click += clickEventToAdd;
+            mode = SessionMode.Stopped;
+            ToggleEndDataInput(true);
+            endDate.Date = DateTime.Now;
+            endTime.Time = DateTime.Now.TimeOfDay;
         }
-
-        private void ToggleEndDataInput(bool show)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            sessionEndDataInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
-        }
+            session.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
+            session.CashOut = Convert.ToDouble(this.CashOutAmount.Text);
+            session.Stakes = ((ComboBoxItem)stakesComboBox.SelectedItem).Content.ToString();
+            session.GameName = ((ComboBoxItem)gamesComboBox.SelectedItem).Content.ToString();
+            session.Location = ((ComboBoxItem)locationComboBox.SelectedItem).Content.ToString();
+            session.Profit = Convert.ToDouble(this.CashOutAmount.Text) - Convert.ToDouble(this.BuyInAmount.Text);
+            session.StartDate = startDate.Date.DateTime;
+            session.StartTime = startTime.Time;
+            session.EndDate = endDate.Date.DateTime;
+            session.EndTime = endTime.Time;
 
+            string result = session.SaveSession(session);
+            App.CurrentSessionId = session.Id;
+            if (result.Contains("Success"))
+            {
+                this.Frame.Navigate(typeof(MainPage));
+            }
+        }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             string result = session.DeleteSession(session.Id);
@@ -112,5 +107,33 @@ namespace App1.Views
         {
             this.Frame.GoBack();
         } 
+
+        private void TogglePlayButton(string label, Symbol icon, RoutedEventHandler clickEventToRemove, RoutedEventHandler clickEventToAdd)
+        {
+            var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(0);
+            btn.Label = label;
+            btn.Icon = new SymbolIcon(icon);
+            btn.Click -= clickEventToRemove;
+            btn.Click += clickEventToAdd;
+        }
+
+        private void RemovePlayButton()
+        {
+            bottomAppBar.PrimaryCommands.RemoveAt(0);
+        }
+
+        private void ToggleDeleteButton(string label, Symbol icon, RoutedEventHandler clickEventToRemove, RoutedEventHandler clickEventToAdd)
+        {
+            var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(1);
+            btn.Label = label;
+            btn.Icon = new SymbolIcon(icon);
+            btn.Click -= clickEventToRemove;
+            btn.Click += clickEventToAdd;
+        }
+
+        private void ToggleEndDataInput(bool show)
+        {
+            sessionEndInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
