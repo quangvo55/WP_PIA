@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 ﻿using App1.ViewModels; 
 using App1.Models;
+using App1.Utils;
 
 namespace App1.Views
 {
@@ -28,6 +29,7 @@ namespace App1.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
             if (e.Parameter == null)
             {
                 session = new SessionViewModel();
@@ -49,9 +51,17 @@ namespace App1.Views
                 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(BuyInAmount.Text))
+            {
+                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a session.");
+                return;
+            }
+
             mode = SessionMode.Running;
             TogglePlayButton("Pause", Symbol.Pause, StartButton_Click, PauseButton_Click);
             breakInput.Visibility = Visibility.Visible;
+            var stopBtn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(1);
+            stopBtn.IsEnabled = true;
             startDate.Date = DateTime.Now;
             startTime.Time = DateTime.Now.TimeOfDay;
         }
@@ -76,6 +86,18 @@ namespace App1.Views
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(BuyInAmount.Text))
+            {
+                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a session.");
+                return;
+            }
+
+            if (String.IsNullOrEmpty(CashOutAmount.Text))
+            {
+                GeneralUtil.ShowMessage("You need to enter a cash out amount before you can save the session.");
+                return;
+            }
+
             session.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
             session.CashOut = Convert.ToDouble(this.CashOutAmount.Text);
             session.Stakes = ((ComboBoxItem)stakesComboBox.SelectedItem).Content.ToString();
@@ -126,6 +148,7 @@ namespace App1.Views
         {
             var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(1);
             btn.Label = label;
+            btn.IsEnabled = false;
             btn.Icon = new SymbolIcon(icon);
             btn.Click -= clickEventToRemove;
             btn.Click += clickEventToAdd;
@@ -135,5 +158,6 @@ namespace App1.Views
         {
             sessionEndInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
         }
+        
     }
 }
