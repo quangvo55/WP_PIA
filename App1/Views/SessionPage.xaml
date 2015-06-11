@@ -29,30 +29,28 @@
         <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
         
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
-                <TextBlock Text="Stakes" FontSize="16" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="stakesComboBox" SelectedValuePath="Stakes" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left" >
-                    <!--<ComboBoxItem Content="$1/$2"/>
+                <ComboBox x:Name="stakesComboBox" Header="Stakes" SelectedValuePath="Stakes" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left" >
+                    <ComboBoxItem Content="$1/$2"/>
                     <ComboBoxItem Content="$1/$3"/>
                     <ComboBoxItem Content="$2/$5" />
-                    <ComboBoxItem Content="$5/$10"/>-->
+                    <ComboBoxItem Content="$5/$10"/>
                 </ComboBox>
-                <TextBlock Text="Games" FontSize="16" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="gamesComboBox" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left">
+                
+                <ComboBox x:Name="gamesComboBox" Header="Games" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left">
                     <ComboBoxItem Content="No Limit Holdem" IsSelected="True"/>
                     <ComboBoxItem Content="Holdem"/>
                     <ComboBoxItem Content="Limit" />
                     <ComboBoxItem Content="PL Omaha"/>
                 </ComboBox>
-
-                <TextBlock Text="Location" FontSize="16" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="locationComboBox" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left">
+                
+                <ComboBox x:Name="locationComboBox" Header="Location" Width="380" VerticalAlignment="Top" Margin="0,0,10,0" HorizontalAlignment="Left">
                     <ComboBoxItem Content="Casino" IsSelected="True"/>
                     <ComboBoxItem Content="Online"/>
                     <ComboBoxItem Content="Homegame" />
                 </ComboBox>
-                
-                <!--<TextBlock Text="Limit Type" FontSize="16" HorizontalAlignment="Left"/>
-                <ComboBox  x:Name="limitListPicker" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" >
+
+                <!--
+                <ComboBox  x:Name="limitListPicker" Header="Limit Type"  Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" >
                     <ComboBoxItem Content="No" IsSelected="True"/>
                     <ComboBoxItem Content="Pot"/>
                     <ComboBoxItem Content="Limit" />
@@ -68,40 +66,32 @@
                     <TextBox x:Name="BuyInAmount" Width="185" InputScope="Number" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding BuyIn}"/>
                     <Button Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
                 </Grid>
-                <TextBlock Text="Note" FontSize="16" HorizontalAlignment="Left"/>
-                <TextBox Width="400" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
-                <Grid x:Name="breakInput" Background="Transparent" Margin="0,10,0,0" Visibility="Collapsed">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Session Duration" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="DurationCounter" InputScope="Number" Text="0:00" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" 
-                             Width="185" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center"/>
-                </Grid>
-                <StackPanel x:Name="sessionEndInput" Visibility="Collapsed">
-                    <TextBlock Text="Start" FontSize="16" HorizontalAlignment="Left"/>
+                <TextBox Width="380" Header="Note" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                
+                <StackPanel x:Name="sessionStartInput" Visibility="Collapsed">
                     <Grid x:Name="Start" Background="Transparent">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <DatePicker x:Name="startDate" Grid.Column="0" Date="{Binding StartDate,Mode=TwoWay}"></DatePicker>
-                        <TimePicker x:Name="startTime" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}"></TimePicker>
+                        <DatePicker x:Name="startDate" Width="185" Header="Start Date" Grid.Column="0" Date="{Binding StartDate,Mode=TwoWay}" HorizontalAlignment="Left"></DatePicker>
+                        <TimePicker x:Name="startTime" Width="185" Header="Start Time" Margin="0,0,10,0" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}"></TimePicker>
                     </Grid>
-                    <TextBlock Text="End" FontSize="16" HorizontalAlignment="Left"/>
-                    <Grid x:Name="End" Background="Transparent">
+                    <TextBox x:Name="DurationCounter" Header="Session Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
+                             Width="380" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center" Visibility="Collapsed"/>
+                </StackPanel>
+                
+                <StackPanel x:Name="sessionEndInput" Visibility="Collapsed">
+                    <Grid Background="Transparent">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <DatePicker x:Name="endDate" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}"></DatePicker>
-                        <TimePicker x:Name="endTime" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}"></TimePicker>
+                        <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"></DatePicker>
+                        <TimePicker x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0"></TimePicker>
                     </Grid>
-
-                    <TextBlock Text="Cashed Out ($)" FontSize="16" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="CashOutAmount" Text="{Binding CashOut}" InputScope="Number" Width="400" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="CashOutAmount" Header="Cashed Out" Text="{Binding CashOut}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

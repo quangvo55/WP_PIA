@@ -160,6 +160,11 @@ namespace App1.ViewModels
                 RaisePropertyChanged("EndTime");
             }
         }
+
+        public TimeSpan Duration
+        {
+            get { return endtime - starttime; }
+        }
         
 
         #endregion "Properties" 

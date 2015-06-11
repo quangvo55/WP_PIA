@@ -11,18 +11,25 @@
     <Page.Resources>
         <valueconverter:DateToStringConverter x:Key="DateToStringConverter" />
         <DataTemplate x:Key="AllSessionsTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}"  Style="{ThemeResource ListViewItemTextBlockStyle}" />
-                <TextBlock Style="{ThemeResource ListViewItemTextBlockStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="#FF428bca" Width="400"/>
+                <TextBlock Margin="10,0,0,0" Grid.Row="0" Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+
+                <TextBlock Margin="10,0,0,0" Grid.Row="1" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Location}" />
-                    <Run Text="{Binding SessionTime}"  />
+                    <Run Text="{Binding Duration}"  />
                     <Run Text="{Binding Profit}"  />
                 </TextBlock>
-                <TextBlock Style="{ThemeResource ListViewItemTextBlockStyle}">
+                <TextBlock Margin="10,0,0,0" Grid.Row="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Stakes}" />
                     <Run Text="{Binding GameName}"  />
                 </TextBlock>
-            </StackPanel>
+            </Grid>
         </DataTemplate>
     </Page.Resources>
     
@@ -33,7 +40,7 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Margin="10,0,0,0">
+    <Grid>
         <ListView x:Name="SessionsListView" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"  ItemClick="ListViewClick"/>
     </Grid>
 </Page>

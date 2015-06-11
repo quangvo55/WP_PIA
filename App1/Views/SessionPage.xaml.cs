@@ -51,7 +51,7 @@ namespace App1.Views
                 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(BuyInAmount.Text))
+            if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
             {
                 GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a session.");
                 return;
@@ -59,7 +59,8 @@ namespace App1.Views
 
             mode = SessionMode.Running;
             TogglePlayButton("Pause", Symbol.Pause, StartButton_Click, PauseButton_Click);
-            breakInput.Visibility = Visibility.Visible;
+            sessionStartInput.Visibility = Visibility.Visible;
+            DurationCounter.Visibility = Visibility.Visible;
             var stopBtn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(1);
             stopBtn.IsEnabled = true;
             startDate.Date = DateTime.Now;
@@ -86,7 +87,7 @@ namespace App1.Views
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(BuyInAmount.Text))
+            if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
             {
                 GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a session.");
                 return;
