@@ -18,9 +18,18 @@
     <RootPropertyPathName Name="Locations" />
     <RootPropertyPathName Name="GameNames" />
     <RootPropertyPathName Name="StakesAvailable" />
+    <RootPropertyPathName Name="Winnings" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
-    <RootType FullName="Windows.UI.Xaml.Application" />
+    <RootType FullName="Windows.UI.Xaml.Application">
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.ResourceDictionary">
+      <RootProperty Name="ThemeDictionaries" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
+      <RootProperty Name="Color" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
       <RootProperty Name="Resources" />
@@ -85,6 +94,7 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
+    <RootType FullName="App1.Views.AllTournaments" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
@@ -132,6 +142,7 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Time" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="TimeChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Width" />
@@ -150,5 +161,6 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="App1.Views.MainPage" />
+    <RootType FullName="App1.Views.TourneyPage" />
   </Roots.RootTypes>
 </Roots>

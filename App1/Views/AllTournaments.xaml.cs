@@ -10,17 +10,18 @@ using App1.Models;
 
 namespace App1.Views
 {
-    public sealed partial class AllSessions : Page
+    public sealed partial class AllTournaments : Page
     {
-        SessionsViewModel sessionsViewModel = null;
-        public AllSessions()
+        public AllTournaments()
         {
             this.InitializeComponent();
         }
+
+        TourniesViewModel tourniesViewModel = null;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            sessionsViewModel = new SessionsViewModel();
-            this.DataContext = sessionsViewModel.GetSessions();
+            tourniesViewModel = new TourniesViewModel();
+            this.DataContext = tourniesViewModel.GetTournies();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -30,12 +31,12 @@ namespace App1.Views
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage));
+            this.Frame.Navigate(typeof(TourneyPage));
         } 
 
         private void ListViewClick(object sender, ItemClickEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage), (SessionViewModel)e.ClickedItem);
+            this.Frame.Navigate(typeof(TourneyPage), (TourneyViewModel)e.ClickedItem);
         }
     }
 }

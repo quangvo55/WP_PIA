@@ -12,29 +12,29 @@
         <Pivot Title="Poker Tracker App">
             <PivotItem Header="Cash Game">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='1' Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='2' Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="32"                                 VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='3' Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="32"                            VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='4' Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='5' Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="32"                           VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='4' Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='5' Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="26"                                 VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='6' Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="26"                            VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='7' Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='8' Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
 
             <PivotItem Header="Tourney">
                 <StackPanel>
-                    <TextBlock Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Tourney Report" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='1' Text="Add a live tournament" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"                           />
+                    <TextBlock x:ConnectionId='2' Text="Add a completed tournament" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"                                 />
+                    <TextBlock x:ConnectionId='3' Text="All Tournaments" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"                           />
+                    <TextBlock Text="Tournament Report" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
 
             <PivotItem Header="Overview">
                 <StackPanel>
-                    <TextBlock Text="Filters" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Cash Game + Tourney Report" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
+                    <TextBlock Text="Filters" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Cash Game + Tourney Report" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Player">
@@ -42,11 +42,11 @@
             </PivotItem>
             <PivotItem Header="Setting">
                 <StackPanel>
-                    <TextBlock Text="Bankroll" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Support" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
-                    <TextBlock Text="Currency" Height="57" HorizontalAlignment="Left" FontSize="32" VerticalAlignment="Top"/>
+                    <TextBlock Text="Bankroll" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Support" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Currency" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
         </Pivot>

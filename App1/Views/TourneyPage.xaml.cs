@@ -15,22 +15,21 @@ using App1.Utils;
 
 namespace App1.Views
 {
-    public sealed partial class SessionPage : Page
+    public sealed partial class TourneyPage : Page
     {
-        SessionViewModel session = null;
+        TourneyViewModel tourney = null;
         SessionMode mode = SessionMode.New;
 
-        public SessionPage()
+        public TourneyPage()
         {
             this.InitializeComponent();
         }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
             if (e.Parameter == null)
             {
-                session = new SessionViewModel();
+                tourney = new TourneyViewModel();
                 ToggleDeleteButton("Stop", Symbol.Stop, DeleteButton_Click, StopButton_Click);
             }
             else
@@ -38,9 +37,11 @@ namespace App1.Views
                 if (e.Parameter is SessionMode)
                 {
                     mode = (SessionMode)e.Parameter;
-                } else {
-                    session = (SessionViewModel)e.Parameter;
-                    App.CurrentSessionId = session.Id;
+                }
+                else
+                {
+                    tourney = (TourneyViewModel)e.Parameter;
+                    App.CurrentSessionId = tourney.Id;
                     mode = SessionMode.Edit;
                 }
 
@@ -50,9 +51,9 @@ namespace App1.Views
                 ToggleEndDataInput(true);
             }
 
-            this.DataContext = session;
+            this.DataContext = tourney;
         }
-                
+
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
@@ -74,12 +75,12 @@ namespace App1.Views
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
             mode = SessionMode.Paused;
-            TogglePlayButton("Resume", Symbol.Play, PauseButton_Click, ResumeButton_Click); 
+            TogglePlayButton("Resume", Symbol.Play, PauseButton_Click, ResumeButton_Click);
         }
         private void ResumeButton_Click(object sender, RoutedEventArgs e)
         {
             mode = SessionMode.Running;
-            TogglePlayButton("Pause", Symbol.Pause, ResumeButton_Click, PauseButton_Click); 
+            TogglePlayButton("Pause", Symbol.Pause, ResumeButton_Click, PauseButton_Click);
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
@@ -93,29 +94,29 @@ namespace App1.Views
         {
             if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
             {
-                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a session.");
+                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can start a tournament.");
                 return;
             }
 
-            if (String.IsNullOrEmpty(CashOutAmount.Text))
-            {
-                GeneralUtil.ShowMessage("You need to enter a cash out amount before you can save the session.");
-                return;
-            }
+            //if (String.IsNullOrEmpty(Winnings.Text))
+            //{
+            //    GeneralUtil.ShowMessage("You need to enter a cash out amount before you can save the tournament.");
+            //    return;
+            //}
 
-            session.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
-            session.CashOut = Convert.ToDouble(this.CashOutAmount.Text);
-            session.Stakes = stakesComboBox.SelectedItem.ToString();
-            session.GameName = gamesComboBox.SelectedItem.ToString();
-            session.Location = locationComboBox.SelectedItem.ToString();
-            session.Profit = Convert.ToDouble(this.CashOutAmount.Text) - Convert.ToDouble(this.BuyInAmount.Text);
-            session.StartDate = startDate.Date.DateTime;
-            session.StartTime = startTime.Time;
-            session.EndDate = endDate.Date.DateTime;
-            session.EndTime = endTime.Time;
+            tourney.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
+            tourney.Winnings = Convert.ToDouble(this.Winnings.Text);
+            tourney.GameName = gamesComboBox.SelectedItem.ToString();
+            tourney.Location = locationComboBox.SelectedItem.ToString();
+            tourney.Profit = Convert.ToDouble(this.Winnings.Text) - Convert.ToDouble(this.BuyInAmount.Text);
+            tourney.StartDate = startDate.Date.DateTime;
+            tourney.StartTime = startTime.Time;
+            tourney.EndDate = endDate.Date.DateTime;
+            tourney.EndTime = endTime.Time;
 
-            string result = session.SaveSession(session);
-            App.CurrentSessionId = session.Id;
+
+            string result = tourney.SaveSession(tourney);
+            App.CurrentSessionId = tourney.Id;
             if (result.Contains("Success"))
             {
                 this.Frame.Navigate(typeof(MainPage));
@@ -123,7 +124,7 @@ namespace App1.Views
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            string result = session.DeleteSession(session.Id);
+            string result = tourney.DeleteSession(tourney.Id);
             if (result.Contains("Success"))
             {
                 this.Frame.Navigate(typeof(MainPage));
@@ -133,7 +134,7 @@ namespace App1.Views
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
-        } 
+        }
 
         private void TogglePlayButton(string label, Symbol icon, RoutedEventHandler clickEventToRemove, RoutedEventHandler clickEventToAdd)
         {
@@ -176,6 +177,5 @@ namespace App1.Views
             var start = startTime.Time;
             DurationCounter.Text = (end - start).ToString();
         }
-        
     }
 }

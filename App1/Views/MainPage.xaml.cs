@@ -41,5 +41,20 @@ namespace App1.Views
         {
             this.Frame.Navigate(typeof(AllSessions));
         }
+
+        private void newTourneyTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TourneyPage));
+        }
+
+        private void completedTourneyTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TourneyPage), SessionMode.Edit);
+        }
+
+        private void allTourniesTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllTournaments));
+        }
     }
 }

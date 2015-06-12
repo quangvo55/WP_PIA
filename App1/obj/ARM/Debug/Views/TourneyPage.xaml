@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="App1.Views.SessionPage"
+    x:Class="App1.Views.TourneyPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App1.Views"
@@ -15,7 +15,6 @@
             <AppBarButton x:ConnectionId='4' Icon="Cancel" Label="Cancel"                           />
         </CommandBar>
     </Page.BottomAppBar>
-    
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,14 +22,12 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,0,0,0">
-            <TextBlock Text="Cash Games" FontSize="32" HorizontalAlignment="Left" />
+            <TextBlock Text="Tournaments" FontSize="32" HorizontalAlignment="Left" />
         </StackPanel>
-        
+
         <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
-        
+
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
-                <ComboBox x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}" Width="380" VerticalAlignment="Top" 
-                          Margin="0,0,10,0" HorizontalAlignment="Left" />
                 <ComboBox x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>
                 <ComboBox x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}" Header="Location" Width="380" VerticalAlignment="Top" 
@@ -46,7 +43,7 @@
                     <Button Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
                 </Grid>
                 <TextBox Width="380" Header="Note" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                
+
                 <StackPanel x:Name="sessionStartInput" Visibility="Collapsed">
                     <Grid x:Name="Start" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -56,10 +53,10 @@
                         <DatePicker x:Name="startDate" Width="185" Header="Start Date" Grid.Column="0" Date="{Binding StartDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
                         <TimePicker x:Name="startTime" Width="185" Header="Start Time" Margin="0,0,10,0" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}"/>
                     </Grid>
-                    <TextBox x:Name="DurationCounter" Header="Session Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
+                    <TextBox x:Name="DurationCounter" Header="Tournament Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
                              Width="380" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center" Visibility="Collapsed"/>
                 </StackPanel>
-                
+
                 <StackPanel x:Name="sessionEndInput" Visibility="Collapsed">
                     <Grid Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -70,7 +67,7 @@
                         <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
                         <TimePicker x:ConnectionId='5' x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0"                                     />
                     </Grid>
-                    <TextBox x:Name="CashOutAmount" Header="Cashed Out" Text="{Binding CashOut}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Winnings" Header="Prize Winnings" Text="{Binding Winnings}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

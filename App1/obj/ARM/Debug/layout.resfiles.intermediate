@@ -7,5 +7,7 @@ Assets\WideLogo.scale-240.png
 App.xbf
 App1.xr.xml
 Views\AllSessions.xbf
+Views\AllTournaments.xbf
 Views\MainPage.xbf
 Views\SessionPage.xbf
+Views\TourneyPage.xbf

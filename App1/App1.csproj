@@ -97,6 +97,7 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Sessions.cs" />
+    <Compile Include="Models\Tourney.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
@@ -104,15 +105,23 @@
     <Compile Include="Utils\GeneralUtil.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
+    <Compile Include="ViewModels\TourneyViewModel.cs" />
+    <Compile Include="ViewModels\TourniesViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AllSessions.xaml.cs">
       <DependentUpon>AllSessions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllTournaments.xaml.cs">
+      <DependentUpon>AllTournaments.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SessionPage.xaml.cs">
       <DependentUpon>SessionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TourneyPage.xaml.cs">
+      <DependentUpon>TourneyPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -142,11 +151,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AllTournaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SessionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TourneyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
