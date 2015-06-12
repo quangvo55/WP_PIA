@@ -22,6 +22,7 @@ namespace App1.Views
     {
         SessionViewModel session = null;
         SessionMode mode = SessionMode.New;
+
         public SessionPage()
         {
             this.InitializeComponent();
@@ -37,12 +38,18 @@ namespace App1.Views
             }
             else
             {
-                session = (SessionViewModel)e.Parameter;
-                App.CurrentSessionId = session.Id;
-                mode = SessionMode.Edit;
+                if (e.Parameter is SessionMode)
+                {
+                    mode = (SessionMode)e.Parameter;
+                } else {
+                    session = (SessionViewModel)e.Parameter;
+                    App.CurrentSessionId = session.Id;
+                    mode = SessionMode.Edit;
+                }
 
                 //Update UI
                 RemovePlayButton();
+                ToggleStartDataInput(true);
                 ToggleEndDataInput(true);
             }
 
@@ -158,6 +165,12 @@ namespace App1.Views
         private void ToggleEndDataInput(bool show)
         {
             sessionEndInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void ToggleStartDataInput(bool show)
+        {
+            sessionStartInput.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
+            DurationCounter.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
         }
         
     }

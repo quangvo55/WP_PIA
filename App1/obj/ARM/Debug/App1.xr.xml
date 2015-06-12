@@ -15,6 +15,9 @@
     <RootPropertyPathName Name="StartTime" />
     <RootPropertyPathName Name="StartDate" />
     <RootPropertyPathName Name="BuyIn" />
+    <RootPropertyPathName Name="Locations" />
+    <RootPropertyPathName Name="GameNames" />
+    <RootPropertyPathName Name="StakesAvailable" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -63,6 +66,8 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Converter" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="TargetNullValue" />
+      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
@@ -93,12 +98,12 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Header" />
-      <RootProperty Name="SelectedValuePath" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Width" />
@@ -134,10 +139,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
-      <RootProperty Name="Content" />
-      <RootProperty Name="IsSelected" />
     </RootType>
     <RootType FullName="App1.Views.SessionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">

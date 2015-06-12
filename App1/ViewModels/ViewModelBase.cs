@@ -1,4 +1,7 @@
-﻿using System.ComponentModel; 
+﻿using System.ComponentModel;
+using System.Collections.Generic;
+
+using App1.Models;
 
 namespace App1.ViewModels
 {
@@ -13,6 +16,23 @@ namespace App1.ViewModels
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
-        } 
+        }
+
+        string _SelectedOption1;
+        public string SelectedOption1
+        {
+            get
+            {
+                return _SelectedOption1;
+            }
+            set
+            {
+                if (_SelectedOption1 != value)
+                {
+                    _SelectedOption1 = value;
+                    RaisePropertyChanged("SelectedOption1");
+                }
+            }
+        }
     }
 }

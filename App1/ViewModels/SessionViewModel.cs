@@ -1,14 +1,27 @@
 ﻿﻿using App1.Models;
 using System;
-using System.Linq; 
+using System.Linq;
+using Windows.UI.Xaml.Controls;
+using System.Collections.Generic;
 
 namespace App1.ViewModels
 {
     public class SessionViewModel : ViewModelBase
     {
+        public SessionViewModel() 
+        {
+            StakesAvailable = new List<string> { "$1/$2", "$1/3", "$2/$5", "$5/$10" };
+            GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
+            Locations = new List<string> { "Casino", "Online", "Homegame" }; 
+        }
+
         #region Properties
 
-        private int id = 0;
+        public List<string> StakesAvailable { get; set; }
+        public List<string> GameNames { get; set; }
+        public List<string> Locations { get; set; }
+
+        private int id;
         public int Id
         {
             get { return id; }
@@ -64,7 +77,7 @@ namespace App1.ViewModels
             }
         }
 
-        private double buyin = 0;
+        private double buyin;
         public double BuyIn
         {
             get { return buyin; }
@@ -78,7 +91,7 @@ namespace App1.ViewModels
             }
         }
 
-        private double cashout = 0;
+        private double cashout;
         public double CashOut
         {
             get { return cashout; }
@@ -92,7 +105,7 @@ namespace App1.ViewModels
             }
         }
 
-        private double profit = 0;
+        private double profit;
         public double Profit
         {
             get { return profit; }
@@ -169,6 +182,7 @@ namespace App1.ViewModels
 
         #endregion "Properties" 
 
+        #region Methods
         public SessionViewModel GetSession(int sessionId)
         {
             var session = new SessionViewModel();
@@ -187,6 +201,7 @@ namespace App1.ViewModels
                 session.EndDate = _session.EndDate;
                 session.EndTime = _session.EndTime;
             }
+            
             return session;
         }
 
@@ -228,7 +243,7 @@ namespace App1.ViewModels
                             StartTime = session.StartTime,
                             EndDate = session.EndDate,
                             EndTime = session.EndTime,
-                            Stakes = session.Stakes
+                            Stakes = session.Stakes,
                         });
                     }
                     result = "Success";
@@ -262,6 +277,7 @@ namespace App1.ViewModels
                 });
             }
             return result;
-        } 
+        }
+        #endregion  
     }
 }

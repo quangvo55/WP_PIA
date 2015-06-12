@@ -16,16 +16,12 @@ using Windows.UI.Xaml.Navigation;
 
 using App1.ViewModels;
 using App1.Common;
+using App1.Models;
 
 namespace App1.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
-        //SessionsViewModel sessionsViewModel = null;
-        //ObservableCollection<SessionViewModel> sessions = null; 
         public MainPage()
         {
             this.InitializeComponent();
@@ -38,7 +34,7 @@ namespace App1.Views
 
         private void completedSessionTapped(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage));
+            this.Frame.Navigate(typeof(SessionPage), SessionMode.Edit);
         }
 
         private void allSessionsTapped(object sender, RoutedEventArgs e)
