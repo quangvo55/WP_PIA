@@ -75,17 +75,17 @@ namespace App1.ViewModels
             }
         }
 
-        private double winnings;
-        public double Winnings
+        private double cashout;
+        public double CashOut
         {
-            get { return winnings; }
+            get { return cashout; }
 
             set
             {
-                if (winnings == value) { return; }
+                if (cashout == value) { return; }
 
-                winnings = value;
-                RaisePropertyChanged("Winnings");
+                cashout = value;
+                RaisePropertyChanged("CashOut");
             }
         }
 
@@ -193,7 +193,7 @@ namespace App1.ViewModels
                 tourney.GameName = _tourney.GameName;
                 tourney.Location = _tourney.Location;
                 tourney.BuyIn = _tourney.BuyIn;
-                tourney.Winnings = _tourney.Winnings;
+                tourney.CashOut = _tourney.CashOut;
                 tourney.StartDate = _tourney.StartDate;
                 tourney.StartTime = _tourney.StartTime;
                 tourney.EndDate = _tourney.EndDate;
@@ -224,7 +224,7 @@ namespace App1.ViewModels
                         existingTourney.StartTime = tourney.StartTime;
                         existingTourney.EndDate = tourney.EndDate;
                         existingTourney.EndTime = tourney.EndTime;
-                        existingTourney.Winnings = tourney.Winnings;
+                        existingTourney.CashOut = tourney.CashOut;
 
                         int success = db.Update(existingTourney);
                     }
@@ -233,15 +233,15 @@ namespace App1.ViewModels
                         int success = db.Insert(new Tourney()
                         {
                             BuyIn = tourney.BuyIn,
-                            Winnings = tourney.Winnings,
+                            CashOut = tourney.CashOut,
                             GameName = tourney.GameName,
                             Location = tourney.Location,
                             Profit = tourney.Profit,
                             StartDate = tourney.StartDate,
                             StartTime = tourney.StartTime,
                             EndDate = tourney.EndDate,
-                            EndTime = tourney.EndTime,
-                            Place = tourney.Place,
+                            EndTime = tourney.EndTime
+                            //Place = tourney.Place,
                         });
                     }
                     result = "Success";

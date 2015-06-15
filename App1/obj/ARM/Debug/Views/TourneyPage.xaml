@@ -67,7 +67,7 @@
                         <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
                         <TimePicker x:ConnectionId='5' x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0"                                     />
                     </Grid>
-                    <TextBox x:Name="Winnings" Header="Prize Winnings" Text="{Binding Winnings}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="CashOut" Header="Prize CashOut" Text="{Binding CashOut}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

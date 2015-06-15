@@ -13,14 +13,26 @@ namespace App1.Views
     public sealed partial class AllSessions : Page
     {
         SessionsViewModel sessionsViewModel = null;
+        TourniesViewModel tourneyViewModel = null;
+        GameType gameType;
         public AllSessions()
         {
             this.InitializeComponent();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            sessionsViewModel = new SessionsViewModel();
-            this.DataContext = sessionsViewModel.GetSessions();
+            gameType = (GameType)e.Parameter;
+            if (gameType == GameType.Cash)
+            {
+                sessionsViewModel = new SessionsViewModel();
+                this.DataContext = sessionsViewModel.GetSessions();
+            }
+            else
+            {
+                tourneyViewModel = new TourniesViewModel();
+                this.DataContext = tourneyViewModel.GetTournies();
+            }
+            
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -30,12 +42,27 @@ namespace App1.Views
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage));
+            if (gameType == GameType.Cash)
+            {
+                this.Frame.Navigate(typeof(SessionPage));
+            }
+            else
+            {
+                this.Frame.Navigate(typeof(TourneyPage));
+            }
+           
         } 
 
         private void ListViewClick(object sender, ItemClickEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage), (SessionViewModel)e.ClickedItem);
+            if (gameType == GameType.Cash)
+            {
+                this.Frame.Navigate(typeof(SessionPage), (SessionViewModel)e.ClickedItem);
+            }
+            else
+            {
+                this.Frame.Navigate(typeof(TourneyPage), (TourneyViewModel)e.ClickedItem);
+            }
         }
     }
 }

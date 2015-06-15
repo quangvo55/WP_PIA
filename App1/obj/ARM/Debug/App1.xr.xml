@@ -18,7 +18,6 @@
     <RootPropertyPathName Name="Locations" />
     <RootPropertyPathName Name="GameNames" />
     <RootPropertyPathName Name="StakesAvailable" />
-    <RootPropertyPathName Name="Winnings" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -94,7 +93,6 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
-    <RootType FullName="App1.Views.AllTournaments" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />

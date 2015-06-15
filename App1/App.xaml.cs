@@ -53,6 +53,7 @@ namespace App1
                 {
                     // Create the tables if they don't exist 
                     db.CreateTable<Sessions>();
+                    db.CreateTable<Tourney>();
                 }
                 
                 // Place the frame in the current Window

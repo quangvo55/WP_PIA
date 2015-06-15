@@ -98,17 +98,17 @@ namespace App1.Views
                 return;
             }
 
-            //if (String.IsNullOrEmpty(Winnings.Text))
+            //if (String.IsNullOrEmpty(CashOut.Text))
             //{
             //    GeneralUtil.ShowMessage("You need to enter a cash out amount before you can save the tournament.");
             //    return;
             //}
 
             tourney.BuyIn = Convert.ToDouble(this.BuyInAmount.Text);
-            tourney.Winnings = Convert.ToDouble(this.Winnings.Text);
+            tourney.CashOut = Convert.ToDouble(this.CashOut.Text);
             tourney.GameName = gamesComboBox.SelectedItem.ToString();
             tourney.Location = locationComboBox.SelectedItem.ToString();
-            tourney.Profit = Convert.ToDouble(this.Winnings.Text) - Convert.ToDouble(this.BuyInAmount.Text);
+            tourney.Profit = Convert.ToDouble(this.CashOut.Text) - Convert.ToDouble(this.BuyInAmount.Text);
             tourney.StartDate = startDate.Date.DateTime;
             tourney.StartTime = startTime.Time;
             tourney.EndDate = endDate.Date.DateTime;

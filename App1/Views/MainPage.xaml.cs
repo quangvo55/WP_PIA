@@ -39,7 +39,7 @@ namespace App1.Views
 
         private void allSessionsTapped(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AllSessions));
+            this.Frame.Navigate(typeof(AllSessions), GameType.Cash);
         }
 
         private void newTourneyTapped(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace App1.Views
 
         private void allTourniesTapped(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AllTournaments));
+            this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
         }
     }
 }

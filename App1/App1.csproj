@@ -96,6 +96,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\GameTypeBase.cs" />
     <Compile Include="Models\Sessions.cs" />
     <Compile Include="Models\Tourney.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,9 +111,6 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AllSessions.xaml.cs">
       <DependentUpon>AllSessions.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AllTournaments.xaml.cs">
-      <DependentUpon>AllTournaments.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SessionPage.xaml.cs">
       <DependentUpon>SessionPage.xaml</DependentUpon>
@@ -148,10 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AllSessions.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AllTournaments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

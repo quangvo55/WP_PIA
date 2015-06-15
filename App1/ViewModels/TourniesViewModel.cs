@@ -31,7 +31,7 @@ namespace App1.ViewModels
                     var tourney = new TourneyViewModel()
                     {
                         Id = _tourney.Id,
-                        Winnings = _tourney.Winnings,
+                        CashOut = _tourney.CashOut,
                         GameName = _tourney.GameName,
                         Location = _tourney.Location,
                         BuyIn = _tourney.BuyIn,

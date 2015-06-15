@@ -14,4 +14,10 @@ namespace App1.Models
         Stopped,
         Edit,
     }
+
+    public enum GameType
+    {   
+        Cash,
+        Tournament
+    }
 }
