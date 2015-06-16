@@ -32,15 +32,17 @@ namespace App1.ViewModels
                     {
                         Id = _tourney.Id,
                         CashOut = _tourney.CashOut,
+                        GameType = _tourney.GameType,
                         GameName = _tourney.GameName,
                         Location = _tourney.Location,
                         BuyIn = _tourney.BuyIn,
-                        Place = _tourney.Place,
                         Profit = _tourney.Profit,
                         StartDate = _tourney.StartDate,
                         StartTime = _tourney.StartTime,
                         EndDate = _tourney.EndDate,
                         EndTime = _tourney.EndTime,
+                        Rank = _tourney.Rank,
+                        PlayerCount = _tourney.PlayerCount
                     };
                     tourneys.Add(tourney);
                 }

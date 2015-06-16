@@ -28,11 +28,14 @@
         <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
 
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
-                <ComboBox x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}" Width="380" VerticalAlignment="Top" 
+                <ComboBox x:Name="gametypeComboBox" Header="Stakes" ItemsSource="{Binding GameTypes}" SelectedItem="{Binding GameType}" Loaded="GameTypeOnLoad" Width="380" VerticalAlignment="Top" 
+                          Margin="0,0,10,0" HorizontalAlignment="Left" />
+                <ComboBox x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}" Loaded="GameNameOnLoad" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}" Header="Location" Width="380" VerticalAlignment="Top" 
+                <ComboBox x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}" Loaded="LocationOnLoad" Header="Location" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>
                 <TextBlock Text="Buy In" FontSize="16" HorizontalAlignment="Left"/>
+                
                 <Grid x:Name="BuyIn" Background="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -56,19 +59,26 @@
                     <TextBox x:Name="DurationCounter" Header="Tournament Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
                              Width="380" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center" Visibility="Collapsed"/>
                 </StackPanel>
+                
+                <Grid Background="Transparent" x:Name="sessionEndInput" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Row="0" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
+                    <TimePicker x:Name="endTime" Width="185" Header="End Time" Grid.Row="0" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0" TimeChanged="timePicker_TimeChanged"/>
 
-                <StackPanel x:Name="sessionEndInput" Visibility="Collapsed">
-                    <Grid Background="Transparent">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
-                        <TimePicker x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0" TimeChanged="timePicker_TimeChanged"/>
-                    </Grid>
-                    <TextBox x:Name="CashOut" Header="Prize CashOut" Text="{Binding CashOut}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
-                </StackPanel>
+                    <TextBox x:Name="Rank" Header="Rank" Text="{Binding Rank}" InputScope="Number" Grid.Row="1" Grid.Column="0" Width="185" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="PlayerCount" Header="Player Count" Width="185" InputScope="Number" Grid.Row="1" Grid.Column="1" Margin="0,10,10,0" HorizontalAlignment="Left" Text="{Binding PlayerCount, TargetNullValue='', FallbackValue=''}" />
+                    
+                    <TextBox x:Name="CashOut" Header="Prize Winnings" Text="{Binding CashOut}" InputScope="Number" Grid.Row="2" Width="380" Grid.ColumnSpan="2" Margin="0,0,0,30" HorizontalAlignment="Left"/>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Grid>

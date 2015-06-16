@@ -17,7 +17,7 @@ namespace App1.Views
 {
     public sealed partial class TourneyPage : Page
     {
-        TourneyViewModel tourney = null;
+        TourneyViewModel tourney = new TourneyViewModel();
         SessionMode mode = SessionMode.New;
         RebuyHelper rebuyHelper;
 
@@ -30,7 +30,6 @@ namespace App1.Views
 
             if (e.Parameter == null)
             {
-                tourney = new TourneyViewModel();
                 ToggleDeleteButton("Stop", Symbol.Stop, DeleteButton_Click, StopButton_Click);
             }
             else
@@ -53,6 +52,30 @@ namespace App1.Views
             }
 
             this.DataContext = tourney;
+        }
+
+        private void GameTypeOnLoad(object sender, RoutedEventArgs e)
+        {
+            if (mode == SessionMode.New || mode == SessionMode.Completed)
+            {
+                this.gametypeComboBox.SelectedIndex = 0;
+            }
+        }
+
+        private void GameNameOnLoad(object sender, RoutedEventArgs e)
+        {
+            if (mode == SessionMode.New || mode == SessionMode.Completed)
+            {
+                this.gamesComboBox.SelectedIndex = 0;
+            }
+        }
+
+        private void LocationOnLoad(object sender, RoutedEventArgs e)
+        {
+            if (mode == SessionMode.New || mode == SessionMode.Completed)
+            {
+                this.locationComboBox.SelectedIndex = 0;
+            }
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
@@ -120,7 +143,7 @@ namespace App1.Views
             App.CurrentSessionId = tourney.Id;
             if (result.Contains("Success"))
             {
-                this.Frame.Navigate(typeof(MainPage));
+                this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
             }
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

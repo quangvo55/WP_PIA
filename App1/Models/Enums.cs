@@ -9,6 +9,7 @@ namespace App1.Models
     public enum SessionMode
     {
         New,
+        Completed,
         Running,
         Paused,
         Stopped,

@@ -34,7 +34,7 @@ namespace App1.Views
 
         private void completedSessionTapped(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SessionPage), SessionMode.Edit);
+            this.Frame.Navigate(typeof(SessionPage), SessionMode.Completed);
         }
 
         private void allSessionsTapped(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ namespace App1.Views
 
         private void completedTourneyTapped(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(TourneyPage), SessionMode.Edit);
+            this.Frame.Navigate(typeof(TourneyPage), SessionMode.Completed);
         }
 
         private void allTourniesTapped(object sender, RoutedEventArgs e)

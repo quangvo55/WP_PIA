@@ -10,12 +10,13 @@ namespace App1.ViewModels
     {
         public TourneyViewModel() 
         {
+            GameTypes = new List<string> { "Sit & Go", "Single Table", "MultiTable"};
             GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
             Locations = new List<string> { "Casino", "Online", "Homegame" }; 
         }
 
         #region Properties
-
+        public List<string> GameTypes { get; set; }
         public List<string> GameNames { get; set; }
         public List<string> Locations { get; set; }
 
@@ -30,6 +31,20 @@ namespace App1.ViewModels
 
                 id = value;
                 RaisePropertyChanged("Id");
+            }
+        }
+
+        private string gameType = string.Empty;
+        public string GameType
+        {
+            get { return gameType; }
+
+            set
+            {
+                if (gameType == value) { return; }
+
+                gameType = value;
+                RaisePropertyChanged("GameType");
             }
         }
 
@@ -89,17 +104,31 @@ namespace App1.ViewModels
             }
         }
 
-        private double place;
-        public double Place
+        private double rank;
+        public double Rank
         {
-            get { return place; }
+            get { return rank; }
 
             set
             {
-                if (place == value) { return; }
+                if (rank == value) { return; }
 
-                place = value;
-                RaisePropertyChanged("Place");
+                rank = value;
+                RaisePropertyChanged("Rank");
+            }
+        }
+
+        private double playerCount;
+        public double PlayerCount
+        {
+            get { return playerCount; }
+
+            set
+            {
+                if (playerCount == value) { return; }
+
+                playerCount = value;
+                RaisePropertyChanged("PlayerCount");
             }
         }
 
@@ -188,8 +217,9 @@ namespace App1.ViewModels
             {
                 var _tourney = (db.Table<Tourney>().Where(
                     s => s.Id == tourneyId)).Single();
+
                 tourney.Id = _tourney.Id;
-                tourney.Place = _tourney.Place;
+                tourney.GameType = _tourney.GameType;
                 tourney.GameName = _tourney.GameName;
                 tourney.Location = _tourney.Location;
                 tourney.BuyIn = _tourney.BuyIn;
@@ -198,6 +228,8 @@ namespace App1.ViewModels
                 tourney.StartTime = _tourney.StartTime;
                 tourney.EndDate = _tourney.EndDate;
                 tourney.EndTime = _tourney.EndTime;
+                tourney.Rank = _tourney.Rank;
+                tourney.PlayerCount = _tourney.PlayerCount;
             }
 
             return tourney;
@@ -216,7 +248,7 @@ namespace App1.ViewModels
                     if (existingTourney != null)
                     {
                         existingTourney.BuyIn = tourney.BuyIn;
-                        existingTourney.Place = tourney.Place;
+                        existingTourney.GameType = tourney.GameType;
                         existingTourney.GameName = tourney.GameName;
                         existingTourney.Location = tourney.Location;
                         existingTourney.Profit = tourney.Profit;
@@ -225,6 +257,8 @@ namespace App1.ViewModels
                         existingTourney.EndDate = tourney.EndDate;
                         existingTourney.EndTime = tourney.EndTime;
                         existingTourney.CashOut = tourney.CashOut;
+                        existingTourney.Rank = tourney.Rank;
+                        existingTourney.PlayerCount = tourney.PlayerCount;
 
                         int success = db.Update(existingTourney);
                     }
@@ -234,14 +268,16 @@ namespace App1.ViewModels
                         {
                             BuyIn = tourney.BuyIn,
                             CashOut = tourney.CashOut,
+                            GameType = tourney.GameType,
                             GameName = tourney.GameName,
                             Location = tourney.Location,
                             Profit = tourney.Profit,
                             StartDate = tourney.StartDate,
                             StartTime = tourney.StartTime,
                             EndDate = tourney.EndDate,
-                            EndTime = tourney.EndTime
-                            //Place = tourney.Place,
+                            EndTime = tourney.EndTime,
+                            Rank = tourney.Rank,
+                            PlayerCount = tourney.PlayerCount,
                         });
                     }
                     result = "Success";

@@ -5,8 +5,8 @@ namespace App1.Models
 {
     public class Tourney : GameTypeBase
     {
-        //public int Type { get; set; }
-        //public double Players { get; set; }
-        public double Place { get; set; }
+        public string GameType { get; set; }
+        public double PlayerCount { get; set; }
+        public double Rank { get; set; }
     }
 }
