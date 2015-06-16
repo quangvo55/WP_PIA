@@ -40,7 +40,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBox x:Name="BuyInAmount" Width="185" InputScope="Number" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding BuyIn, TargetNullValue='', FallbackValue=''}"/>
-                    <Button Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
+                    <Button x:ConnectionId='6' Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0"                           VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
                 </Grid>
                 <TextBox Width="380" Header="Note" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 

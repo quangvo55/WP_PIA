@@ -104,6 +104,7 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Utils\DateToStringConverter.cs" />
     <Compile Include="Utils\GeneralUtil.cs" />
+    <Compile Include="Utils\RebuyHelper.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
     <Compile Include="ViewModels\TourneyViewModel.cs" />

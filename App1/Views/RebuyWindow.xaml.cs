@@ -42,5 +42,10 @@ namespace App1.Views
                 cancelBtnTapped(this, null);
         }
         public int RebuyAmount { get; set; }
+
+        public void FocusInputBox()
+        {
+            this.rebuyAmount.Focus(FocusState.Pointer);
+        }
     }
 }

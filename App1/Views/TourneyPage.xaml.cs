@@ -19,6 +19,7 @@ namespace App1.Views
     {
         TourneyViewModel tourney = null;
         SessionMode mode = SessionMode.New;
+        RebuyHelper rebuyHelper;
 
         public TourneyPage()
         {
@@ -176,6 +177,22 @@ namespace App1.Views
             var end = endTime.Time;
             var start = startTime.Time;
             DurationCounter.Text = (end - start).ToString();
+        }
+
+        private void RebuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
+            {
+                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can rebuy.");
+                return;
+            }
+            rebuyHelper = new RebuyHelper(this);
+            rebuyHelper.OKBtnTapped += rebuyOkBtnTapped;
+        }
+
+        private void rebuyOkBtnTapped(object sender, RoutedEventArgs e)
+        {
+            this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyHelper.RebuyAmount).ToString();
         }
     }
 }

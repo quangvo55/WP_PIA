@@ -9,10 +9,18 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <StackPanel x:Name="LayoutRoot"  Width="480" Height="480" Background="LightBlue">
-        <TextBox x:Name="rebuyAmount" InputScope="Number"/>
-        <Button x:ConnectionId='1' x:Name="btnOK"                     Content="Rebuy"/>
-        <Button x:ConnectionId='2' x:Name="btnCancel"                         Content="Cancel"/>
-    </StackPanel>
+    <Grid x:Name="LayoutRoot" Width="400" Height="180" Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="2" Margin="10,20,10,0" x:Name="rebuyAmount" InputScope="Number"/>
+        <Button x:ConnectionId='1' Grid.Row="1" Grid.Column="0" Width="185" Margin="10,0,0,0" x:Name="btnOK"                     Content="Rebuy"/>
+        <Button x:ConnectionId='2' Grid.Row="1" Grid.Column="1" Width="185" x:Name="btnCancel"                         Content="Cancel"/>
+    </Grid>
 </UserControl>
 

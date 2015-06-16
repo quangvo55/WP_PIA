@@ -19,8 +19,7 @@ namespace App1.Views
     {
         SessionViewModel session = null;
         SessionMode mode = SessionMode.New;
-        Popup popup;
-        RebuyWindow rebuyWindow;
+        RebuyHelper rebuyHelper;
 
         public SessionPage()
         {
@@ -179,29 +178,20 @@ namespace App1.Views
             DurationCounter.Text = (end - start).ToString();
         }
 
-        private void RebuyButton_Click(object sender, RoutedEventArgs e) 
+        private void RebuyButton_Click(object sender, RoutedEventArgs e)
         {
-             popup = new Popup();
-            popup.Height = 300;
-            popup.Width = 400;
-            popup.VerticalOffset = 100;
-            rebuyWindow = new RebuyWindow();
-            popup.Child = rebuyWindow;
-            popup.IsOpen = true;
-
-            rebuyWindow.okBtnTapped += okBtnTapped;
-            rebuyWindow.cancelBtnTapped += btnCancelTapped;
+            if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
+            {
+                GeneralUtil.ShowMessage("You need to enter a buy in amount before you can rebuy.");
+                return;
+            }
+            rebuyHelper = new RebuyHelper(this);
+            rebuyHelper.OKBtnTapped += rebuyOkBtnTapped;
         }
 
-        private void okBtnTapped(object sender, RoutedEventArgs e)
+        private void rebuyOkBtnTapped(object sender, RoutedEventArgs e)
         {
-            popup.IsOpen = false;
-            this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyWindow.RebuyAmount).ToString();
-        }
-
-        private void btnCancelTapped(object sender, RoutedEventArgs e)
-        {
-            popup.IsOpen = false;
-        }  
+            this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyHelper.RebuyAmount).ToString();
+        } 
     }
 }
