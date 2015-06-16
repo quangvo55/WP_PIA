@@ -112,6 +112,9 @@
     <Compile Include="Views\AllSessions.xaml.cs">
       <DependentUpon>AllSessions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RebuyWindow.xaml.cs">
+      <DependentUpon>RebuyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SessionPage.xaml.cs">
       <DependentUpon>SessionPage.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AllSessions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RebuyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

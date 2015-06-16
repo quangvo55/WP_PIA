@@ -93,11 +93,39 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
+    <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="InputScope" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="App1.Views.RebuyWindow" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalScrollBarVisibility" />
@@ -112,19 +140,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Header" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="InputScope" />
-      <RootProperty Name="IsReadOnly" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -141,13 +156,6 @@
       <RootProperty Name="Time" />
       <RootProperty Name="Margin" />
       <RootEvent Name="TimeChanged" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="App1.Views.SessionPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">

@@ -8,5 +8,6 @@ App.xbf
 App1.xr.xml
 Views\AllSessions.xbf
 Views\MainPage.xbf
+Views\RebuyWindow.xbf
 Views\SessionPage.xbf
 Views\TourneyPage.xbf

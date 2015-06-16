@@ -19,6 +19,8 @@ namespace App1.Views
     {
         SessionViewModel session = null;
         SessionMode mode = SessionMode.New;
+        Popup popup;
+        RebuyWindow rebuyWindow;
 
         public SessionPage()
         {
@@ -176,6 +178,30 @@ namespace App1.Views
             var start = startTime.Time;
             DurationCounter.Text = (end - start).ToString();
         }
-        
+
+        private void RebuyButton_Click(object sender, RoutedEventArgs e) 
+        {
+             popup = new Popup();
+            popup.Height = 300;
+            popup.Width = 400;
+            popup.VerticalOffset = 100;
+            rebuyWindow = new RebuyWindow();
+            popup.Child = rebuyWindow;
+            popup.IsOpen = true;
+
+            rebuyWindow.okBtnTapped += okBtnTapped;
+            rebuyWindow.cancelBtnTapped += btnCancelTapped;
+        }
+
+        private void okBtnTapped(object sender, RoutedEventArgs e)
+        {
+            popup.IsOpen = false;
+            this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyWindow.RebuyAmount).ToString();
+        }
+
+        private void btnCancelTapped(object sender, RoutedEventArgs e)
+        {
+            popup.IsOpen = false;
+        }  
     }
 }
