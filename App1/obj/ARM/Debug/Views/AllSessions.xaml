@@ -18,15 +18,19 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Rectangle Grid.Row="0" Fill="#FF428bca" Width="400"/>
-                <TextBlock Margin="10,0,0,0" Grid.Row="0" Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#FF428bca" Width="400"/>
+                <TextBlock Margin="10,0,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
 
-                <TextBlock Margin="10,0,0,0" Grid.Row="1" Style="{ThemeResource ListViewItemTextBlockStyle}">
+                <TextBlock Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Location}" />
                     <Run Text="{Binding Duration}"  />
-                    <Run Text="{Binding Profit}"  />
                 </TextBlock>
-                <TextBlock Margin="10,0,0,0" Grid.Row="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ProfitAsCurrency}" Foreground="{Binding FontColor}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                <TextBlock Margin="10,0,0,0" Grid.Row="2"  Grid.ColumnSpan="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Stakes}" />
                     <Run Text="{Binding GameName}"  />
                 </TextBlock>
