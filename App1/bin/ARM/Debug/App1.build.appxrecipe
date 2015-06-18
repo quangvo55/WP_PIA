@@ -1,73 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>CS-WRK07</Machine>
-    <WindowsUser>james.vo</WindowsUser>
+    <Machine>J</Machine>
+    <WindowsUser>j</WindowsUser>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>98ca2491-2259-44f6-8fb5-bb63388bf9aa</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\obj\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\App1.exe">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\App1.exe">
       <PackagePath>App1.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.8.10\Redist\Debug\ARM\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Common.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.Common.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Display.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.Display.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.UI.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Web\bootstrap.html">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Web\bootstrap.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Themes\Generic.xbf">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Web\Ormma.js">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Web\Ormma.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.8.10.2\Redist\Debug\ARM\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AllSessions.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\Views\AllSessions.xbf">
       <PackagePath>Views\AllSessions.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\RebuyWindow.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\Views\RebuyWindow.xbf">
       <PackagePath>Views\RebuyWindow.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\SessionPage.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\Views\SessionPage.xbf">
       <PackagePath>Views\SessionPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\TourneyPage.xbf">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\Views\TourneyPage.xbf">
       <PackagePath>Views\TourneyPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\App1.xr.xml">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\App1.xr.xml">
       <PackagePath>App1.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\quang_000\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

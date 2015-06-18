@@ -43,7 +43,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBox x:Name="BuyInAmount" Width="185" InputScope="Number" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding BuyIn, TargetNullValue='', FallbackValue=''}"/>
-                    <Button x:ConnectionId='9' Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0"                           VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
+                    <Button x:ConnectionId='12' Width="185" Content="Rebuy" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0"                           VerticalAlignment="Top" HorizontalAlignment="Left"></Button>
                 </Grid>
                 <TextBox Width="380" Header="Note" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 
@@ -53,8 +53,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <DatePicker x:Name="startDate" Width="185" Header="Start Date" Grid.Column="0" Date="{Binding StartDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
-                        <TimePicker x:Name="startTime" Width="185" Header="Start Time" Margin="0,0,10,0" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='10' x:Name="startDate" Width="185" Header="Start Date" Grid.Column="0" Date="{Binding StartDate,Mode=TwoWay}" HorizontalAlignment="Left"                                 />
+                        <TimePicker x:ConnectionId='11' x:Name="startTime" Width="185" Header="Start Time" Margin="0,0,10,0" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}"                                 />
                     </Grid>
                     <TextBox x:Name="DurationCounter" Header="Session Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
                              Width="380" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center" Visibility="Collapsed"/>
@@ -67,8 +67,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <DatePicker x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"/>
-                        <TimePicker x:ConnectionId='8' x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0"                                     />
+                        <DatePicker x:ConnectionId='8' x:Name="endDate" Width="185" Header="End Date" Grid.Column="0" Date="{Binding EndDate,Mode=TwoWay}" HorizontalAlignment="Left"                                 />
+                        <TimePicker x:ConnectionId='9' x:Name="endTime" Width="185" Header="End Time" Grid.Column="1" Time="{Binding EndTime,Mode=TwoWay}" Margin="0,0,10,0"                                 />
                     </Grid>
                     <TextBox x:Name="CashOutAmount" Header="Cashed Out" Text="{Binding CashOut}" InputScope="Number" Width="380" VerticalAlignment="Top" Margin="0,0,0,30" HorizontalAlignment="Left"/>
                 </StackPanel>

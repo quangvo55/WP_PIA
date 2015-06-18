@@ -142,7 +142,7 @@ namespace App1.Views
             App.CurrentSessionId = session.Id;
             if (result.Contains("Success"))
             {
-                this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
+                this.Frame.Navigate(typeof(AllSessions), GameType.Cash);
             }
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -194,11 +194,14 @@ namespace App1.Views
             DurationCounter.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void timePicker_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
+        private void timePicker_Changed(object sender, TimePickerValueChangedEventArgs e)
         {
-            var end = endTime.Time;
-            var start = startTime.Time;
-            DurationCounter.Text = (end - start).ToString();
+            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
+        }
+
+        private void datePicker_Changed(object sender, DatePickerValueChangedEventArgs e)
+        {
+            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
         }
 
         private void RebuyButton_Click(object sender, RoutedEventArgs e)

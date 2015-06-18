@@ -1,4 +1,5 @@
 ﻿﻿using App1.Models;
+using App1.Utils;
 using System;
 using System.Linq;
 using Windows.UI.Xaml.Controls;
@@ -201,9 +202,9 @@ namespace App1.ViewModels
             }
         }
 
-        public TimeSpan Duration
+        public string Duration
         {
-            get { return endtime - starttime; }
+            get { return GeneralUtil.GetDateTimeDifference(startdate, starttime, enddate, endtime); }
         }
 
 

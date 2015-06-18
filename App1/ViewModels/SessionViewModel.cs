@@ -1,4 +1,5 @@
 ﻿﻿using App1.Models;
+using App1.Utils;
 using System;
 using System.Linq;
 using Windows.UI.Xaml.Controls;
@@ -174,9 +175,9 @@ namespace App1.ViewModels
             }
         }
 
-        public TimeSpan Duration
+        public string Duration
         {
-            get { return endtime - starttime; }
+            get { return GeneralUtil.GetDateTimeDifference(startdate, starttime, enddate, endtime); }
         }
         
 
@@ -277,6 +278,23 @@ namespace App1.ViewModels
                 });
             }
             return result;
+        }
+
+        private string GetDateTimeDifference()
+        {
+            var startingDate = startdate.Date;
+            var startDateFormatted = new DateTime(startingDate.Year, startingDate.Month, startingDate.Day, 0, 0, 0);
+            startDateFormatted = startDateFormatted.Add(starttime);
+
+            var endingDate = enddate.Date;
+            var endDateFormatted = new DateTime(endingDate.Year, endingDate.Month, endingDate.Day, 0, 0, 0);
+            endDateFormatted = endDateFormatted.Add(endtime);
+
+            var diff = (endDateFormatted - startDateFormatted);
+            var totalHours = (diff.TotalHours < 10) ? "0" + Math.Floor(diff.TotalHours).ToString() : Math.Floor(diff.TotalHours).ToString();
+            var minutes = (diff.Minutes < 10) ? "0" + diff.Minutes.ToString() : diff.Minutes.ToString();
+
+            return String.Format("{0}:{1}", totalHours, minutes);
         }
         #endregion  
     }

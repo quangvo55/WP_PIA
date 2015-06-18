@@ -156,6 +156,7 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Date" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="DateChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
       <RootProperty Name="Width" />
