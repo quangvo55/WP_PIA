@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="App1.Views.AddStakes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Width="400" Height="Auto" Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Header="Low Amount"  Grid.ColumnSpan="2" Margin="10,20,10,0" x:Name="lowAmount" InputScope="Number"/>
+        <TextBox Grid.Row="1" Header="High Amount" Grid.ColumnSpan="2" Margin="10,20,10,0" x:Name="highAmount" InputScope="Number"/>
+        <Button Grid.Row="2" Grid.Column="0" Width="185" Margin="10,0,0,0" x:Name="btnOK" Click="okBtn_Click" Content="Add"/>
+        <Button Grid.Row="2" Grid.Column="1" Width="185" x:Name="btnCancel" Click="cancelBtn_Click" Content="Cancel"/>
+    </Grid>
+</UserControl>

@@ -3,6 +3,7 @@ using App1.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -14,7 +15,8 @@ namespace App1.ViewModels
     {
         public SessionViewModel() 
         {
-            StakesAvailable = new List<string> { "$1/$2", "$1/3", "$2/$5", "$5/$10" };
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            StakesAvailable = (List<string>)localSettings.Values["StakesAvailable"];
             GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
             Locations = new List<string> { "Casino", "Online", "Homegame" }; 
         }

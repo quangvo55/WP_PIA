@@ -28,6 +28,12 @@ namespace App1
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            var stakesAvailable = localSettings.Values["StakesAvailable"];
+            if (stakesAvailable == null) {
+                localSettings.Values["StakesAvailable"] = new List<string> { "$1/$2", "$2/3", "$3/$5", "$5/$10", "$8/$16", "$20/$40", "New" };
+            }
         }
 
         protected async override void OnLaunched(LaunchActivatedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -20,7 +21,7 @@ namespace App1.Views
         SessionViewModel session = new SessionViewModel();
         SessionMode mode = SessionMode.New;
         RebuyHelper rebuyHelper;
-
+        AddStakesHelper addStakesHelper;
         public SessionPage()
         {
             this.InitializeComponent();
@@ -194,12 +195,12 @@ namespace App1.Views
             DurationCounter.Visibility = (show) ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void timePicker_Changed(object sender, TimePickerValueChangedEventArgs e)
+        private void TimePicker_Changed(object sender, TimePickerValueChangedEventArgs e)
         {
             DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
         }
 
-        private void datePicker_Changed(object sender, DatePickerValueChangedEventArgs e)
+        private void DatePicker_Changed(object sender, DatePickerValueChangedEventArgs e)
         {
             DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
         }
@@ -212,12 +213,45 @@ namespace App1.Views
                 return;
             }
             rebuyHelper = new RebuyHelper(this);
-            rebuyHelper.OKBtnTapped += rebuyOkBtnTapped;
+            rebuyHelper.OKBtnTapped += RebuyOkBtnTapped;
         }
 
-        private void rebuyOkBtnTapped(object sender, RoutedEventArgs e)
+        private void RebuyOkBtnTapped(object sender, RoutedEventArgs e)
         {
             this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyHelper.RebuyAmount).ToString();
-        } 
+        }
+
+        private bool handle = true;
+        private void Stakes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+            handle = !cmb.IsDropDownOpen;
+            Handle(sender);
+        }
+
+        private void Stakes_DropDownClosed(object sender, object e)
+        {
+            Handle(sender);
+        }
+
+        private void Handle(object sender)
+        {
+            var cmb = sender as ComboBox;
+            var selectedItem = cmb.SelectedItem.ToString();
+            if (selectedItem == "New")
+            {
+                addStakesHelper = new AddStakesHelper(this);
+                addStakesHelper.OKBtnTapped += StakesOKBtnTapped;
+            }
+        }
+
+        private void StakesOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            var stakesAvailable = (List<string>)localSettings.Values["StakesAvailable"];
+            stakesAvailable.Add("$" + addStakesHelper.LowAmount + "/$" + addStakesHelper.HighAmount);
+
+            localSettings.Values["StakesAvailable"] = stakesAvailable;
+        }
     }
 }
