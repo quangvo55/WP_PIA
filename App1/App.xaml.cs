@@ -31,7 +31,7 @@ namespace App1
 
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             var stakesAvailable = localSettings.Values["StakesAvailable"];
-            if (stakesAvailable != null) {
+            if (stakesAvailable == null) {
                 localSettings.Values["StakesAvailable"] = new List<string> { "$1/$2", "$2/3", "$3/$5", "$5/$10", "$8/$16", "$20/$40", "New" }.ToArray();
             }
         }

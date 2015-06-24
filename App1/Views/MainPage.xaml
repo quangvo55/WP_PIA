@@ -15,7 +15,7 @@
                     <TextBlock Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newSessionTapped" VerticalAlignment="Top"/>
                     <TextBlock Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="completedSessionTapped" VerticalAlignment="Top"/>
                     <TextBlock Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="allSessionsTapped" VerticalAlignment="Top"/>
-                    <TextBlock Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newSessionTapped" VerticalAlignment="Top"/>
+                    <TextBlock Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newCashReportTapped" VerticalAlignment="Top"/>
                     <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newSessionTapped" VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>

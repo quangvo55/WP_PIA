@@ -29,7 +29,7 @@
         <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
         
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
-                <ComboBox x:ConnectionId='5' x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}"                                                                                                         Width="380" VerticalAlignment="Top" 
+                <ComboBox x:ConnectionId='5' x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}"                                                                  Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left" />
                 <ComboBox x:ConnectionId='6' x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}"                         Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>

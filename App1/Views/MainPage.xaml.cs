@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 using App1.ViewModels;
 using App1.Common;
 using App1.Models;
+using App1.Utils;
 
 namespace App1.Views
 {
@@ -55,6 +56,11 @@ namespace App1.Views
         private void allTourniesTapped(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
+        }
+
+        private void newCashReportTapped(object sender, RoutedEventArgs e)
+        {
+            var addstakesHelper = new AddStakesHelper(this);
         }
     }
 }

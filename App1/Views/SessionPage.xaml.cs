@@ -5,10 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Data;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,11 +23,14 @@ namespace App1.Views
         SessionMode mode = SessionMode.New;
         RebuyHelper rebuyHelper;
         AddStakesHelper addStakesHelper;
+        private bool stakesCollectionHasChanged = false;
+
         public SessionPage()
         {
             this.InitializeComponent();
         }
 
+        #region Events
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
@@ -56,8 +56,20 @@ namespace App1.Views
             }
 
             this.DataContext = session;
+        }
 
-            ICollectionViewLiveShaping view = (ICollectionViewLiveShaping)CollectionViewSource.GetDefaultView(session.StakesAvailable);
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            //need to sort observable collection
+            if (stakesCollectionHasChanged)
+            {
+                var tempStakes = new List<string>(session.StakesAvailable);
+                tempStakes.Sort(GeneralUtil.AlphaNumCompare);
+                localSettings.Values["StakesAvailable"] = tempStakes.ToArray();
+            }
         }
 
         private void StakesOnLoad(object sender, RoutedEventArgs e)
@@ -83,7 +95,9 @@ namespace App1.Views
                 this.locationComboBox.SelectedIndex = 0;
             }
         }
-                
+        #endregion
+
+        #region Xaml Event Handlers
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
@@ -210,7 +224,9 @@ namespace App1.Views
         {
             DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
         }
+        #endregion
 
+        #region Add Rebuy
         private void RebuyButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(BuyInAmount.Text) || BuyInAmount.Text == "0")
@@ -226,28 +242,17 @@ namespace App1.Views
         {
             this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyHelper.RebuyAmount).ToString();
         }
+        #endregion
 
-        private bool handle = true;
+        #region Add Stakes
         private void Stakes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //ComboBox cmb = sender as ComboBox;
-            //handle = !cmb.IsDropDownOpen;
-            Handle(sender);
-        }
-
-        private void Stakes_DropDownClosed(object sender, object e)
-        {
-            Handle(sender);
-        }
-
-        private void Handle(object sender)
         {
             var cmb = sender as ComboBox;
             var selectedItem = cmb.SelectedItem.ToString();
             if (selectedItem == "New")
             {
                 addStakesHelper = new AddStakesHelper(this);
-                addStakesHelper.TESTOKBtnTapped += StakesOKBtnTapped;
+                addStakesHelper.confirmBtnTapped += StakesOKBtnTapped;
             }
         }
         
@@ -255,14 +260,19 @@ namespace App1.Views
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
            
-            var strtoadd = String.Concat("$", addStakesHelper.LowAmount, "/$", addStakesHelper.HighAmount);
-            session.StakesAvailable.Add(strtoadd);
-            //need to sort observable collection
-            var testlist = new List<string>(session.StakesAvailable);
-            testlist.Sort(GeneralUtil.AlphaNumCompare);
-            localSettings.Values["StakesAvailable"] = testlist.ToArray();
-
-            addStakesHelper.closePopup();
+            var stakeToAdd = String.Concat("$", addStakesHelper.LowAmount, "/$", addStakesHelper.HighAmount);
+            if (!session.StakesAvailable.Contains(stakeToAdd))
+            {
+                session.StakesAvailable.Add(stakeToAdd);
+                stakesCollectionHasChanged = true;
+                stakesComboBox.SelectedIndex = session.StakesAvailable.Count - 1;
+            }
+            else
+            {
+                stakesComboBox.SelectedIndex = session.StakesAvailable.IndexOf(stakeToAdd);
+            }
+            
         }
+        #endregion
     }
 }

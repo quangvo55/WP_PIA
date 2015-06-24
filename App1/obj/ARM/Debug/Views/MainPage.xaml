@@ -15,7 +15,7 @@
                     <TextBlock x:ConnectionId='4' Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='5' Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="26"                                 VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='6' Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="26"                            VerticalAlignment="Top"/>
-                    <TextBlock x:ConnectionId='7' Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='7' Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26"                              VerticalAlignment="Top"/>
                     <TextBlock x:ConnectionId='8' Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26"                           VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
