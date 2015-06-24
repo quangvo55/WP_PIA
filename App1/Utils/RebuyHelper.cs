@@ -14,6 +14,7 @@ namespace App1.Utils
         Popup popup;
         RebuyWindow rebuyWindow;
         public EventHandler<RoutedEventArgs> OKBtnTapped;
+        public int RebuyAmount { get; set; }
 
         public RebuyHelper(Page parentPage) 
         {
@@ -49,7 +50,5 @@ namespace App1.Utils
             popup.IsOpen = false;
             parentPage.BottomAppBar.Visibility = Visibility.Visible;
         }
-
-        public int RebuyAmount { get; set; }
     }
 }

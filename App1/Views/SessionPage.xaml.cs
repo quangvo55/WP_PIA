@@ -1,7 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Windows.Data;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -52,6 +56,8 @@ namespace App1.Views
             }
 
             this.DataContext = session;
+
+            ICollectionViewLiveShaping view = (ICollectionViewLiveShaping)CollectionViewSource.GetDefaultView(session.StakesAvailable);
         }
 
         private void StakesOnLoad(object sender, RoutedEventArgs e)
@@ -224,8 +230,8 @@ namespace App1.Views
         private bool handle = true;
         private void Stakes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBox cmb = sender as ComboBox;
-            handle = !cmb.IsDropDownOpen;
+            //ComboBox cmb = sender as ComboBox;
+            //handle = !cmb.IsDropDownOpen;
             Handle(sender);
         }
 
@@ -241,17 +247,22 @@ namespace App1.Views
             if (selectedItem == "New")
             {
                 addStakesHelper = new AddStakesHelper(this);
-                addStakesHelper.OKBtnTapped += StakesOKBtnTapped;
+                addStakesHelper.TESTOKBtnTapped += StakesOKBtnTapped;
             }
         }
-
+        
         private void StakesOKBtnTapped(object sender, RoutedEventArgs e)
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            var stakesAvailable = (List<string>)localSettings.Values["StakesAvailable"];
-            stakesAvailable.Add("$" + addStakesHelper.LowAmount + "/$" + addStakesHelper.HighAmount);
+           
+            var strtoadd = String.Concat("$", addStakesHelper.LowAmount, "/$", addStakesHelper.HighAmount);
+            session.StakesAvailable.Add(strtoadd);
+            //need to sort observable collection
+            var testlist = new List<string>(session.StakesAvailable);
+            testlist.Sort(GeneralUtil.AlphaNumCompare);
+            localSettings.Values["StakesAvailable"] = testlist.ToArray();
 
-            localSettings.Values["StakesAvailable"] = stakesAvailable;
+            addStakesHelper.closePopup();
         }
     }
 }

@@ -2,6 +2,7 @@
 using App1.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel; 
 using System.Linq;
 using Windows.Storage;
 using Windows.UI;
@@ -16,14 +17,15 @@ namespace App1.ViewModels
         public SessionViewModel() 
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            StakesAvailable = (List<string>)localSettings.Values["StakesAvailable"];
+            var stakesAvailableArray = (string [])localSettings.Values["StakesAvailable"];
+            StakesAvailable = new ObservableCollection<string>(stakesAvailableArray);
             GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
             Locations = new List<string> { "Casino", "Online", "Homegame" }; 
         }
 
         #region Properties
 
-        public List<string> StakesAvailable { get; set; }
+        public ObservableCollection<string> StakesAvailable { get; set; }
         public List<string> GameNames { get; set; }
         public List<string> Locations { get; set; }        
 

@@ -30,10 +30,8 @@ namespace App1.Views
                 {
                     this.RebuyAmount = Convert.ToInt32(buyInAmount);
                     okBtnTapped(this, null);
-                }
-                
-            }
-                
+                }                
+            }                
         }
 
         public void cancelBtn_Click(object sender, RoutedEventArgs e)

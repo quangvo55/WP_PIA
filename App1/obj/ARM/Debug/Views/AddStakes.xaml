@@ -21,8 +21,8 @@
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0" Header="Low Amount"  Grid.ColumnSpan="2" Margin="10,20,10,0" x:Name="lowAmount" InputScope="Number"/>
         <TextBox Grid.Row="1" Header="High Amount" Grid.ColumnSpan="2" Margin="10,20,10,0" x:Name="highAmount" InputScope="Number"/>
-        <Button x:ConnectionId='1' Grid.Row="2" Grid.Column="0" Width="185" Margin="10,0,0,0" x:Name="btnOK"                     Content="Add"/>
-        <Button x:ConnectionId='2' Grid.Row="2" Grid.Column="1" Width="185" x:Name="btnCancel"                         Content="Cancel"/>
+        <Button x:ConnectionId='1' Grid.Row="2" Grid.Column="0" Width="185" Margin="10,0,0,0" x:Name="btnOK"                      Content="Add"/>
+        <Button x:ConnectionId='2' Grid.Row="2" Grid.Column="1" Width="185" x:Name="btnCancel"                          Content="Cancel"/>
     </Grid>
 </UserControl>
 

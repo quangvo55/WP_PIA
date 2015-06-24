@@ -11,9 +11,9 @@ namespace App1.Utils
     public class AddStakesHelper
     {
         Page parentPage;
-        Popup popup;
+        Popup stakesPopup;
         AddStakes addStakesWindow;
-        public EventHandler<RoutedEventArgs> OKBtnTapped;
+        public EventHandler<RoutedEventArgs> TESTOKBtnTapped;
         public string HighAmount;
         public string LowAmount;
 
@@ -25,34 +25,41 @@ namespace App1.Utils
 
         private void CreatePopupWindow()
         {
-            popup = new Popup();
-            popup.VerticalOffset = 0;
+            stakesPopup = new Popup();
+            stakesPopup.VerticalOffset = 0;
             addStakesWindow = new AddStakes();
-            addStakesWindow.Height = Window.Current.Bounds.Height;
-            popup.Child = addStakesWindow;
-            popup.IsOpen = true;
+            //addStakesWindow.Height = Window.Current.Bounds.Height;
+            stakesPopup.Child = addStakesWindow;
+            stakesPopup.IsOpen = true;
 
             parentPage.BottomAppBar.Visibility = Visibility.Collapsed;
-            addStakesWindow.okBtnTapped += okBtnTapped;
+            addStakesWindow.confirmBtnTapped += okBtnTapped;
             addStakesWindow.cancelBtnTapped += btnCancelTapped;
             addStakesWindow.FocusInputBox();
         }
 
         private void okBtnTapped(object sender, RoutedEventArgs e)
         {
-            popup.IsOpen = false;
+            stakesPopup.IsOpen = false;
             parentPage.BottomAppBar.Visibility = Visibility.Visible;
             this.HighAmount = addStakesWindow.HighAmount;
             this.LowAmount = addStakesWindow.LowAmount;
-            if (OKBtnTapped != null)
-                OKBtnTapped(this, null);
-
+            if (TESTOKBtnTapped != null)
+            {
+                TESTOKBtnTapped(this, null);
+            }
+            stakesPopup.IsOpen = false;
         }
 
         private void btnCancelTapped(object sender, RoutedEventArgs e)
         {
-            popup.IsOpen = false;
+            stakesPopup.IsOpen = false;
             parentPage.BottomAppBar.Visibility = Visibility.Visible;
+        }
+
+        public void closePopup()
+        {
+            stakesPopup.IsOpen = false;
         }
     }
 }
