@@ -29,11 +29,14 @@
         <ScrollViewer Grid.Row="1" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
         
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
-                <ComboBox x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}" Loaded="StakesOnLoad" SelectionChanged="Stakes_SelectionChanged" Width="380" VerticalAlignment="Top" 
+                <ComboBox x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}" Loaded="StakesOnLoad" 
+                          SelectionChanged="Stakes_SelectionChanged" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left" />
-                <ComboBox x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}" Loaded="GameNameOnLoad" Width="380" VerticalAlignment="Top" 
+                <ComboBox x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}" Loaded="GameNameOnLoad" 
+                          SelectionChanged="Games_SelectionChanged" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}" Loaded="LocationOnLoad" Header="Location" Width="380" VerticalAlignment="Top" 
+                <ComboBox x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}" Loaded="LocationOnLoad" Header="Location" 
+                          SelectionChanged="Location_SelectionChanged" Width="380" VerticalAlignment="Top" 
                           Margin="0,0,10,0" HorizontalAlignment="Left"/>
                 <TextBlock Text="Buy In" FontSize="16" HorizontalAlignment="Left"/>
                 <Grid x:Name="BuyIn" Background="Transparent">

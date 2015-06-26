@@ -10,6 +10,10 @@ namespace App1.Views
     {
         public EventHandler<TappedRoutedEventArgs> okBtnTapped;
         public EventHandler<TappedRoutedEventArgs> cancelBtnTapped;
+        public int RebuyAmount 
+        { 
+            get { return Convert.ToInt32(this.rebuyAmount.Text); }
+        }
 
         public RebuyWindow()
         {
@@ -20,15 +24,13 @@ namespace App1.Views
         {
             if (okBtnTapped != null)
             {
-                var buyInAmount = this.rebuyAmount.Text;
-                if (String.IsNullOrEmpty(buyInAmount))
+                if (String.IsNullOrEmpty(this.rebuyAmount.Text))
                 {
                     GeneralUtil.ShowMessage("The buy in amount can not be empty.");
                     return;
                 }
                 else
                 {
-                    this.RebuyAmount = Convert.ToInt32(buyInAmount);
                     okBtnTapped(this, null);
                 }                
             }                
@@ -38,8 +40,7 @@ namespace App1.Views
         {
             if (cancelBtnTapped != null)
                 cancelBtnTapped(this, null);
-        }
-        public int RebuyAmount { get; set; }
+        }        
 
         public void FocusInputBox()
         {

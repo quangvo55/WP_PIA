@@ -6,36 +6,35 @@ using App1.Utils;
 
 namespace App1.Views
 {
-    public sealed partial class AddStakes : UserControl
+    public sealed partial class AddItem : UserControl
     {
-        public EventHandler<TappedRoutedEventArgs> confirmBtnTapped;
+        public EventHandler<TappedRoutedEventArgs> okBtnTapped;
         public EventHandler<TappedRoutedEventArgs> cancelBtnTapped;
-        public string LowAmount 
+        public string ItemText;
+        public string TextInput
         {
-            get { return this.lowAmount.Text; }
-        }
-        public string HighAmount 
-        {
-            get { return this.highAmount.Text; } 
+            get { return this.txtInput.Text; }
         }
 
-        public AddStakes()
+        public AddItem(string itemText)
         {
             this.InitializeComponent();
+            this.ItemText = itemText;
+            this.txtInput.Header = ItemText;
         }
 
         public void okBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (confirmBtnTapped != null)
+            if (okBtnTapped != null)
             {
-                if (String.IsNullOrEmpty(this.lowAmount.Text) || String.IsNullOrEmpty(this.highAmount.Text))
+                if (String.IsNullOrEmpty(this.txtInput.Text))
                 {
-                    GeneralUtil.ShowMessage("The high and low amount can not be empty.");
+                    GeneralUtil.ShowMessage(String.Format("The {0} text can not be empty.", ItemText));
                     return;
                 }
                 else
                 {
-                    confirmBtnTapped(this, null);
+                    okBtnTapped(this, null);
                 }
             }
         }
@@ -44,11 +43,11 @@ namespace App1.Views
         {
             if (cancelBtnTapped != null)
                 cancelBtnTapped(this, null);
-        }
+        }        
 
         public void FocusInputBox()
         {
-            this.lowAmount.Focus(FocusState.Pointer);
+            this.txtInput.Focus(FocusState.Pointer);
         }
     }
 }

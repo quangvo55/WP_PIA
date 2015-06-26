@@ -17,6 +17,8 @@ namespace App1.Utils
 
         public static string GetDateTimeDifference(DateTime startDate, TimeSpan startTime, DateTime endDate, TimeSpan endTime)
         {
+            if (startDate == null || startTime == null || endDate == null || endTime == null) return "00:00";
+
             var startDateFormatted = new DateTime(startDate.Year, startDate.Month, startDate.Day, 0, 0, 0);
             startDateFormatted = startDateFormatted.Add(startTime);
 

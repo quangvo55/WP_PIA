@@ -67,6 +67,9 @@
     <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AddItem.xbf">
+      <PackagePath>Views\AddItem.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AddStakes.xbf">
       <PackagePath>Views\AddStakes.xbf</PackagePath>
     </AppxPackagedFile>

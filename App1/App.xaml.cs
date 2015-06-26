@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Windows.Phone.UI.Input;
 
 using App1.Models;
 using App1.Views;
@@ -28,12 +29,8 @@ namespace App1
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-
-            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            var stakesAvailable = localSettings.Values["StakesAvailable"];
-            if (stakesAvailable == null) {
-                localSettings.Values["StakesAvailable"] = new List<string> { "$1/$2", "$2/3", "$3/$5", "$5/$10", "$8/$16", "$20/$40", "New" }.ToArray();
-            }
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            InitFromLocalSettings();            
         }
 
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
@@ -85,5 +82,43 @@ namespace App1
             await SuspensionManager.SaveAsync();  
             deferral.Complete();
         }
+
+        private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            if (frame == null)
+            {
+                return;
+            }
+
+            if (frame.CanGoBack)
+            {
+                frame.GoBack();
+                e.Handled = true;
+            }
+        }
+
+        private void InitFromLocalSettings()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            var stakesSaved = localSettings.Values["StakesSaved"];
+            if (stakesSaved == null)
+            {
+                localSettings.Values["StakesSaved"] = new List<string> { "$1/$2", "$2/3", "$3/$5", "$5/$10", "$8/$16", "$20/$40", "New" }.ToArray();
+            }
+
+            var gamesSaved = localSettings.Values["GamesSaved"];
+            if (gamesSaved == null)
+            {
+                localSettings.Values["GamesSaved"] = new List<string> { "Texas Holdem", "Omaha", "HORSE", "7 Card Stud", "7 Card Stud 8", "Omaha 8", "Razz", "Black Jack", "New" }.ToArray();
+            }
+
+            var locations = localSettings.Values["Locations"];
+            if (locations == null)
+            {
+                localSettings.Values["Locations"] = new List<string> { "Casino", "Online", "Home", "New" }.ToArray();
+            }
+        }
+
     }
 }

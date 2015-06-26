@@ -17,17 +17,22 @@ namespace App1.ViewModels
         public SessionViewModel() 
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            var stakesAvailableArray = (string[])localSettings.Values["StakesAvailable"];
-            StakesAvailable = new ObservableCollection<string>(stakesAvailableArray);
-            GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
-            Locations = new List<string> { "Casino", "Online", "Homegame" }; 
+
+            var stakesSavedArray = (string[])localSettings.Values["StakesSaved"];
+            StakesAvailable = new ObservableCollection<string>(stakesSavedArray);
+
+            var gamesSavedArray = (string[])localSettings.Values["GamesSaved"];
+            GameNames = new ObservableCollection<string>(gamesSavedArray);
+
+            var LocationsSaved = (string[])localSettings.Values["Locations"];
+            Locations = new ObservableCollection<string>(LocationsSaved);
         }
 
         #region Properties
 
         public ObservableCollection<string> StakesAvailable { get; set; }
-        public List<string> GameNames { get; set; }
-        public List<string> Locations { get; set; }        
+        public ObservableCollection<string> GameNames { get; set; }
+        public ObservableCollection<string> Locations { get; set; }        
 
         private string stakes = string.Empty;
         public string Stakes

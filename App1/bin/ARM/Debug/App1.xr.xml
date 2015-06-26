@@ -59,9 +59,9 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
       <RootProperty Name="InputScope" />
+      <RootProperty Name="Header" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
@@ -77,9 +77,10 @@
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootEvent Name="Tapped" />
       <RootEvent Name="Click" />
+      <RootEvent Name="Tapped" />
     </RootType>
+    <RootType FullName="App1.Views.AddItem" />
     <RootType FullName="App1.Views.AddStakes" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />

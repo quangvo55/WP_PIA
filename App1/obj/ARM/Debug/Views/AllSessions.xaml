@@ -40,8 +40,7 @@
     
     <Page.BottomAppBar>
         <CommandBar x:Name="bottomAppBar">
-            <AppBarButton x:ConnectionId='1' Icon="Home" Label="Home"                         />
-            <AppBarButton x:ConnectionId='2' Icon="Add" Label="Add"                        />
+            <AppBarButton x:ConnectionId='1' Icon="Add" Label="Add"                        />
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -50,7 +49,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView x:ConnectionId='3' x:Name="SessionsListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
+        <ListView x:ConnectionId='2' x:Name="SessionsListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
         <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
               Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>-->
     </Grid>

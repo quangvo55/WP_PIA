@@ -35,11 +35,6 @@ namespace App1.Views
             
         }
 
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (gameType == GameType.Cash)

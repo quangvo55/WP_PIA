@@ -23,7 +23,10 @@ namespace App1.Views
         SessionMode mode = SessionMode.New;
         RebuyHelper rebuyHelper;
         AddStakesHelper addStakesHelper;
+        AddItemHelper addItemHelper;
         private bool stakesCollectionHasChanged = false;
+        private bool gamesCollectionHasChanged = false;
+        private bool locationCollectionHasChanged = false;
 
         public SessionPage()
         {
@@ -61,15 +64,6 @@ namespace App1.Views
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            //need to sort observable collection
-            if (stakesCollectionHasChanged)
-            {
-                var tempStakes = new List<string>(session.StakesAvailable);
-                tempStakes.Sort(GeneralUtil.AlphaNumCompare);
-                localSettings.Values["StakesAvailable"] = tempStakes.ToArray();
-            }
         }
 
         private void StakesOnLoad(object sender, RoutedEventArgs e)
@@ -163,6 +157,7 @@ namespace App1.Views
             App.CurrentSessionId = session.Id;
             if (result.Contains("Success"))
             {
+                SaveComboChanges();
                 this.Frame.Navigate(typeof(AllSessions), GameType.Cash);
             }
         }
@@ -248,8 +243,7 @@ namespace App1.Views
         private void Stakes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var cmb = sender as ComboBox;
-            var selectedItem = cmb.SelectedItem.ToString();
-            if (selectedItem == "New")
+            if (cmb.SelectedItem.ToString() == "New")
             {
                 addStakesHelper = new AddStakesHelper(this);
                 addStakesHelper.confirmBtnTapped += StakesOKBtnTapped;
@@ -258,8 +252,6 @@ namespace App1.Views
         
         private void StakesOKBtnTapped(object sender, RoutedEventArgs e)
         {
-            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-           
             var stakeToAdd = String.Concat("$", addStakesHelper.LowAmount, "/$", addStakesHelper.HighAmount);
             if (!session.StakesAvailable.Contains(stakeToAdd))
             {
@@ -274,5 +266,81 @@ namespace App1.Views
             
         }
         #endregion
+
+        private void Games_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var cmb = sender as ComboBox;
+            if (cmb.SelectedItem.ToString() == "New")
+            {
+                addItemHelper = new AddItemHelper(this, "Game name");
+                addItemHelper.confirmBtnTapped += GamesOKBtnTapped;
+            }
+        }
+
+        private void GamesOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var gameName = addItemHelper.txtInput;
+            if (!session.GameNames.Contains(gameName))
+            {
+                session.GameNames.Add(gameName);
+                gamesCollectionHasChanged = true;
+                gamesComboBox.SelectedIndex = session.GameNames.Count - 1;
+            }
+            else
+            {
+                gamesComboBox.SelectedIndex = session.GameNames.IndexOf(gameName);
+            }
+        }
+
+        private void Location_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var cmb = sender as ComboBox;
+            if (cmb.SelectedItem.ToString() == "New")
+            {
+                addItemHelper = new AddItemHelper(this, "Location");
+                addItemHelper.confirmBtnTapped += LocationOKBtnTapped;
+            }
+        }
+
+        private void LocationOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var location = addItemHelper.txtInput;
+            if (!session.Locations.Contains(location))
+            {
+                session.Locations.Add(location);
+                locationCollectionHasChanged = true;
+                locationComboBox.SelectedIndex = session.Locations.Count - 1;
+            }
+            else
+            {
+                locationComboBox.SelectedIndex = session.Locations.IndexOf(location);
+            }
+        }
+
+        private void SaveComboChanges()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            //need to sort observable collection
+            if (stakesCollectionHasChanged)
+            {
+                var tempList = new List<string>(session.StakesAvailable);
+                tempList.Sort(GeneralUtil.AlphaNumCompare);
+                localSettings.Values["StakesSaved"] = tempList.ToArray();
+            }
+
+            if (gamesCollectionHasChanged)
+            {
+                var tempList = new List<string>(session.GameNames);
+                tempList.Sort();
+                localSettings.Values["GamesSaved"] = tempList.ToArray();
+            }
+
+            if (locationCollectionHasChanged)
+            {
+                var tempList = new List<string>(session.Locations);
+                tempList.Sort();
+                localSettings.Values["Locations"] = tempList.ToArray();
+            }
+        }
     }
 }

@@ -121,3 +121,8 @@ C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\qualifiers.txt.intermediate
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\ProjectArchitectures.txt
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.g.i.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.g.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.xaml
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.xbf
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AddItem.xbf
