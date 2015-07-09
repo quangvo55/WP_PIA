@@ -2,6 +2,8 @@
 using App1.Utils;
 using System;
 using System.Linq;
+using System.Collections.Generic;
+using System.Collections.ObjectModel; 
 using Windows.UI.Xaml.Controls;
 using System.Collections.Generic;
 
@@ -11,15 +13,14 @@ namespace App1.ViewModels
     {
         public TourneyViewModel() 
         {
-            GameTypes = new List<string> { "Sit & Go", "Single Table", "MultiTable"};
-            GameNames = new List<string> { "No Limit Texas Holdem", "Pot Limit Texas Holdem", "Limit Texas Holdem", "PL Omaha" };
-            Locations = new List<string> { "Casino", "Online", "Homegame" }; 
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var gameTypesSavedArray = (string[])localSettings.Values["GameTypesSaved"];
+            GameTypes = new ObservableCollection<string>(gameTypesSavedArray);
         }
 
         #region Properties
-        public List<string> GameTypes { get; set; }
-        public List<string> GameNames { get; set; }
-        public List<string> Locations { get; set; }
+        public ObservableCollection<string> GameTypes { get; set; }
 
         private string gameType = string.Empty;
         public string GameType

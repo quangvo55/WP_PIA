@@ -126,3 +126,8 @@ C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.xaml
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\AddItem.xbf
 C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\AddItem.xbf
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\Report.xbf
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\Report.g.i.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\Report.g.cs
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\Report.xaml
+C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Debug\Views\Report.xbf

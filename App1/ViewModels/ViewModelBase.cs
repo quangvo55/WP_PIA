@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
@@ -13,6 +14,21 @@ namespace App1.ViewModels
 {
     public class ViewModelBase
     {
+
+        public ViewModelBase()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var gamesSavedArray = (string[])localSettings.Values["GamesSaved"];
+            GameNames = new ObservableCollection<string>(gamesSavedArray);
+
+            var LocationsSaved = (string[])localSettings.Values["Locations"];
+            Locations = new ObservableCollection<string>(LocationsSaved);
+        }
+
+        #region Properties;
+        public ObservableCollection<string> GameNames { get; set; }
+        public ObservableCollection<string> Locations { get; set; }  
         private int id;
         public int Id
         {
@@ -169,6 +185,7 @@ namespace App1.ViewModels
                 return (this.profit > 0) ? new SolidColorBrush(Colors.Green) : (this.profit == 0) ? new SolidColorBrush(Colors.Black) : new SolidColorBrush(Colors.Red);
             }
         }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -180,5 +197,6 @@ namespace App1.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        
     }
 }

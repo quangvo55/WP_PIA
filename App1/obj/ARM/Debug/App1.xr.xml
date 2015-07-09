@@ -135,6 +135,7 @@
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
     <RootType FullName="App1.Views.RebuyWindow" />
+    <RootType FullName="App1.Views.Report" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />

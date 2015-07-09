@@ -20,20 +20,12 @@ namespace App1.ViewModels
 
             var stakesSavedArray = (string[])localSettings.Values["StakesSaved"];
             StakesAvailable = new ObservableCollection<string>(stakesSavedArray);
-
-            var gamesSavedArray = (string[])localSettings.Values["GamesSaved"];
-            GameNames = new ObservableCollection<string>(gamesSavedArray);
-
-            var LocationsSaved = (string[])localSettings.Values["Locations"];
-            Locations = new ObservableCollection<string>(LocationsSaved);
         }
 
         #region Properties
 
         public ObservableCollection<string> StakesAvailable { get; set; }
-        public ObservableCollection<string> GameNames { get; set; }
-        public ObservableCollection<string> Locations { get; set; }        
-
+              
         private string stakes = string.Empty;
         public string Stakes
         {

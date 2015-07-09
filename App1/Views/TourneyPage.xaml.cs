@@ -1,9 +1,11 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,6 +22,10 @@ namespace App1.Views
         TourneyViewModel tourney = new TourneyViewModel();
         SessionMode mode = SessionMode.New;
         RebuyHelper rebuyHelper;
+        AddItemHelper addItemHelper;
+        private bool gameTypeCollectionHasChanged = false;
+        private bool gamesCollectionHasChanged = false;
+        private bool locationCollectionHasChanged = false;
 
         public TourneyPage()
         {
@@ -137,12 +143,15 @@ namespace App1.Views
             tourney.StartTime = startTime.Time;
             tourney.EndDate = endDate.Date.DateTime;
             tourney.EndTime = endTime.Time;
+            tourney.Rank = Convert.ToDouble(Rank.Text);
+            tourney.PlayerCount = Convert.ToDouble(PlayerCount.Text);
 
 
             string result = tourney.SaveSession(tourney);
             App.CurrentSessionId = tourney.Id;
             if (result.Contains("Success"))
             {
+                SaveComboChanges();
                 this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
             }
         }
@@ -216,6 +225,107 @@ namespace App1.Views
         private void rebuyOkBtnTapped(object sender, RoutedEventArgs e)
         {
             this.BuyInAmount.Text = (Convert.ToInt32(this.BuyInAmount.Text) + rebuyHelper.RebuyAmount).ToString();
+        }
+
+        private void Games_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var cmb = sender as ComboBox;
+            if (cmb.SelectedItem.ToString() == "New")
+            {
+                addItemHelper = new AddItemHelper(this, "Game name");
+                addItemHelper.confirmBtnTapped += GamesOKBtnTapped;
+            }
+        }
+
+        private void GamesOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var gameName = addItemHelper.txtInput;
+            if (!tourney.GameNames.Contains(gameName))
+            {
+                tourney.GameNames.Add(gameName);
+                gamesCollectionHasChanged = true;
+                gamesComboBox.SelectedIndex = tourney.GameNames.Count - 1;
+            }
+            else
+            {
+                gamesComboBox.SelectedIndex = tourney.GameNames.IndexOf(gameName);
+            }
+        }
+
+        private void Location_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var cmb = sender as ComboBox;
+            if (cmb.SelectedItem.ToString() == "New")
+            {
+                addItemHelper = new AddItemHelper(this, "Location");
+                addItemHelper.confirmBtnTapped += LocationOKBtnTapped;
+            }
+        }
+
+        private void LocationOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var location = addItemHelper.txtInput;
+            if (!tourney.Locations.Contains(location))
+            {
+                tourney.Locations.Add(location);
+                locationCollectionHasChanged = true;
+                locationComboBox.SelectedIndex = tourney.Locations.Count - 1;
+            }
+            else
+            {
+                locationComboBox.SelectedIndex = tourney.Locations.IndexOf(location);
+            }
+        }
+
+        private void GameTypes_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            var cmb = sender as ComboBox;
+            if (cmb.SelectedItem.ToString() == "New")
+            {
+                addItemHelper = new AddItemHelper(this, "Game type");
+                addItemHelper.confirmBtnTapped += GameTypeOKBtnTapped;
+            }
+        }
+
+        private void GameTypeOKBtnTapped(object sender, RoutedEventArgs e)
+        {
+            var gametype = addItemHelper.txtInput;
+            if (!tourney.GameTypes.Contains(gametype))
+            {
+                tourney.GameTypes.Add(gametype);
+                gameTypeCollectionHasChanged = true;
+                gametypeComboBox.SelectedIndex = tourney.GameTypes.Count - 1;
+            }
+            else
+            {
+                gametypeComboBox.SelectedIndex = tourney.GameTypes.IndexOf(gametype);
+            }
+        }
+
+        private void SaveComboChanges()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            //need to sort observable collection
+            if (gameTypeCollectionHasChanged)
+            {
+                var tempList = new List<string>(tourney.GameTypes);
+                tempList.Sort();
+                localSettings.Values["GameTypesSaved"] = tempList.ToArray();
+            }
+
+            if (gamesCollectionHasChanged)
+            {
+                var tempList = new List<string>(tourney.GameNames);
+                tempList.Sort();
+                localSettings.Values["GamesSaved"] = tempList.ToArray();
+            }
+
+            if (locationCollectionHasChanged)
+            {
+                var tempList = new List<string>(tourney.Locations);
+                tempList.Sort();
+                localSettings.Values["Locations"] = tempList.ToArray();
+            }
         }
     }
 }

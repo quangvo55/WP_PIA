@@ -79,6 +79,9 @@
     <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\RebuyWindow.xbf">
       <PackagePath>Views\RebuyWindow.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\Report.xbf">
+      <PackagePath>Views\Report.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\Views\SessionPage.xbf">
       <PackagePath>Views\SessionPage.xbf</PackagePath>
     </AppxPackagedFile>

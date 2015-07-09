@@ -101,6 +101,7 @@ namespace App1
         private void InitFromLocalSettings()
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
             var stakesSaved = localSettings.Values["StakesSaved"];
             if (stakesSaved == null)
             {
@@ -117,6 +118,12 @@ namespace App1
             if (locations == null)
             {
                 localSettings.Values["Locations"] = new List<string> { "Casino", "Online", "Home", "New" }.ToArray();
+            }
+
+            var gameTypes = localSettings.Values["GameTypesSaved"];
+            if (gameTypes == null)
+            {
+                localSettings.Values["GameTypesSaved"] = new List<string> { "Sit & Go", "Single Table", "MultiTable", "New" }.ToArray();
             }
         }
 

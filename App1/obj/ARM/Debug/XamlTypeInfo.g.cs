@@ -148,7 +148,7 @@ namespace App1.App1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[13];
+            _typeNameTable = new string[14];
             _typeNameTable[0] = "App1.Views.AddItem";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "String";
@@ -159,11 +159,12 @@ namespace App1.App1_XamlTypeInfo
             _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[8] = "App1.Views.RebuyWindow";
             _typeNameTable[9] = "Int32";
-            _typeNameTable[10] = "App1.Views.SessionPage";
-            _typeNameTable[11] = "App1.Views.MainPage";
-            _typeNameTable[12] = "App1.Views.TourneyPage";
+            _typeNameTable[10] = "App1.Views.Report";
+            _typeNameTable[11] = "App1.Views.SessionPage";
+            _typeNameTable[12] = "App1.Views.MainPage";
+            _typeNameTable[13] = "App1.Views.TourneyPage";
 
-            _typeTable = new global::System.Type[13];
+            _typeTable = new global::System.Type[14];
             _typeTable[0] = typeof(global::App1.Views.AddItem);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::System.String);
@@ -174,9 +175,10 @@ namespace App1.App1_XamlTypeInfo
             _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[8] = typeof(global::App1.Views.RebuyWindow);
             _typeTable[9] = typeof(global::System.Int32);
-            _typeTable[10] = typeof(global::App1.Views.SessionPage);
-            _typeTable[11] = typeof(global::App1.Views.MainPage);
-            _typeTable[12] = typeof(global::App1.Views.TourneyPage);
+            _typeTable[10] = typeof(global::App1.Views.Report);
+            _typeTable[11] = typeof(global::App1.Views.SessionPage);
+            _typeTable[12] = typeof(global::App1.Views.MainPage);
+            _typeTable[13] = typeof(global::App1.Views.TourneyPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -215,9 +217,10 @@ namespace App1.App1_XamlTypeInfo
         private object Activate_4_DateToStringConverter() { return new global::App1.Utils.DateToStringConverter(); }
         private object Activate_6_AllSessions() { return new global::App1.Views.AllSessions(); }
         private object Activate_8_RebuyWindow() { return new global::App1.Views.RebuyWindow(); }
-        private object Activate_10_SessionPage() { return new global::App1.Views.SessionPage(); }
-        private object Activate_11_MainPage() { return new global::App1.Views.MainPage(); }
-        private object Activate_12_TourneyPage() { return new global::App1.Views.TourneyPage(); }
+        private object Activate_10_Report() { return new global::App1.Views.Report(); }
+        private object Activate_11_SessionPage() { return new global::App1.Views.SessionPage(); }
+        private object Activate_12_MainPage() { return new global::App1.Views.MainPage(); }
+        private object Activate_13_TourneyPage() { return new global::App1.Views.TourneyPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -287,23 +290,30 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  App1.Views.SessionPage
+            case 10:   //  App1.Views.Report
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_SessionPage;
+                userType.Activator = Activate_10_Report;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  App1.Views.MainPage
+            case 11:   //  App1.Views.SessionPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_MainPage;
+                userType.Activator = Activate_11_SessionPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  App1.Views.TourneyPage
+            case 12:   //  App1.Views.MainPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_TourneyPage;
+                userType.Activator = Activate_12_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  App1.Views.TourneyPage
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_13_TourneyPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

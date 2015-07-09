@@ -110,6 +110,7 @@
     <Compile Include="Utils\DateToStringConverter.cs" />
     <Compile Include="Utils\GeneralUtil.cs" />
     <Compile Include="Utils\RebuyHelper.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
     <Compile Include="ViewModels\TourneyViewModel.cs" />
@@ -126,6 +127,9 @@
     </Compile>
     <Compile Include="Views\RebuyWindow.xaml.cs">
       <DependentUpon>RebuyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SessionPage.xaml.cs">
       <DependentUpon>SessionPage.xaml</DependentUpon>
@@ -173,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RebuyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

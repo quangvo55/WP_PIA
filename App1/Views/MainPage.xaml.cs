@@ -60,7 +60,7 @@ namespace App1.Views
 
         private void newCashReportTapped(object sender, RoutedEventArgs e)
         {
-            var addstakesHelper = new AddStakesHelper(this);
+            this.Frame.Navigate(typeof(Report), GameType.Cash);
         }
     }
 }
