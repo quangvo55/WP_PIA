@@ -22,11 +22,9 @@ namespace App1.Views
             gameType = (GameType)e.Parameter;
             if (gameType == GameType.Cash)
             {
-                reportViewModel = new ReportViewModel(gameType);
+                reportViewModel = new ReportViewModel(gameType);                
             }
-            else
-            {
-            }
+            this.DataContext = reportViewModel;
         }
     }
 }

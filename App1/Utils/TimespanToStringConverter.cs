@@ -3,13 +3,13 @@ using Windows.UI.Xaml.Data;
 
 namespace App1.Utils
 {
-    public class DateToStringConverter : IValueConverter
+    public class TimespanToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            DateTime date = (DateTime)value;
+            TimeSpan ts = (TimeSpan)value;
 
-            return String.Format("{0:MMMM dd, yyyy} {0:dddd}", date);
+            return ts.ToHHMMString();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

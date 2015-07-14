@@ -14,7 +14,6 @@ namespace App1.ViewModels
 {
     public class ViewModelBase
     {
-
         public ViewModelBase()
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -173,7 +172,7 @@ namespace App1.ViewModels
             }
         }
 
-        public string Duration
+        public TimeSpan Duration
         {
             get { return GeneralUtil.GetDateTimeDifference(startdate, starttime, enddate, endtime); }
         }

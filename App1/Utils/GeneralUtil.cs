@@ -15,9 +15,9 @@ namespace App1.Utils
             dialog.ShowAsync();
         }
 
-        public static string GetDateTimeDifference(DateTime startDate, TimeSpan startTime, DateTime endDate, TimeSpan endTime)
+        public static TimeSpan GetDateTimeDifference(DateTime startDate, TimeSpan startTime, DateTime endDate, TimeSpan endTime)
         {
-            if (startDate == null || startTime == null || endDate == null || endTime == null) return "00:00";
+            if (startDate == null || startTime == null || endDate == null || endTime == null) return new TimeSpan(0, 0, 0, 0, 0);
 
             var startDateFormatted = new DateTime(startDate.Year, startDate.Month, startDate.Day, 0, 0, 0);
             startDateFormatted = startDateFormatted.Add(startTime);
@@ -26,6 +26,12 @@ namespace App1.Utils
             endDateFormatted = endDateFormatted.Add(endTime);
 
             var diff = (endDateFormatted - startDateFormatted);
+            return diff;
+            
+        }
+
+        public static string ConvertTimeSpanToString(TimeSpan diff)
+        {
             var totalHours = (diff.TotalHours < 10) ? "0" + Math.Floor(diff.TotalHours).ToString() : Math.Floor(diff.TotalHours).ToString();
             var minutes = (diff.Minutes < 10) ? "0" + diff.Minutes.ToString() : diff.Minutes.ToString();
             return String.Format("{0}:{1}", totalHours, minutes);

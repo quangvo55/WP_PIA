@@ -11,6 +11,8 @@
     <RootPropertyPathName Name="Duration" />
     <RootPropertyPathName Name="Location" />
     <RootPropertyPathName Name="EndDate" />
+    <RootPropertyPathName Name="TotalProfit" />
+    <RootPropertyPathName Name="TotalDuration" />
     <RootPropertyPathName Name="CashOut" />
     <RootPropertyPathName Name="EndTime" />
     <RootPropertyPathName Name="StartTime" />
@@ -135,12 +137,13 @@
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
     <RootType FullName="App1.Views.RebuyWindow" />
-    <RootType FullName="App1.Views.Report" />
+    <RootType FullName="App1.Utils.TimespanToStringConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
     </RootType>
+    <RootType FullName="App1.Views.Report" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalScrollBarVisibility" />

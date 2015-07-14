@@ -1,14 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using App1.Models;
 
 namespace App1.ViewModels
 {
     public class ReportViewModel
     {
-        public TimeSpan Duration;
-        public Double   Profit;
+        public TimeSpan _totalDuration = new TimeSpan(0,0,0,0,0);
+        public TimeSpan TotalDuration
+        {
+            get { return _totalDuration; }
+
+            set
+            {
+                if (_totalDuration == value) { return; }
+
+                _totalDuration = value;
+                RaisePropertyChanged("TotalDuration");
+            }
+        }
+        public Double _totalProfit;
+        public Double TotalProfit
+        {
+            get { return _totalProfit; }
+
+            set
+            {
+                if (_totalProfit == value) { return; }
+
+                _totalProfit = value;
+                RaisePropertyChanged("TotalProfit");
+            }
+        }
         public Double DollarPerHour;
         public Double Cashed;
         public Double DollarPerSession;
@@ -38,16 +63,23 @@ namespace App1.ViewModels
         {
             foreach (var session in sessions)
             {
-                //TODO add duration > 24hrs
-                var dur = session.Duration;
-                var dur1 = TimeSpan.Parse(dur);
-                Duration += dur1;
+                _totalDuration += session.Duration;
+                _totalProfit += session.Profit;
             }
-            System.Diagnostics.Debug.WriteLine(Duration);
         }
         private void CalculateStats(List<TourneyViewModel> tournies)
         {
 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void RaisePropertyChanged(string propertyName)
+        {
+            var handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

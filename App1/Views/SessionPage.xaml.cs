@@ -212,12 +212,12 @@ namespace App1.Views
 
         private void TimePicker_Changed(object sender, TimePickerValueChangedEventArgs e)
         {
-            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
+            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time).ToHHMMString();
         }
 
         private void DatePicker_Changed(object sender, DatePickerValueChangedEventArgs e)
         {
-            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time);
+            DurationCounter.Text = GeneralUtil.GetDateTimeDifference(startDate.Date.DateTime, startTime.Time, endDate.Date.DateTime, endTime.Time).ToHHMMString();
         }
         #endregion
 
