@@ -107,11 +107,10 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Utils\AddItemHelper.cs" />
     <Compile Include="Utils\AddStakesHelper.cs" />
-    <Compile Include="Utils\DateToStringConverter.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\GeneralUtil.cs" />
     <Compile Include="Utils\RebuyHelper.cs" />
-    <Compile Include="Utils\TimespanToStringConverter.cs" />
+    <Compile Include="Utils\Converters.cs" />
     <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
@@ -163,6 +162,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

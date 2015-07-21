@@ -8,6 +8,7 @@ namespace App1.ViewModels
 {
     public class ReportViewModel
     {
+        #region Properties
         public TimeSpan _totalDuration = new TimeSpan(0,0,0,0,0);
         public TimeSpan TotalDuration
         {
@@ -21,6 +22,7 @@ namespace App1.ViewModels
                 RaisePropertyChanged("TotalDuration");
             }
         }
+
         public Double _totalProfit;
         public Double TotalProfit
         {
@@ -34,42 +36,80 @@ namespace App1.ViewModels
                 RaisePropertyChanged("TotalProfit");
             }
         }
-        public Double DollarPerHour;
-        public Double Cashed;
-        public Double DollarPerSession;
-        public Double Tips;
+
+        public Double DollarPerHour 
+        { 
+            get { return _totalProfit/_totalDuration.TotalHours; }
+            set { }
+        }
+
+        public Double SessionCount
+        {
+            get; set;
+        }
+
+        public Double _cashed = 0;
+        public Double Cashed
+        {    
+            get { return _cashed; }
+
+            set
+            {
+                if (_cashed == value) { return; }
+
+                _cashed = value;
+                RaisePropertyChanged("Cashed");
+            }
+        }
+
+        public Double DollarPerSession
+        {
+            get { return _totalProfit / SessionCount; }
+            set { }
+        } 
+
         public Double Bankroll;
-        public Double BBPerHour;
-        public Double BBPerSession;
         public Double DollarPerHourStDev;
-        public Double BBPerHourStDev;
+
         protected List<SessionViewModel> Sessions = null;
         protected List<TourneyViewModel> Tournies = null;
+        #endregion
 
         public ReportViewModel(GameType gameType)
         {
             if (gameType == GameType.Cash)
                 Sessions = new List<SessionViewModel>(new SessionsViewModel().GetSessions());                
             else
-                Tournies = new List<TourneyViewModel>(new TourniesViewModel().GetTournies());           
+                Tournies = new List<TourneyViewModel>(new TourniesViewModel().GetTournies());
 
-            if (Sessions.Count > 0)
+            if (Sessions != null  && Sessions.Count > 0)
                 CalculateStats(Sessions);
-            else if (Tournies.Count > 0)
+            else if (Tournies != null && Tournies.Count > 0)
                 CalculateStats(Tournies);
         }
 
         private void CalculateStats(List<SessionViewModel> sessions)
         {
+            SessionCount = sessions.Count;
+
             foreach (var session in sessions)
             {
                 _totalDuration += session.Duration;
                 _totalProfit += session.Profit;
+                if (session.Profit > 0) _cashed++;
             }
         }
+
         private void CalculateStats(List<TourneyViewModel> tournies)
         {
+            SessionCount = tournies.Count;
 
+            foreach (var tourney in tournies)
+            {
+                _totalDuration += tourney.Duration;
+                _totalProfit += tourney.Profit;
+                if (tourney.Profit > 0) _cashed++;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -11,6 +11,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <valueconverter:DateToStringConverter x:Key="DateToStringConverter" />
+        <valueconverter:CurrencyForegroundConverter x:Key="CurrencyForegroundConverter" />
+        <valueconverter:StringToCurrencyConverter x:Key="StringToCurrencyConverter" />
         <DataTemplate x:Key="AllSessionsTemplate">
             <Grid>
                 <Grid.RowDefinitions>
@@ -29,7 +31,8 @@
                     <Run Text="{Binding Location}" />
                     <Run Text="{Binding Duration}"  />
                 </TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ProfitAsCurrency}" Foreground="{Binding FontColor}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Profit,Converter={StaticResource StringToCurrencyConverter}}" 
+                           Foreground="{Binding Profit, Converter={StaticResource CurrencyForegroundConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
                 <TextBlock Margin="10,0,0,0" Grid.Row="2"  Grid.ColumnSpan="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Stakes}" />
                     <Run Text="{Binding GameName}"  />
@@ -41,6 +44,7 @@
     <Page.BottomAppBar>
         <CommandBar x:Name="bottomAppBar">
             <AppBarButton x:ConnectionId='1' Icon="Add" Label="Add"                        />
+            <AppBarButton x:ConnectionId='2' Icon="Home" Label="Home"                         />
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -49,7 +53,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView x:ConnectionId='2' x:Name="SessionsListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
+        <ListView x:ConnectionId='3' x:Name="SessionsListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
         <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
               Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>-->
     </Grid>

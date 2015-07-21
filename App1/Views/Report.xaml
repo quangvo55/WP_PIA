@@ -10,10 +10,50 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <valueconverter:TimespanToStringConverter x:Key="TimespanToStringConverter" />
+        <valueconverter:StringToCurrencyConverter x:Key="StringToCurrencyConverter" />
+        <valueconverter:CurrencyForegroundConverter x:Key="CurrencyForegroundConverter" />
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+        </Style>
     </Page.Resources>
-    <StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>               
+        
+        <TextBlock Text="Profit/Loss" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="{Binding TotalProfit, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}"
+                   Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"/>
 
-        <TextBlock Text="{Binding TotalDuration, Converter={StaticResource TimespanToStringConverter}}" FontSize="16" HorizontalAlignment="Left"/>
-        <TextBlock Text="{Binding TotalProfit}" FontSize="16" HorizontalAlignment="Left"/>
-    </StackPanel>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+        <TextBlock Text="Duration" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="{Binding TotalDuration, Converter={StaticResource TimespanToStringConverter}}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+        
+        <TextBlock Text="$/Hour" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="{Binding DollarPerHour,Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}" 
+                   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
+
+        <Rectangle Grid.Row="3" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+        <TextBlock Text="Cashed" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right">
+            <Run Text="{Binding Cashed}"/>
+            <Run Text="/"/>
+            <Run Text="{Binding SessionCount}"/>
+        </TextBlock>
+
+        <TextBlock Text="$/Session" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="{Binding DollarPerSession, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}"
+                   Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"/>
+    </Grid>
 </Page>

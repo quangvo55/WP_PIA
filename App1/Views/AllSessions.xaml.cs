@@ -46,7 +46,12 @@ namespace App1.Views
                 this.Frame.Navigate(typeof(TourneyPage));
             }
            
-        } 
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
 
         private void ListViewClick(object sender, ItemClickEventArgs e)
         {

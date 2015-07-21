@@ -6,12 +6,15 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="GameName" />
     <RootPropertyPathName Name="Stakes" />
-    <RootPropertyPathName Name="ProfitAsCurrency" />
-    <RootPropertyPathName Name="FontColor" />
+    <RootPropertyPathName Name="Profit" />
     <RootPropertyPathName Name="Duration" />
     <RootPropertyPathName Name="Location" />
     <RootPropertyPathName Name="EndDate" />
+    <RootPropertyPathName Name="DollarPerSession" />
     <RootPropertyPathName Name="TotalProfit" />
+    <RootPropertyPathName Name="SessionCount" />
+    <RootPropertyPathName Name="Cashed" />
+    <RootPropertyPathName Name="DollarPerHour" />
     <RootPropertyPathName Name="TotalDuration" />
     <RootPropertyPathName Name="CashOut" />
     <RootPropertyPathName Name="EndTime" />
@@ -92,6 +95,8 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="App1.Utils.DateToStringConverter" />
+    <RootType FullName="App1.Utils.CurrencyForegroundConverter" />
+    <RootType FullName="App1.Utils.StringToCurrencyConverter" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -138,12 +143,20 @@
     <RootType FullName="App1.Views.AllSessions" />
     <RootType FullName="App1.Views.RebuyWindow" />
     <RootType FullName="App1.Utils.TimespanToStringConverter" />
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Children" />
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="App1.Views.Report" />
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalScrollBarVisibility" />

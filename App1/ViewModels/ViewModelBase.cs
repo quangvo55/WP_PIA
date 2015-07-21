@@ -112,11 +112,6 @@ namespace App1.ViewModels
             }
         }
 
-        public string ProfitAsCurrency
-        {
-            get { return profit.ToString("C"); }
-        }
-
         private DateTime startdate = DateTime.Now;
         public DateTime StartDate
         {
@@ -175,14 +170,6 @@ namespace App1.ViewModels
         public TimeSpan Duration
         {
             get { return GeneralUtil.GetDateTimeDifference(startdate, starttime, enddate, endtime); }
-        }
-
-        public SolidColorBrush FontColor
-        {
-            get
-            {
-                return (this.profit > 0) ? new SolidColorBrush(Colors.Green) : (this.profit == 0) ? new SolidColorBrush(Colors.Black) : new SolidColorBrush(Colors.Red);
-            }
         }
         #endregion
 
