@@ -166,7 +166,7 @@ namespace App1.Views
             string result = session.DeleteSession(session.Id);
             if (result.Contains("Success"))
             {
-                this.Frame.Navigate(typeof(MainPage));
+                this.Frame.Navigate(typeof(AllSessions), GameType.Cash);
             }
         }
 

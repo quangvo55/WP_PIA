@@ -7,38 +7,49 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Height" Value="57"/>
+        </Style>
+    </Page.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Pivot Title="Poker Tracker App">
             <PivotItem Header="Cash Game">
                 <StackPanel>
-                    <TextBlock Text="Add a live session" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newSessionTapped" VerticalAlignment="Top"/>
-                    <TextBlock Text="Add a completed session" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="completedSessionTapped" VerticalAlignment="Top"/>
-                    <TextBlock Text="All Sessions" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="allSessionsTapped" VerticalAlignment="Top"/>
-                    <TextBlock Text="Cash Game Report" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newCashReportTapped" VerticalAlignment="Top"/>
-                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" Tapped="newSessionTapped" VerticalAlignment="Top"/>
+                    <TextBlock Text="Add a live session" Tapped="newSessionTapped"/>
+                    <TextBlock Text="Add a completed session" Tapped="completedSessionTapped"/>
+                    <TextBlock Text="All Sessions" Tapped="allSessionsTapped"/>
+                    <TextBlock Text="Cash Game Report" Tapped="newCashReportTapped" />
+                    <TextBlock Text="Charts" Tapped="newSessionTapped" />
                 </StackPanel>
             </PivotItem>
 
             <PivotItem Header="Tourney">
                 <StackPanel>
-                    <TextBlock Text="Add a live tournament" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top" Tapped="newTourneyTapped" />
-                    <TextBlock Text="Add a completed tournament" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top" Tapped="completedTourneyTapped" />
-                    <TextBlock Text="All Tournaments" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top" Tapped="allTourniesTapped"/>
-                    <TextBlock Text="Tournament Report" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Add a live tournament" Tapped="newTourneyTapped" />
+                    <TextBlock Text="Add a completed tournament" Tapped="completedTourneyTapped" />
+                    <TextBlock Text="All Tournaments" Tapped="allTourniesTapped"/>
+                    <TextBlock Text="Tournament Report"/>
+                    <TextBlock Text="Charts" Height="57"/>
                 </StackPanel>
             </PivotItem>
 
             <PivotItem Header="Overview">
                 <StackPanel>
-                    <TextBlock Text="Filters" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Cash Game + Tourney Report" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Charts" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock Text="Filters" />
+                    <TextBlock Text="Cash Game + Tourney Report" />
+                    <TextBlock Text="Charts"/>
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Player">
-                <StackPanel/>
+                <StackPanel>
+                    <TextBlock Text="Add Player" Tapped="newPlayerTapped"/>
+                    <TextBlock Text="All Players" Tapped="allPlayersTapped" />
+                    <TextBlock Text="Charts" />
+                </StackPanel>
             </PivotItem>
             <PivotItem Header="Setting">
                 <StackPanel>
@@ -46,7 +57,6 @@
                     <TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                     <TextBlock Text="Support" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                     <TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Currency" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
                 </StackPanel>
             </PivotItem>
         </Pivot>

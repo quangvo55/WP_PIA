@@ -100,6 +100,7 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\GameTypeBase.cs" />
+    <Compile Include="Models\Players.cs" />
     <Compile Include="Models\Sessions.cs" />
     <Compile Include="Models\Tourney.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,8 @@
     <Compile Include="Utils\GeneralUtil.cs" />
     <Compile Include="Utils\RebuyHelper.cs" />
     <Compile Include="Utils\Converters.cs" />
+    <Compile Include="ViewModels\PlayersViewModel.cs" />
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
     <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
@@ -123,8 +126,14 @@
     <Compile Include="Views\AddStakes.xaml.cs">
       <DependentUpon>AddStakes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AllPlayers.xaml.cs">
+      <DependentUpon>AllPlayers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AllSessions.xaml.cs">
       <DependentUpon>AllSessions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerPage.xaml.cs">
+      <DependentUpon>PlayerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RebuyWindow.xaml.cs">
       <DependentUpon>RebuyWindow.xaml</DependentUpon>
@@ -174,7 +183,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AllPlayers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AllSessions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

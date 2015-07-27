@@ -8,8 +8,10 @@ App.xbf
 App1.xr.xml
 Views\AddItem.xbf
 Views\AddStakes.xbf
+Views\AllPlayers.xbf
 Views\AllSessions.xbf
 Views\MainPage.xbf
+Views\PlayerPage.xbf
 Views\RebuyWindow.xbf
 Views\Report.xbf
 Views\SessionPage.xbf

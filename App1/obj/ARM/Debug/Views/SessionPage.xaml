@@ -15,7 +15,14 @@
             <AppBarButton x:ConnectionId='4' Icon="Cancel" Label="Cancel"                           />
         </CommandBar>
     </Page.BottomAppBar>
-    
+    <Page.Resources>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="380"/>
+        </Style>
+    </Page.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -30,14 +37,11 @@
         
             <StackPanel Grid.Row="1" Margin="10,0,0,0">
                 <ComboBox x:ConnectionId='5' x:Name="stakesComboBox" Header="Stakes" ItemsSource="{Binding StakesAvailable}" SelectedItem="{Binding Stakes}"                       
-                                                                     Width="380" VerticalAlignment="Top" 
-                          Margin="0,0,10,0" HorizontalAlignment="Left" />
+                                                                     />
                 <ComboBox x:ConnectionId='6' x:Name="gamesComboBox" Header="Games" ItemsSource="{Binding GameNames}" SelectedItem="{Binding GameName}"                         
-                                                                    Width="380" VerticalAlignment="Top" 
-                          Margin="0,0,10,0" HorizontalAlignment="Left"/>
+                                                                    />
                 <ComboBox x:ConnectionId='7' x:Name="locationComboBox" ItemsSource="{Binding Locations}" SelectedItem="{Binding Location}"                         Header="Location" 
-                                                                       Width="380" VerticalAlignment="Top" 
-                          Margin="0,0,10,0" HorizontalAlignment="Left"/>
+                                                                       />
                 <TextBlock Text="Buy In" FontSize="16" HorizontalAlignment="Left"/>
                 <Grid x:Name="BuyIn" Background="Transparent">
                     <Grid.ColumnDefinitions>

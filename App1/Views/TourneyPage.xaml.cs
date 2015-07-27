@@ -160,7 +160,7 @@ namespace App1.Views
             string result = tourney.DeleteSession(tourney.Id);
             if (result.Contains("Success"))
             {
-                this.Frame.Navigate(typeof(MainPage));
+                this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
             }
         }
 

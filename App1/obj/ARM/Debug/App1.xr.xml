@@ -89,11 +89,12 @@
     <RootType FullName="App1.Views.AddStakes" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
+      <RootProperty Name="Content" />
       <RootProperty Name="Resources" />
       <RootProperty Name="BottomAppBar" />
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="App1.Views.AllPlayers" />
     <RootType FullName="App1.Utils.DateToStringConverter" />
     <RootType FullName="App1.Utils.CurrencyForegroundConverter" />
     <RootType FullName="App1.Utils.StringToCurrencyConverter" />
@@ -141,28 +142,21 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="App1.Views.AllSessions" />
+    <RootType FullName="App1.Views.PlayerPage" />
     <RootType FullName="App1.Views.RebuyWindow" />
     <RootType FullName="App1.Utils.TimespanToStringConverter" />
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="App1.Views.Report" />
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Visibility" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Height" />
-      <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="AllowDrop" />
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Header" />
       <RootProperty Name="ItemsSource" />
@@ -173,6 +167,17 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="AllowDrop" />
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Width" />

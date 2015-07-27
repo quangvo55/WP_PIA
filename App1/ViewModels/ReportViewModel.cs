@@ -78,14 +78,21 @@ namespace App1.ViewModels
         public ReportViewModel(GameType gameType)
         {
             if (gameType == GameType.Cash)
-                Sessions = new List<SessionViewModel>(new SessionsViewModel().GetSessions());                
-            else
-                Tournies = new List<TourneyViewModel>(new TourniesViewModel().GetTournies());
-
-            if (Sessions != null  && Sessions.Count > 0)
+            {
+                Sessions = new List<SessionViewModel>(new SessionsViewModel().GetSessions());
                 CalculateStats(Sessions);
-            else if (Tournies != null && Tournies.Count > 0)
+            }
+            else
+            {
+                Tournies = new List<TourneyViewModel>(new TourniesViewModel().GetTournies());
                 CalculateStats(Tournies);
+            }
+                
+
+            //if (Sessions != null  && Sessions.Count > 0)
+            //    CalculateStats(Sessions);
+            //else if (Tournies != null && Tournies.Count > 0)
+            //    CalculateStats(Tournies);
         }
 
         private void CalculateStats(List<SessionViewModel> sessions)

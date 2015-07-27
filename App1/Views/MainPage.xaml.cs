@@ -62,5 +62,14 @@ namespace App1.Views
         {
             this.Frame.Navigate(typeof(Report), GameType.Cash);
         }
+        private void newPlayerTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PlayerPage));
+        }
+
+        private void allPlayersTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllPlayers));
+        }
     }
 }

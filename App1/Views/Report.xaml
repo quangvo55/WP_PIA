@@ -25,7 +25,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -55,5 +55,10 @@
         <TextBlock Text="$/Session" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left"/>
         <TextBlock Text="{Binding DollarPerSession, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}"
                    Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"/>
+        
+        <Grid x:Name="AdditionalInfo" Grid.Row="5" Grid.ColumnSpan="2">
+            <Rectangle Fill="#FF2e618d"/>
+            <TextBlock Text="Location" Foreground="White" HorizontalAlignment="Left"/>
+        </Grid>        
     </Grid>
 </Page>

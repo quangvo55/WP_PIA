@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="App1.Views.PlayerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBox x:Name="BuyInAmount" Width="185" InputScope="Number" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding FirstName}"/>
+        <TextBox x:Name="BuyInAmount" Width="185" InputScope="Number" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding LastName}"/>
+    </StackPanel>
+</Page>
