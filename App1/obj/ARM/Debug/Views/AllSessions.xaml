@@ -7,8 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:valueconverter="using:App1.Utils"
     xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
     <Page.Resources>
         <valueconverter:DateToStringConverter x:Key="DateToStringConverter" />
         <valueconverter:CurrencyForegroundConverter x:Key="CurrencyForegroundConverter" />
@@ -24,16 +23,16 @@
                     <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#FF428bca" Width="400"/>
-                <TextBlock Margin="10,0,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
+                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="{StaticResource Blue}" Width="400"/>
+                <TextBlock Margin="10,5,0,5" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding EndDate, Converter={StaticResource DateToStringConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
 
-                <TextBlock Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" Style="{ThemeResource ListViewItemTextBlockStyle}">
+                <TextBlock Margin="10,5,0,5" Grid.Row="1" Grid.Column="0" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Location}" />
                     <Run Text="{Binding Duration}"  />
                 </TextBlock>
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Profit,Converter={StaticResource StringToCurrencyConverter}}" 
                            Foreground="{Binding Profit, Converter={StaticResource CurrencyForegroundConverter}}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                <TextBlock Margin="10,0,0,0" Grid.Row="2"  Grid.ColumnSpan="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
+                <TextBlock Margin="10,5,0,5" Grid.Row="2"  Grid.ColumnSpan="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding Stakes}" />
                     <Run Text="{Binding GameName}"  />
                 </TextBlock>

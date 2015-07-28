@@ -54,5 +54,10 @@ namespace App1.Utils
             popupWindow.IsOpen = false;
             if (parentHasBottomAppBar) parentPage.BottomAppBar.Visibility = Visibility.Visible;
         }
+
+        public void setInputScopeToNumeric()
+        {
+            addItemWindow.setInputScopeToNumeric();
+        }
     }
 }

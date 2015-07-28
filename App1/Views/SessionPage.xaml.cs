@@ -39,7 +39,7 @@ namespace App1.Views
 
             if (e.Parameter == null)
             {
-                ToggleDeleteButton("Stop", Symbol.Stop, DeleteButton_Click, StopButton_Click);
+                ToggleDeleteButton("End", Symbol.Stop, DeleteButton_Click, StopButton_Click);
             }
             else
             {

@@ -37,13 +37,13 @@
                 </StackPanel>
             </PivotItem>
 
-            <PivotItem Header="Overview">
+            <!--<PivotItem Header="Overview">
                 <StackPanel>
                     <TextBlock Text="Filters" />
                     <TextBlock Text="Cash Game + Tourney Report" />
-                    <!--<TextBlock Text="Charts"/>-->
+                    --><!--<TextBlock Text="Charts"/>--><!--
                 </StackPanel>
-            </PivotItem>
+            </PivotItem>-->
             <PivotItem Header="Player">
                 <StackPanel>
                     <TextBlock Text="Add Player" Tapped="newPlayerTapped"/>
@@ -52,10 +52,11 @@
             </PivotItem>
             <PivotItem Header="Setting">
                 <StackPanel>
-                    <TextBlock Text="Bankroll" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Support" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="setBankRoll" Tapped="setBankRollTapped"/>
+
+                    <!--<TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>-->
+                    <TextBlock Text="Support" Tapped="supportTapped"/>
+                    <!--<TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>-->
                 </StackPanel>
             </PivotItem>
         </Pivot>

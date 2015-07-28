@@ -19,43 +19,44 @@
         <Pivot Title="Poker Tracker App">
             <PivotItem Header="Cash Game">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='6' Text="Add a live session"                          />
-                    <TextBlock x:ConnectionId='7' Text="Add a completed session"                                />
-                    <TextBlock x:ConnectionId='8' Text="All Sessions"                           />
-                    <TextBlock x:ConnectionId='9' Text="Cash Game Report"                              />
+                    <TextBlock x:ConnectionId='8' Text="Add a live session"                          />
+                    <TextBlock x:ConnectionId='9' Text="Add a completed session"                                />
+                    <TextBlock x:ConnectionId='10' Text="All Sessions"                           />
+                    <TextBlock x:ConnectionId='11' Text="Cash Game Report"                              />
                     <!--<TextBlock Text="Charts" Tapped="newSessionTapped" />-->
                 </StackPanel>
             </PivotItem>
 
             <PivotItem Header="Tourney">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='3' Text="Add a live tournament"                           />
-                    <TextBlock x:ConnectionId='4' Text="Add a completed tournament"                                 />
-                    <TextBlock x:ConnectionId='5' Text="All Tournaments"                           />
+                    <TextBlock x:ConnectionId='5' Text="Add a live tournament"                           />
+                    <TextBlock x:ConnectionId='6' Text="Add a completed tournament"                                 />
+                    <TextBlock x:ConnectionId='7' Text="All Tournaments"                           />
                     <TextBlock Text="Tournament Report"/>
                     <!--<TextBlock Text="Charts" Height="57"/>-->
                 </StackPanel>
             </PivotItem>
 
-            <PivotItem Header="Overview">
+            <!--<PivotItem Header="Overview">
                 <StackPanel>
                     <TextBlock Text="Filters" />
                     <TextBlock Text="Cash Game + Tourney Report" />
-                    <!--<TextBlock Text="Charts"/>-->
+                    --><!--<TextBlock Text="Charts"/>--><!--
                 </StackPanel>
-            </PivotItem>
+            </PivotItem>-->
             <PivotItem Header="Player">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='1' Text="Add Player"                         />
-                    <TextBlock x:ConnectionId='2' Text="All Players"                           />
+                    <TextBlock x:ConnectionId='3' Text="Add Player"                         />
+                    <TextBlock x:ConnectionId='4' Text="All Players"                           />
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Setting">
                 <StackPanel>
-                    <TextBlock Text="Bankroll" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Support" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
-                    <TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>
+                    <TextBlock x:ConnectionId='1' x:Name="setBankRoll"                           />
+
+                    <!--<TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>-->
+                    <TextBlock x:ConnectionId='2' Text="Support"                       />
+                    <!--<TextBlock Text="Manage Data" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>-->
                 </StackPanel>
             </PivotItem>
         </Pivot>

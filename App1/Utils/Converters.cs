@@ -60,4 +60,27 @@ namespace App1.Utils
             throw new NotImplementedException();
         }
     }
+
+    public class AlternatingIndexConverter : IValueConverter
+    {
+        private static int _index;
+
+        public Brush Even { get; set; }
+        public Brush Odd { get; set; }
+
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+             Even = new SolidColorBrush(Color.FromArgb(0xFF, 0x42, 0x8b, 0xca));
+             Odd = new SolidColorBrush(Colors.White);
+             return (_index++ % 2 == 0) ? Even : Odd;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
+
 }

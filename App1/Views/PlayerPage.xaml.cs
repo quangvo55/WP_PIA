@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
 using App1.ViewModels;
 using App1.Utils;
@@ -14,15 +16,21 @@ namespace App1.Views
         {
             this.InitializeComponent();
         }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (e.Parameter != null)
             {
-                player = (PlayerViewModel)e.Parameter;               
+                player = (PlayerViewModel)e.Parameter;
+            }
+            else
+            {
+                HideDeleteButton();
             }
 
             this.DataContext = player;
         }
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(firstName.Text))
@@ -32,7 +40,7 @@ namespace App1.Views
             }
 
             player.FirstName = this.firstName.Text;
-            player.LastName = this.lastName.Text;
+            player.LastName = (string.IsNullOrEmpty(this.lastName.Text)) ? "" :  this.lastName.Text ;
             player.Aggressive = this.aggresssive.Value;
             player.Tight = this.tight.Value;
             player.Note = this.notes.Text;
@@ -56,7 +64,13 @@ namespace App1.Views
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
-        } 
+        }
+
+        private void HideDeleteButton()
+        {
+            var btn = (AppBarButton)bottomAppBar.PrimaryCommands.ElementAtOrDefault(1);
+            btn.Visibility = Visibility.Collapsed;
+        }
 
     }
 }

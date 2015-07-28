@@ -5,19 +5,18 @@
     xmlns:local="using:App1.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:valueconverter="using:App1.Utils"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="AllPlayersTemplate">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Margin="10,0,0,0" Grid.Row="0" Grid.ColumnSpan="2" Style="{ThemeResource ListViewItemTextBlockStyle}">
+        <valueconverter:AlternatingIndexConverter x:Key="AlternatingIndexConverter" />
+        <DataTemplate x:Name="AllPlayersTemplate">
+            <Border Background="{Binding Converter={StaticResource AlternatingIndexConverter}}">
+                <TextBlock Margin="10,5,0,5" Style="{ThemeResource ListViewItemTextBlockStyle}">
                     <Run Text="{Binding FirstName}"/>
                     <Run Text="{Binding LastName}"  />
-                </TextBlock>               
-            </Grid>
+                </TextBlock>
+            </Border>            
         </DataTemplate>
     </Page.Resources>
     
@@ -33,8 +32,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="PlayersListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllPlayersTemplate}" IsItemClickEnabled="True" ItemClick="ListViewClick"/>
-        <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
+        <ListView x:Name="PlayersListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllPlayersTemplate}" IsItemClickEnabled="True" ItemClick="ListViewClick" HorizontalAlignment="Stretch">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+            <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
               Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>-->
     </Grid>
 </Page>

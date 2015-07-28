@@ -23,9 +23,20 @@ namespace App1.Views
 {
     public sealed partial class MainPage : Page
     {
+        AddItemHelper addItemHelper;
         public MainPage()
         {
             this.InitializeComponent();
+            SetBankRoll(); 
+        }
+
+        private void SetBankRoll()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var bankroll = (string)localSettings.Values["BankRoll"];
+
+            setBankRoll.Text = "Set Bank Roll " + (Convert.ToDouble(bankroll)).ToString("C");
         }
 
         private void newSessionTapped(object sender, RoutedEventArgs e)
@@ -70,6 +81,29 @@ namespace App1.Views
         private void allPlayersTapped(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllPlayers));
+        }
+        private async void supportTapped(object sender, RoutedEventArgs e)
+        {
+            var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
+            emailMessage.Subject = "message subject";
+            emailMessage.Body = "message body";
+            var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient("windows.pokerincometracker@gmail.com");
+            emailMessage.To.Add(emailRecipient); 
+            await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage); 
+        }
+
+        
+        private void setBankRollTapped(object sender, RoutedEventArgs e)
+        {
+            addItemHelper = new AddItemHelper(this, "Bankroll Amount");
+            addItemHelper.setInputScopeToNumeric();
+            addItemHelper.confirmBtnTapped += confirmBankRollTapped;
+        }
+
+        private void confirmBankRollTapped(object sender, RoutedEventArgs e)
+        {
+            Windows.Storage.ApplicationData.Current.LocalSettings.Values["BankRoll"] = addItemHelper.txtInput;
+            SetBankRoll();
         }
     }
 }

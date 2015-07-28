@@ -8,6 +8,7 @@
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
                     <SolidColorBrush x:Key="PivotHeaderForegroundSelectedBrush" Color="#FF428bca" />
+                    <SolidColorBrush x:Key="Blue" Color="#FF428bca" />
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>

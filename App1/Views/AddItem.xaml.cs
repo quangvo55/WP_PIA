@@ -49,5 +49,13 @@ namespace App1.Views
         {
             this.txtInput.Focus(FocusState.Pointer);
         }
+
+        public void setInputScopeToNumeric()
+        {
+            this.txtInput.InputScope = new InputScope
+            {
+                Names = { new InputScopeName(InputScopeNameValue.Number) }
+            };
+        }
     }
 }
