@@ -5,11 +5,21 @@
     xmlns:local="using:App1.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid>
-
-    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="bottomAppBar">
+            <AppBarButton x:ConnectionId='1' Icon="Save" Label="Save"                         />
+            <AppBarButton x:ConnectionId='2' Icon="Cancel" Label="Cancel"                           />
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <StackPanel>
+        <TextBox x:Name="firstName" Header="First Name" Margin="10,10,10,0" InputScope="AlphanumericFullWidth" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="{Binding FirstName}"/>
+        <TextBox x:Name="lastName"  Header="Last Name" Margin="10,10,10,0" InputScope="AlphanumericFullWidth" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="{Binding LastName}"/>
+        <Slider x:Name="aggresssive" Header="Aggresssive" Margin="10,0" Minimum="1" Maximum="6" SmallChange="1" LargeChange="1" TickFrequency="1" Value="{Binding Aggressive}"/>
+        <Slider x:Name="tight" Header="Tight" Margin="10,0" Minimum="1" Maximum="6" SmallChange="1" LargeChange="1" TickFrequency="1" Value="{Binding Tight}"/>
+        <TextBox x:Name="notes" Header="Notes" Margin="10,10,10,0" TextWrapping="Wrap" AcceptsReturn="True" MaxLength="300" Text="{Binding Note}"/>
+    </StackPanel>
 </Page>
 

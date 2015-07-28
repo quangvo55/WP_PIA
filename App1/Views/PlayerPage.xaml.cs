@@ -3,6 +3,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using App1.ViewModels;
+using App1.Utils;
 
 namespace App1.Views
 {
@@ -22,5 +23,40 @@ namespace App1.Views
 
             this.DataContext = player;
         }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(firstName.Text))
+            {
+                GeneralUtil.ShowMessage("The first name field is required.");
+                return;
+            }
+
+            player.FirstName = this.firstName.Text;
+            player.LastName = this.lastName.Text;
+            player.Aggressive = this.aggresssive.Value;
+            player.Tight = this.tight.Value;
+            player.Note = this.notes.Text;
+
+            string result = player.SavePlayer(player);
+            if (result.Contains("Success"))
+            {
+                this.Frame.Navigate(typeof(AllPlayers));
+            }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            string result = player.DeletePlayer(player.Id);
+            if (result.Contains("Success"))
+            {
+                this.Frame.Navigate(typeof(AllPlayers));
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
+        } 
+
     }
 }

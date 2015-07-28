@@ -9,8 +9,8 @@ namespace App1.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Aggressive { get; set; }
-        public int Tight { get; set; }
+        public double Aggressive { get; set; }
+        public double Tight { get; set; }
         public string Note { get; set; }
     }
 }

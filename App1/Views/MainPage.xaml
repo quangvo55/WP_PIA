@@ -23,7 +23,7 @@
                     <TextBlock Text="Add a completed session" Tapped="completedSessionTapped"/>
                     <TextBlock Text="All Sessions" Tapped="allSessionsTapped"/>
                     <TextBlock Text="Cash Game Report" Tapped="newCashReportTapped" />
-                    <TextBlock Text="Charts" Tapped="newSessionTapped" />
+                    <!--<TextBlock Text="Charts" Tapped="newSessionTapped" />-->
                 </StackPanel>
             </PivotItem>
 
@@ -33,7 +33,7 @@
                     <TextBlock Text="Add a completed tournament" Tapped="completedTourneyTapped" />
                     <TextBlock Text="All Tournaments" Tapped="allTourniesTapped"/>
                     <TextBlock Text="Tournament Report"/>
-                    <TextBlock Text="Charts" Height="57"/>
+                    <!--<TextBlock Text="Charts" Height="57"/>-->
                 </StackPanel>
             </PivotItem>
 
@@ -41,14 +41,13 @@
                 <StackPanel>
                     <TextBlock Text="Filters" />
                     <TextBlock Text="Cash Game + Tourney Report" />
-                    <TextBlock Text="Charts"/>
+                    <!--<TextBlock Text="Charts"/>-->
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Player">
                 <StackPanel>
                     <TextBlock Text="Add Player" Tapped="newPlayerTapped"/>
                     <TextBlock Text="All Players" Tapped="allPlayersTapped" />
-                    <TextBlock Text="Charts" />
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Setting">

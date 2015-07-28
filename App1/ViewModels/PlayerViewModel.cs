@@ -65,8 +65,8 @@ namespace App1.ViewModels
             }
         }
 
-        private int aggressive;
-        public int Aggressive
+        private double aggressive;
+        public double Aggressive
         {
             get { return aggressive; }
 
@@ -79,8 +79,8 @@ namespace App1.ViewModels
             }
         }
 
-        private int tight;
-        public int Tight
+        private double tight;
+        public double Tight
         {
             get { return tight; }
 
