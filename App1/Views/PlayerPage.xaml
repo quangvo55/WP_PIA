@@ -16,6 +16,7 @@
     </Page.BottomAppBar>
     
     <StackPanel>
+        <TextBlock Text="Add Player" FontSize="32" Margin="10,0,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="firstName" Header="First Name" Margin="10,10,10,0" InputScope="AlphanumericFullWidth" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="{Binding FirstName}"/>
         <TextBox x:Name="lastName"  Header="Last Name" Margin="10,10,10,0" InputScope="AlphanumericFullWidth" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="{Binding LastName}"/>
         <Slider x:Name="aggresssive" Header="Aggresssive" Margin="10,0" Minimum="1" Maximum="6" SmallChange="1" LargeChange="1" TickFrequency="1" Value="{Binding Aggressive}"/>

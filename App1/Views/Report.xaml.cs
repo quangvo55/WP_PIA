@@ -20,9 +20,14 @@ namespace App1.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             gameType = (GameType)e.Parameter;
-            if (gameType == GameType.Cash)
+            if (gameType != null)
             {
-                reportViewModel = new ReportViewModel(gameType);                
+                reportViewModel = new ReportViewModel(gameType);
+                if (gameType == GameType.Tournament)
+                {
+                    this.TourneyInfo.Visibility = Visibility.Visible;
+                    this.reportTitle.Text = "Tournament Report";
+                }
             }
             this.DataContext = reportViewModel;
         }

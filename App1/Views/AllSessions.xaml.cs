@@ -29,6 +29,7 @@ namespace App1.Views
             else
             {
                 tourneyViewModel = new TourniesViewModel();
+                this.txtTitle.Text = "All Tournaments";
                 this.DataContext = tourneyViewModel.GetTournies();
             }
             

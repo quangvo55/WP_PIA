@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:valueconverter="using:App1.Utils"
+    xmlns:UI="using:Microsoft.Advertising.Mobile.UI"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -29,9 +30,13 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
+
+        <TextBlock Text="All Players" Grid.Row="0" Margin="10,0,0,0" FontSize="32" HorizontalAlignment="Left" />
+
         <ListView x:ConnectionId='3' x:Name="PlayersListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllPlayersTemplate}" IsItemClickEnabled="True"                           HorizontalAlignment="Stretch">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -39,8 +44,8 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-            <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
-              Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>-->
+        <UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
+            Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>
     </Grid>
 </Page>
 

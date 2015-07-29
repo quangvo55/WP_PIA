@@ -16,13 +16,18 @@
         </Style>
     </Page.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Pivot Title="Poker Tracker App">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Poker Income Tracker" FontSize="32" Margin="10,0,0,0"/>
+        <Pivot Grid.Row="1">
             <PivotItem Header="Cash Game">
                 <StackPanel>
-                    <TextBlock x:ConnectionId='8' Text="Add a live session"                          />
-                    <TextBlock x:ConnectionId='9' Text="Add a completed session"                                />
-                    <TextBlock x:ConnectionId='10' Text="All Sessions"                           />
-                    <TextBlock x:ConnectionId='11' Text="Cash Game Report"                              />
+                    <TextBlock x:ConnectionId='9' Text="Add a live session"                          />
+                    <TextBlock x:ConnectionId='10' Text="Add a completed session"                                />
+                    <TextBlock x:ConnectionId='11' Text="All Sessions"                           />
+                    <TextBlock x:ConnectionId='12' Text="Cash Game Report"                           />
                     <!--<TextBlock Text="Charts" Tapped="newSessionTapped" />-->
                 </StackPanel>
             </PivotItem>
@@ -32,7 +37,7 @@
                     <TextBlock x:ConnectionId='5' Text="Add a live tournament"                           />
                     <TextBlock x:ConnectionId='6' Text="Add a completed tournament"                                 />
                     <TextBlock x:ConnectionId='7' Text="All Tournaments"                           />
-                    <TextBlock Text="Tournament Report"/>
+                    <TextBlock x:ConnectionId='8' Text="Tournament Report"                             />
                     <!--<TextBlock Text="Charts" Height="57"/>-->
                 </StackPanel>
             </PivotItem>

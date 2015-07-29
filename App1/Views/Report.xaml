@@ -18,47 +18,72 @@
             <Setter Property="Margin" Value="10,0,10,0"/>
         </Style>
     </Page.Resources>
+   
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>               
-        
-        <TextBlock Text="Profit/Loss" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <TextBlock x:Name="reportTitle" Text="Cash Game Report" FontSize="32" HorizontalAlignment="Left" />
+        </StackPanel>
+
+        <TextBlock Text="Profit/Loss" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"/>
         <TextBlock Text="{Binding TotalProfit, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}"
-                   Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"/>
+                   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
 
-        <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="#FF428bca"/>
-        <TextBlock Text="Duration" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"/>
-        <TextBlock Text="{Binding TotalDuration, Converter={StaticResource TimespanToStringConverter}}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+        <Rectangle Grid.Row="2" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+        <TextBlock Text="Duration" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="{Binding TotalDuration, Converter={StaticResource TimespanToStringConverter}}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
         
-        <TextBlock Text="$/Hour" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="$/Hour" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"/>
         <TextBlock Text="{Binding DollarPerHour,Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}" 
-                   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
+                   Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"/>
 
-        <Rectangle Grid.Row="3" Grid.ColumnSpan="2" Fill="#FF428bca"/>
-        <TextBlock Text="Cashed" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"/>
-        <TextBlock Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right">
+        <Rectangle Grid.Row="4" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+        <TextBlock Text="Cashed" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right">
             <Run Text="{Binding Cashed}"/>
             <Run Text="/"/>
             <Run Text="{Binding SessionCount}"/>
         </TextBlock>
 
-        <TextBlock Text="$/Session" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Text="$/Session" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left"/>
         <TextBlock Text="{Binding DollarPerSession, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalProfit, Converter={StaticResource CurrencyForegroundConverter}}"
-                   Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"/>
-        
-        <Grid x:Name="AdditionalInfo" Grid.Row="5" Grid.ColumnSpan="2">
-            <Rectangle Fill="#FF2e618d"/>
-            <TextBlock Text="Location" Foreground="White" HorizontalAlignment="Left"/>
+                   Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right"/>
+
+        <Grid x:Name="TourneyInfo" Grid.Row="6" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+            <TextBlock Text="Total Buyin" Grid.Row="0" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding TotalBuyin, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalBuyin, Converter={StaticResource CurrencyForegroundConverter}}"
+                Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"/>
+
+            <TextBlock Text="Total Winnings" Grid.Row="1" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding TotalWinnings, Converter={StaticResource StringToCurrencyConverter}}" Foreground="{Binding TotalWinnings, Converter={StaticResource CurrencyForegroundConverter}}"
+                Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+
+            <Rectangle Grid.Row="2" Grid.ColumnSpan="2" Fill="#FF428bca"/>
+            <TextBlock Text="Return on Investment" Grid.Row="2" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding ROI}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
         </Grid>        
     </Grid>
 </Page>

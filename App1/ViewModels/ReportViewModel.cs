@@ -37,6 +37,40 @@ namespace App1.ViewModels
             }
         }
 
+        public Double _totalBuyin;
+        public Double TotalBuyin
+        {
+            get { return _totalBuyin; }
+
+            set
+            {
+                if (_totalBuyin == value) { return; }
+
+                _totalBuyin = value;
+                RaisePropertyChanged("TotalBuyin");
+            }
+        }
+
+        public Double _totalWinnings;
+        public Double TotalWinnings
+        {
+            get { return _totalWinnings; }
+
+            set
+            {
+                if (_totalWinnings == value) { return; }
+
+                _totalWinnings = value;
+                RaisePropertyChanged("TotalWinnings");
+            }
+        }
+
+        public string ROI
+        {
+            get { return (_totalWinnings / _totalBuyin).ToString("0.0%"); }
+            set { }
+        }
+
         public Double DollarPerHour 
         { 
             get { return _totalProfit/_totalDuration.TotalHours; }
@@ -87,12 +121,6 @@ namespace App1.ViewModels
                 Tournies = new List<TourneyViewModel>(new TourniesViewModel().GetTournies());
                 CalculateStats(Tournies);
             }
-                
-
-            //if (Sessions != null  && Sessions.Count > 0)
-            //    CalculateStats(Sessions);
-            //else if (Tournies != null && Tournies.Count > 0)
-            //    CalculateStats(Tournies);
         }
 
         private void CalculateStats(List<SessionViewModel> sessions)
@@ -115,6 +143,8 @@ namespace App1.ViewModels
             {
                 _totalDuration += tourney.Duration;
                 _totalProfit += tourney.Profit;
+                _totalBuyin += tourney.BuyIn;
+                _totalWinnings += tourney.CashOut;
                 if (tourney.Profit > 0) _cashed++;
             }
         }

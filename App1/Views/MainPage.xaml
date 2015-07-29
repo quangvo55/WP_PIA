@@ -16,13 +16,18 @@
         </Style>
     </Page.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Pivot Title="Poker Tracker App">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Poker Income Tracker" FontSize="32" Margin="10,0,0,0"/>
+        <Pivot Grid.Row="1">
             <PivotItem Header="Cash Game">
                 <StackPanel>
                     <TextBlock Text="Add a live session" Tapped="newSessionTapped"/>
                     <TextBlock Text="Add a completed session" Tapped="completedSessionTapped"/>
                     <TextBlock Text="All Sessions" Tapped="allSessionsTapped"/>
-                    <TextBlock Text="Cash Game Report" Tapped="newCashReportTapped" />
+                    <TextBlock Text="Cash Game Report" Tapped="cashReportTapped" />
                     <!--<TextBlock Text="Charts" Tapped="newSessionTapped" />-->
                 </StackPanel>
             </PivotItem>
@@ -32,7 +37,7 @@
                     <TextBlock Text="Add a live tournament" Tapped="newTourneyTapped" />
                     <TextBlock Text="Add a completed tournament" Tapped="completedTourneyTapped" />
                     <TextBlock Text="All Tournaments" Tapped="allTourniesTapped"/>
-                    <TextBlock Text="Tournament Report"/>
+                    <TextBlock Text="Tournament Report" Tapped="tourneyReportTapped"/>
                     <!--<TextBlock Text="Charts" Height="57"/>-->
                 </StackPanel>
             </PivotItem>

@@ -69,9 +69,14 @@ namespace App1.Views
             this.Frame.Navigate(typeof(AllSessions), GameType.Tournament);
         }
 
-        private void newCashReportTapped(object sender, RoutedEventArgs e)
+        private void cashReportTapped(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Report), GameType.Cash);
+        }
+
+        private void tourneyReportTapped(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Report), GameType.Tournament);
         }
         private void newPlayerTapped(object sender, RoutedEventArgs e)
         {

@@ -49,12 +49,14 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView x:ConnectionId='3' x:Name="SessionsListView" Grid.Row="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
-        <!--<UI:AdControl Grid.Row="1" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Left" 
-              Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>-->
+        <TextBlock x:Name="txtTitle"  Text="All Cash Games" Grid.Row="0" Margin="10,0,0,0" FontSize="32" HorizontalAlignment="Left" />
+        <ListView x:ConnectionId='3' x:Name="SessionsListView" Grid.Row="1" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"                           />
+        <UI:AdControl Grid.Row="2" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Stretch" 
+              Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>
     </Grid>
 </Page>
 
