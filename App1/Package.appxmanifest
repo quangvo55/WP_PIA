@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="26848QuangVoInc.PokerIncomeTracker" Publisher="CN=960BF8A8-F5ED-4A43-8162-CDD33EB56FD9" Version="1.1.0.1" />
+  <Identity Name="26848QuangVoInc.PokerIncomeTracker" Publisher="CN=960BF8A8-F5ED-4A43-8162-CDD33EB56FD9" Version="1.1.0.2" />
   <mp:PhoneIdentity PhoneProductId="6f2709bc-2621-44f4-a745-c8479aa46c68" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Poker Income Tracker</DisplayName>

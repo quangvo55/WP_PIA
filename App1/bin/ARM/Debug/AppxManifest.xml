@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="98ca2491-2259-44f6-8fb5-bb63388bf9aa" Publisher="CN=james.vo" Version="1.0.0.0" ProcessorArchitecture="arm" />
-  <mp:PhoneIdentity PhoneProductId="98ca2491-2259-44f6-8fb5-bb63388bf9aa" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="26848QuangVoInc.PokerIncomeTracker" Publisher="CN=960BF8A8-F5ED-4A43-8162-CDD33EB56FD9" Version="1.1.0.1" ProcessorArchitecture="arm" />
+  <mp:PhoneIdentity PhoneProductId="6f2709bc-2621-44f4-a745-c8479aa46c68" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Poker Income Tracker</DisplayName>
-    <PublisherDisplayName>james.vo</PublisherDisplayName>
+    <PublisherDisplayName>Quang Vo Inc</PublisherDisplayName>
     <Logo>Assets\Icon-120.png</Logo>
   </Properties>
   <Prerequisites>

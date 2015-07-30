@@ -148,7 +148,7 @@ namespace App1.App1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[21];
+            _typeNameTable = new string[25];
             _typeNameTable[0] = "App1.Views.AddItem";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "String";
@@ -156,22 +156,26 @@ namespace App1.App1_XamlTypeInfo
             _typeNameTable[4] = "App1.Utils.AlternatingIndexConverter";
             _typeNameTable[5] = "Object";
             _typeNameTable[6] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[7] = "App1.Views.AllPlayers";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[9] = "App1.Utils.DateToStringConverter";
-            _typeNameTable[10] = "App1.Utils.CurrencyForegroundConverter";
-            _typeNameTable[11] = "App1.Utils.StringToCurrencyConverter";
-            _typeNameTable[12] = "App1.Views.AllSessions";
-            _typeNameTable[13] = "App1.Views.PlayerPage";
-            _typeNameTable[14] = "App1.Views.RebuyWindow";
-            _typeNameTable[15] = "Int32";
-            _typeNameTable[16] = "App1.Utils.TimespanToStringConverter";
-            _typeNameTable[17] = "App1.Views.Report";
-            _typeNameTable[18] = "App1.Views.SessionPage";
-            _typeNameTable[19] = "App1.Views.MainPage";
-            _typeNameTable[20] = "App1.Views.TourneyPage";
+            _typeNameTable[7] = "Microsoft.Advertising.Mobile.UI.AdControl";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[9] = "Int32";
+            _typeNameTable[10] = "Boolean";
+            _typeNameTable[11] = "Double";
+            _typeNameTable[12] = "App1.Views.AllPlayers";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[14] = "App1.Utils.DateToStringConverter";
+            _typeNameTable[15] = "App1.Utils.CurrencyForegroundConverter";
+            _typeNameTable[16] = "App1.Utils.StringToCurrencyConverter";
+            _typeNameTable[17] = "App1.Views.AllSessions";
+            _typeNameTable[18] = "App1.Views.PlayerPage";
+            _typeNameTable[19] = "App1.Views.RebuyWindow";
+            _typeNameTable[20] = "App1.Utils.TimespanToStringConverter";
+            _typeNameTable[21] = "App1.Views.Report";
+            _typeNameTable[22] = "App1.Views.SessionPage";
+            _typeNameTable[23] = "App1.Views.MainPage";
+            _typeNameTable[24] = "App1.Views.TourneyPage";
 
-            _typeTable = new global::System.Type[21];
+            _typeTable = new global::System.Type[25];
             _typeTable[0] = typeof(global::App1.Views.AddItem);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::System.String);
@@ -179,20 +183,24 @@ namespace App1.App1_XamlTypeInfo
             _typeTable[4] = typeof(global::App1.Utils.AlternatingIndexConverter);
             _typeTable[5] = typeof(global::System.Object);
             _typeTable[6] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[7] = typeof(global::App1.Views.AllPlayers);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[9] = typeof(global::App1.Utils.DateToStringConverter);
-            _typeTable[10] = typeof(global::App1.Utils.CurrencyForegroundConverter);
-            _typeTable[11] = typeof(global::App1.Utils.StringToCurrencyConverter);
-            _typeTable[12] = typeof(global::App1.Views.AllSessions);
-            _typeTable[13] = typeof(global::App1.Views.PlayerPage);
-            _typeTable[14] = typeof(global::App1.Views.RebuyWindow);
-            _typeTable[15] = typeof(global::System.Int32);
-            _typeTable[16] = typeof(global::App1.Utils.TimespanToStringConverter);
-            _typeTable[17] = typeof(global::App1.Views.Report);
-            _typeTable[18] = typeof(global::App1.Views.SessionPage);
-            _typeTable[19] = typeof(global::App1.Views.MainPage);
-            _typeTable[20] = typeof(global::App1.Views.TourneyPage);
+            _typeTable[7] = typeof(global::Microsoft.Advertising.Mobile.UI.AdControl);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[9] = typeof(global::System.Int32);
+            _typeTable[10] = typeof(global::System.Boolean);
+            _typeTable[11] = typeof(global::System.Double);
+            _typeTable[12] = typeof(global::App1.Views.AllPlayers);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[14] = typeof(global::App1.Utils.DateToStringConverter);
+            _typeTable[15] = typeof(global::App1.Utils.CurrencyForegroundConverter);
+            _typeTable[16] = typeof(global::App1.Utils.StringToCurrencyConverter);
+            _typeTable[17] = typeof(global::App1.Views.AllSessions);
+            _typeTable[18] = typeof(global::App1.Views.PlayerPage);
+            _typeTable[19] = typeof(global::App1.Views.RebuyWindow);
+            _typeTable[20] = typeof(global::App1.Utils.TimespanToStringConverter);
+            _typeTable[21] = typeof(global::App1.Views.Report);
+            _typeTable[22] = typeof(global::App1.Views.SessionPage);
+            _typeTable[23] = typeof(global::App1.Views.MainPage);
+            _typeTable[24] = typeof(global::App1.Views.TourneyPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -229,18 +237,19 @@ namespace App1.App1_XamlTypeInfo
 
         private object Activate_3_AddStakes() { return new global::App1.Views.AddStakes(); }
         private object Activate_4_AlternatingIndexConverter() { return new global::App1.Utils.AlternatingIndexConverter(); }
-        private object Activate_7_AllPlayers() { return new global::App1.Views.AllPlayers(); }
-        private object Activate_9_DateToStringConverter() { return new global::App1.Utils.DateToStringConverter(); }
-        private object Activate_10_CurrencyForegroundConverter() { return new global::App1.Utils.CurrencyForegroundConverter(); }
-        private object Activate_11_StringToCurrencyConverter() { return new global::App1.Utils.StringToCurrencyConverter(); }
-        private object Activate_12_AllSessions() { return new global::App1.Views.AllSessions(); }
-        private object Activate_13_PlayerPage() { return new global::App1.Views.PlayerPage(); }
-        private object Activate_14_RebuyWindow() { return new global::App1.Views.RebuyWindow(); }
-        private object Activate_16_TimespanToStringConverter() { return new global::App1.Utils.TimespanToStringConverter(); }
-        private object Activate_17_Report() { return new global::App1.Views.Report(); }
-        private object Activate_18_SessionPage() { return new global::App1.Views.SessionPage(); }
-        private object Activate_19_MainPage() { return new global::App1.Views.MainPage(); }
-        private object Activate_20_TourneyPage() { return new global::App1.Views.TourneyPage(); }
+        private object Activate_7_AdControl() { return new global::Microsoft.Advertising.Mobile.UI.AdControl(); }
+        private object Activate_12_AllPlayers() { return new global::App1.Views.AllPlayers(); }
+        private object Activate_14_DateToStringConverter() { return new global::App1.Utils.DateToStringConverter(); }
+        private object Activate_15_CurrencyForegroundConverter() { return new global::App1.Utils.CurrencyForegroundConverter(); }
+        private object Activate_16_StringToCurrencyConverter() { return new global::App1.Utils.StringToCurrencyConverter(); }
+        private object Activate_17_AllSessions() { return new global::App1.Views.AllSessions(); }
+        private object Activate_18_PlayerPage() { return new global::App1.Views.PlayerPage(); }
+        private object Activate_19_RebuyWindow() { return new global::App1.Views.RebuyWindow(); }
+        private object Activate_20_TimespanToStringConverter() { return new global::App1.Utils.TimespanToStringConverter(); }
+        private object Activate_21_Report() { return new global::App1.Views.Report(); }
+        private object Activate_22_SessionPage() { return new global::App1.Views.SessionPage(); }
+        private object Activate_23_MainPage() { return new global::App1.Views.MainPage(); }
+        private object Activate_24_TourneyPage() { return new global::App1.Views.TourneyPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -293,95 +302,127 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  App1.Views.AllPlayers
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_AllPlayers;
-                userType.SetIsLocalType();
+            case 7:   //  Microsoft.Advertising.Mobile.UI.AdControl
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_7_AdControl;
+                userType.AddMemberName("AutoRefreshIntervalInSeconds");
+                userType.AddMemberName("ApplicationId");
+                userType.AddMemberName("AdUnitId");
+                userType.AddMemberName("IsAutoRefreshEnabled");
+                userType.AddMemberName("Keywords");
+                userType.AddMemberName("Latitude");
+                userType.AddMemberName("Longitude");
+                userType.AddMemberName("CountryOrRegion");
+                userType.AddMemberName("PostalCode");
+                userType.AddMemberName("IsAutoCollapseEnabled");
+                userType.AddMemberName("IsEngaged");
+                userType.AddMemberName("IsSuspended");
+                userType.AddMemberName("HasAd");
+                userType.AddMemberName("IsBackgroundTransparent");
                 xamlType = userType;
                 break;
 
-            case 8:   //  Windows.UI.Xaml.Controls.Page
+            case 8:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  App1.Utils.DateToStringConverter
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_DateToStringConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
+            case 9:   //  Int32
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  App1.Utils.CurrencyForegroundConverter
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_10_CurrencyForegroundConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
+            case 10:   //  Boolean
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  App1.Utils.StringToCurrencyConverter
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_11_StringToCurrencyConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
+            case 11:   //  Double
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  App1.Views.AllSessions
+            case 12:   //  App1.Views.AllPlayers
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_AllSessions;
+                userType.Activator = Activate_12_AllPlayers;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  App1.Views.PlayerPage
+            case 13:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 14:   //  App1.Utils.DateToStringConverter
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_14_DateToStringConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  App1.Utils.CurrencyForegroundConverter
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_15_CurrencyForegroundConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  App1.Utils.StringToCurrencyConverter
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_16_StringToCurrencyConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  App1.Views.AllSessions
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_PlayerPage;
+                userType.Activator = Activate_17_AllSessions;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  App1.Views.RebuyWindow
+            case 18:   //  App1.Views.PlayerPage
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_18_PlayerPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 19:   //  App1.Views.RebuyWindow
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_14_RebuyWindow;
+                userType.Activator = Activate_19_RebuyWindow;
                 userType.AddMemberName("RebuyAmount");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Int32
-                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 16:   //  App1.Utils.TimespanToStringConverter
+            case 20:   //  App1.Utils.TimespanToStringConverter
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_16_TimespanToStringConverter;
+                userType.Activator = Activate_20_TimespanToStringConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  App1.Views.Report
+            case 21:   //  App1.Views.Report
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_Report;
+                userType.Activator = Activate_21_Report;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  App1.Views.SessionPage
+            case 22:   //  App1.Views.SessionPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_SessionPage;
+                userType.Activator = Activate_22_SessionPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  App1.Views.MainPage
+            case 23:   //  App1.Views.MainPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_MainPage;
+                userType.Activator = Activate_23_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  App1.Views.TourneyPage
+            case 24:   //  App1.Views.TourneyPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_TourneyPage;
+                userType.Activator = Activate_24_TourneyPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -478,7 +519,132 @@ namespace App1.App1_XamlTypeInfo
             var that = (global::App1.Utils.AlternatingIndexConverter)instance;
             that.Odd = (global::Windows.UI.Xaml.Media.Brush)Value;
         }
-        private object get_5_RebuyWindow_RebuyAmount(object instance)
+        private object get_5_AdControl_AutoRefreshIntervalInSeconds(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AutoRefreshIntervalInSeconds;
+        }
+        private void set_5_AdControl_AutoRefreshIntervalInSeconds(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AutoRefreshIntervalInSeconds = (global::System.Int32)Value;
+        }
+        private object get_6_AdControl_ApplicationId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.ApplicationId;
+        }
+        private void set_6_AdControl_ApplicationId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.ApplicationId = (global::System.String)Value;
+        }
+        private object get_7_AdControl_AdUnitId(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.AdUnitId;
+        }
+        private void set_7_AdControl_AdUnitId(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.AdUnitId = (global::System.String)Value;
+        }
+        private object get_8_AdControl_IsAutoRefreshEnabled(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsAutoRefreshEnabled;
+        }
+        private void set_8_AdControl_IsAutoRefreshEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsAutoRefreshEnabled = (global::System.Boolean)Value;
+        }
+        private object get_9_AdControl_Keywords(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Keywords;
+        }
+        private void set_9_AdControl_Keywords(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Keywords = (global::System.String)Value;
+        }
+        private object get_10_AdControl_Latitude(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Latitude;
+        }
+        private void set_10_AdControl_Latitude(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Latitude = (global::System.Double)Value;
+        }
+        private object get_11_AdControl_Longitude(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.Longitude;
+        }
+        private void set_11_AdControl_Longitude(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.Longitude = (global::System.Double)Value;
+        }
+        private object get_12_AdControl_CountryOrRegion(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.CountryOrRegion;
+        }
+        private void set_12_AdControl_CountryOrRegion(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.CountryOrRegion = (global::System.String)Value;
+        }
+        private object get_13_AdControl_PostalCode(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.PostalCode;
+        }
+        private void set_13_AdControl_PostalCode(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.PostalCode = (global::System.String)Value;
+        }
+        private object get_14_AdControl_IsAutoCollapseEnabled(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsAutoCollapseEnabled;
+        }
+        private void set_14_AdControl_IsAutoCollapseEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsAutoCollapseEnabled = (global::System.Boolean)Value;
+        }
+        private object get_15_AdControl_IsEngaged(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsEngaged;
+        }
+        private object get_16_AdControl_IsSuspended(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsSuspended;
+        }
+        private object get_17_AdControl_HasAd(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.HasAd;
+        }
+        private object get_18_AdControl_IsBackgroundTransparent(object instance)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            return that.IsBackgroundTransparent;
+        }
+        private void set_18_AdControl_IsBackgroundTransparent(object instance, object Value)
+        {
+            var that = (global::Microsoft.Advertising.Mobile.UI.AdControl)instance;
+            that.IsBackgroundTransparent = (global::System.Boolean)Value;
+        }
+        private object get_19_RebuyWindow_RebuyAmount(object instance)
         {
             var that = (global::App1.Views.RebuyWindow)instance;
             return that.RebuyAmount;
@@ -521,10 +687,105 @@ namespace App1.App1_XamlTypeInfo
                 xamlMember.Getter = get_4_AlternatingIndexConverter_Odd;
                 xamlMember.Setter = set_4_AlternatingIndexConverter_Odd;
                 break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AutoRefreshIntervalInSeconds":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "AutoRefreshIntervalInSeconds", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_AdControl_AutoRefreshIntervalInSeconds;
+                xamlMember.Setter = set_5_AdControl_AutoRefreshIntervalInSeconds;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.ApplicationId":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "ApplicationId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_AdControl_ApplicationId;
+                xamlMember.Setter = set_6_AdControl_ApplicationId;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.AdUnitId":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "AdUnitId", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_AdControl_AdUnitId;
+                xamlMember.Setter = set_7_AdControl_AdUnitId;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsAutoRefreshEnabled":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "IsAutoRefreshEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_AdControl_IsAutoRefreshEnabled;
+                xamlMember.Setter = set_8_AdControl_IsAutoRefreshEnabled;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Keywords":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "Keywords", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_AdControl_Keywords;
+                xamlMember.Setter = set_9_AdControl_Keywords;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Latitude":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "Latitude", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_AdControl_Latitude;
+                xamlMember.Setter = set_10_AdControl_Latitude;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.Longitude":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "Longitude", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_11_AdControl_Longitude;
+                xamlMember.Setter = set_11_AdControl_Longitude;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.CountryOrRegion":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "CountryOrRegion", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_12_AdControl_CountryOrRegion;
+                xamlMember.Setter = set_12_AdControl_CountryOrRegion;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.PostalCode":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "PostalCode", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_13_AdControl_PostalCode;
+                xamlMember.Setter = set_13_AdControl_PostalCode;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsAutoCollapseEnabled":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "IsAutoCollapseEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_14_AdControl_IsAutoCollapseEnabled;
+                xamlMember.Setter = set_14_AdControl_IsAutoCollapseEnabled;
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsEngaged":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "IsEngaged", "Boolean");
+                xamlMember.Getter = get_15_AdControl_IsEngaged;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsSuspended":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "IsSuspended", "Boolean");
+                xamlMember.Getter = get_16_AdControl_IsSuspended;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.HasAd":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "HasAd", "Boolean");
+                xamlMember.Getter = get_17_AdControl_HasAd;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Advertising.Mobile.UI.AdControl.IsBackgroundTransparent":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Advertising.Mobile.UI.AdControl");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "IsBackgroundTransparent", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_18_AdControl_IsBackgroundTransparent;
+                xamlMember.Setter = set_18_AdControl_IsBackgroundTransparent;
+                break;
             case "App1.Views.RebuyWindow.RebuyAmount":
                 userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("App1.Views.RebuyWindow");
                 xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "RebuyAmount", "Int32");
-                xamlMember.Getter = get_5_RebuyWindow_RebuyAmount;
+                xamlMember.Getter = get_19_RebuyWindow_RebuyAmount;
                 xamlMember.SetIsReadOnly();
                 break;
             }
@@ -852,8 +1113,5 @@ namespace App1.App1_XamlTypeInfo
         }
     }
 }
-
-
-
 
 

@@ -7,16 +7,16 @@
     <SolutionConfiguration>Release|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>6f2709bc-2621-44f4-a745-c8479aa46c68</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\obj\ARM\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\obj\ARM\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\App1.exe">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\App1.exe">
       <PackagePath>App1.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Common.winmd">
@@ -40,59 +40,62 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.8.10\Redist\Retail\ARM\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-106.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\appbg.jpg">
+      <PackagePath>Assets\appbg.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Icon-106.scale-240.png">
       <PackagePath>Assets\Icon-106.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-120.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Icon-120.scale-240.png">
       <PackagePath>Assets\Icon-120.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-170.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Icon-170.scale-240.png">
       <PackagePath>Assets\Icon-170.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-360.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\Assets\Icon-360.scale-240.png">
       <PackagePath>Assets\Icon-360.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\App.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\AddItem.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\AddItem.xbf">
       <PackagePath>Views\AddItem.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\AddStakes.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\AddStakes.xbf">
       <PackagePath>Views\AddStakes.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\AllPlayers.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\AllPlayers.xbf">
       <PackagePath>Views\AllPlayers.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\AllSessions.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\AllSessions.xbf">
       <PackagePath>Views\AllSessions.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\PlayerPage.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\PlayerPage.xbf">
       <PackagePath>Views\PlayerPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\RebuyWindow.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\RebuyWindow.xbf">
       <PackagePath>Views\RebuyWindow.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\Report.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\Report.xbf">
       <PackagePath>Views\Report.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\SessionPage.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\SessionPage.xbf">
       <PackagePath>Views\SessionPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\Views\TourneyPage.xbf">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\Views\TourneyPage.xbf">
       <PackagePath>Views\TourneyPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\App1.xr.xml">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\App1.xr.xml">
       <PackagePath>App1.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Release\resources.pri">
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\WP_PIA\App1\bin\ARM\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -9,6 +9,14 @@
                 <ResourceDictionary x:Key="Default">
                     <SolidColorBrush x:Key="PivotHeaderForegroundSelectedBrush" Color="#FF428bca" />
                     <SolidColorBrush x:Key="Blue" Color="#FF428bca" />
+                    <Style TargetType="Grid">
+                        <Setter Property="Background" Value="#FF819FC4">
+                        </Setter>
+                    </Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Background" Value="#FF819FC4">
+                        </Setter>
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>

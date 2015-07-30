@@ -15,7 +15,7 @@
             <AppBarButton x:ConnectionId='4' Icon="Cancel" Label="Cancel"                           />
         </CommandBar>
     </Page.BottomAppBar>
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>

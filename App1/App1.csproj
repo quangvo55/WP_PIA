@@ -210,6 +210,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\appbg.jpg" />
     <Content Include="Assets\Icon-106.scale-240.png" />
     <Content Include="Assets\Icon-120.scale-240.png" />
     <Content Include="Assets\Icon-170.scale-240.png" />

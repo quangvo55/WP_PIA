@@ -97,6 +97,10 @@ namespace App1.Views
             await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage); 
         }
 
+        private async void rateAppTapped(object sender, RoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=4a103723-2056-42d9-8605-ae16a04d08bd"));
+        }
         
         private void setBankRollTapped(object sender, RoutedEventArgs e)
         {
