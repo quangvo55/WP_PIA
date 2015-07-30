@@ -1,41 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-
-  <Identity Name="98ca2491-2259-44f6-8fb5-bb63388bf9aa"
-            Publisher="CN=james.vo"
-            Version="1.0.0.0" />
-
-  <mp:PhoneIdentity PhoneProductId="98ca2491-2259-44f6-8fb5-bb63388bf9aa" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
-
+  <Identity Name="26848QuangVoInc.PokerIncomeTracker" Publisher="CN=960BF8A8-F5ED-4A43-8162-CDD33EB56FD9" Version="1.1.0.1" />
+  <mp:PhoneIdentity PhoneProductId="6f2709bc-2621-44f4-a745-c8479aa46c68" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>App1</DisplayName>
-    <PublisherDisplayName>james.vo</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <DisplayName>Poker Income Tracker</DisplayName>
+    <PublisherDisplayName>Quang Vo Inc</PublisherDisplayName>
+    <Logo>Assets\Icon-120.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.1</OSMinVersion>
     <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
   </Prerequisites>
-  
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="App1.App">
-        <m3:VisualElements
-            DisplayName="App1"
-            Square150x150Logo="Assets\Logo.png"
-            Square44x44Logo="Assets\SmallLogo.png"
-            Description="App1"
-            ForegroundText="light"
-            BackgroundColor="transparent">
-            <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png"/>
-            <m3:SplashScreen Image="Assets\SplashScreen.png"/>
-        </m3:VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="App1.App">
+      <m3:VisualElements DisplayName="Poker Income Tracker" Square150x150Logo="Assets\Icon-360.png" Square44x44Logo="Assets\Icon-106.png" Description="Track your winnings/losses for tournament and cash games." ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Square71x71Logo="Assets\Icon-170.png">
+        </m3:DefaultTile>
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
+      </m3:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

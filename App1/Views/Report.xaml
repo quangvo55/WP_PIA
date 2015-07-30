@@ -14,7 +14,7 @@
         <valueconverter:CurrencyForegroundConverter x:Key="CurrencyForegroundConverter" />
         <Style TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="10,0,10,0"/>
         </Style>
     </Page.Resources>

@@ -55,7 +55,7 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="txtTitle"  Text="All Cash Games" Grid.Row="0" Margin="10,0,0,0" FontSize="32" HorizontalAlignment="Left" />
         <ListView x:Name="SessionsListView" Grid.Row="1" ItemsSource="{Binding}" ItemTemplate="{StaticResource AllSessionsTemplate}" IsItemClickEnabled="True"  ItemClick="ListViewClick"/>
-        <UI:AdControl Grid.Row="2" AutoRefreshIntervalInSeconds="60"  ApplicationId="test_client" AdUnitId="Image320_50" HorizontalAlignment="Stretch" 
-              Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>
+        <UI:AdControl Grid.Row="2" AutoRefreshIntervalInSeconds="60"  ApplicationId="202b047a-010e-4e9e-8834-435e522157b7" AdUnitId="11529574" HorizontalAlignment="Stretch" 
+            Height="50" IsAutoRefreshEnabled="True" VerticalAlignment="Bottom" Width="400"/>
     </Grid>
 </Page>

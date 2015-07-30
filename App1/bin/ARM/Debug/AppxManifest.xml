@@ -10,9 +10,9 @@
   <Identity Name="98ca2491-2259-44f6-8fb5-bb63388bf9aa" Publisher="CN=james.vo" Version="1.0.0.0" ProcessorArchitecture="arm" />
   <mp:PhoneIdentity PhoneProductId="98ca2491-2259-44f6-8fb5-bb63388bf9aa" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>App1</DisplayName>
+    <DisplayName>Poker Income Tracker</DisplayName>
     <PublisherDisplayName>james.vo</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets\Icon-120.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.3.1</OSMinVersion>
@@ -23,9 +23,11 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="App1.exe" EntryPoint="App1.App">
-      <m3:VisualElements DisplayName="App1" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="App1" ForegroundText="light" BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png" />
-        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+      <m3:VisualElements DisplayName="Poker Income Tracker" Square150x150Logo="Assets\Icon-360.png" Square44x44Logo="Assets\Icon-106.png" Description="Track your winnings/losses for tournament and cash games." ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Square71x71Logo="Assets\Icon-170.png"></m3:DefaultTile>
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
       </m3:VisualElements>
     </Application>
   </Applications>

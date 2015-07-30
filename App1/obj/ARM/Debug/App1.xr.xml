@@ -83,9 +83,9 @@
       <RootProperty Name="MaxLength" />
       <RootProperty Name="Width" />
       <RootProperty Name="IsReadOnly" />
-      <RootProperty Name="Background" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Width" />

@@ -40,28 +40,20 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.8.10\Redist\Debug\ARM\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Logo.scale-240.png">
-      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-106.scale-240.png">
+      <PackagePath>Assets\Icon-106.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\SmallLogo.scale-240.png">
-      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-120.scale-240.png">
+      <PackagePath>Assets\Icon-120.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\SplashScreen.scale-240.png">
-      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-170.scale-240.png">
+      <PackagePath>Assets\Icon-170.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Square71x71Logo.scale-240.png">
-      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\StoreLogo.scale-240.png">
-      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\WideLogo.scale-240.png">
-      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\Assets\Icon-360.scale-240.png">
+      <PackagePath>Assets\Icon-360.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\james.vo\Documents\Visual Studio 2013\Projects\App1\App1\bin\ARM\Debug\App.xbf">

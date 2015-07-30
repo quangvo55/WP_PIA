@@ -57,7 +57,7 @@
             </PivotItem>
             <PivotItem Header="Setting">
                 <StackPanel>
-                    <TextBlock x:Name="setBankRoll" Tapped="setBankRollTapped"/>
+                    <!--<TextBlock x:Name="setBankRoll" Tapped="setBankRollTapped"/>-->
 
                     <!--<TextBlock Text="Customize" Height="57" HorizontalAlignment="Left" FontSize="26" VerticalAlignment="Top"/>-->
                     <TextBlock Text="Support" Tapped="supportTapped"/>

@@ -24,7 +24,7 @@ namespace App1.Utils
         {
             TimeSpan ts = (TimeSpan)value;
 
-            return ts.TotalHours + " Hours " + ts.Minutes + " Minutes";
+            return Math.Floor(ts.TotalHours) + " Hours " + ts.Minutes + " Minutes";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

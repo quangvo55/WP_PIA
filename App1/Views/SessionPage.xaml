@@ -65,7 +65,7 @@
                         <TimePicker x:Name="startTime" Width="185" Header="Start Time" Margin="0,0,10,0" Grid.Column="1" Time="{Binding StartTime,Mode=TwoWay}" TimeChanged="TimePicker_Changed"/>
                     </Grid>
                     <TextBox x:Name="DurationCounter" Header="Session Duration" InputScope="Number" Text="0:00" HorizontalAlignment="Left" 
-                             Width="380" Margin="0,0,10,0" IsReadOnly="True" Background="Transparent" TextAlignment="Center" Visibility="Collapsed"/>
+                             Width="380" Margin="0,0,10,0" IsReadOnly="True" TextAlignment="Center" Visibility="Collapsed"/>
                 </StackPanel>
                 
                 <StackPanel x:Name="sessionEndInput" Visibility="Collapsed">

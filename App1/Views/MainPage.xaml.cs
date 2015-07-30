@@ -36,7 +36,7 @@ namespace App1.Views
 
             var bankroll = (string)localSettings.Values["BankRoll"];
 
-            setBankRoll.Text = "Set Bank Roll " + (Convert.ToDouble(bankroll)).ToString("C");
+            //setBankRoll.Text = "Set Bank Roll " + (Convert.ToDouble(bankroll)).ToString("C");
         }
 
         private void newSessionTapped(object sender, RoutedEventArgs e)
